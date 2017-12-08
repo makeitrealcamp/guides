@@ -1,83 +1,103 @@
 # Arquitectura
 
-A **Ruby on Rails** se le llama un **framework** porque es un grupo de gemas que requieren una estructura de carpetas específica para funcionar (en pocas palabras es más complejo que una librería).
+**Ruby on Rails** usa un concepto llamado [convención sobre configuración](http://es.wikipedia.org/wiki/Convenci%C3%B3n_sobre_Configuraci%C3%B3n) para que la estructura de todos los proyectos sea similar y escribamos menos código.
 
-**Ruby on Rails** viene con una **aplicación para línea de comandos** que te va permitir realizar tareas frecuentes muy rápidamente acelerando el tiempo de desarrollo.
+La desventaja de la [convención sobre configuración](http://es.wikipedia.org/wiki/Convenci%C3%B3n_sobre_Configuraci%C3%B3n) es que muchas cosas en Rails parecen magia para los principiantes.
 
-## Instalación
+Los componentes más importantes de **Ruby on Rails** son:
 
-Para instalar **Ruby on Rails** ejecuta el siguiente comando:
+* El enrutador (el archivo `config/routes.rb`).
+* Los controladores (en `app/controllers`).
+* Las vistas (en `app/views`).
+* ActiveRecord (la capa de acceso a la base de datos).
+* La aplicación de consola.
 
-```
-$ gem install rails
-```
+## El enrutador
 
-Para verificar que quedó bien instalado deberías poder correr el siguiente comando sin error:
+El **enrutador** es el componente que decide qué **controlador** y **método** va a procesar una petición HTTP.
 
-```
-$ rails -v
-```
+El **enrutador** se configura en el archivo `config/routes.rb`.
 
-## Crea tu primera aplicación
-
-Para crear tu primera aplicación ejecuta el comando `rails new <nombre_de_la_app>`. Por ejemplo, para crear una aplicación llamada **blog** ejecutaríamos:
-
-```
-$ rails new blog
-```
-
-Esto va a crear una carpeta llamada **blog** en la ubicación donde te encuentres en ese momento.
-
-Ingresa a la carpeta ejecutando:
-
-```
-$ cd blog
-```
-
-Inicia el servidor ejecutando `rails server` o `rails s` :
-
-```
-$ rails server
-```
-
-Ingresa en tu navegador a http://localhost:3000/. Deberías ver la pantalla inicial de Rails!
-
-## Crea tu primera ruta
-
-Ruby introduce el concepto de **controladores** que se encargan de procesar las peticiones HTTP.
-
-Las rutas se definen en el archivo `config/routes.rb`.
-
-Los controladores se encuentra en la carpeta `app/controllers` y son clases de Ruby con métodos que contienen el código que se debe ejecutar cuando una ruta coincida.
-
-Las vistas se almacenan en `app/views`.
-
-Para crear un controlador llamado `Welcome` con una acción index ejecuta el siguiente comando:
-
-```
-$ rails generate controller Welcome index
-```
-
-Rails va a crear varios archivos incluyendo el controlador (`app/controllers/welcome_controller.rb`), la vista (`app/views/welcome/index.html.erb`), y va a agregar una ruta a `config/routes.rb`.
-
-Abre el archivo `app/views/welcome/index.html.erb` y reemplaza el código que se encuentra allí por lo siguiente:
-
-```erb
-<h1>Hola, Rails!</h1>
-```
-
-Prende nuevamente el servidor e ingresa desde tu navegador a http://localhost:3000/welcome/. Te debería aparecer "Hola, Rails!".
-
-### Definiendo la página de inicio
-
-Modifica el archivo `config/routes.rb` agregando la línea `root 'welcome#index'`. Debería quedar de la siguiente forma:
+Hay varias formas de definir las rutas. Veamos la más genérica:
 
 ```ruby
-Rails.application.routes.draw do
-  get 'welcome/index'
+get '/products', to: 'products#index'
+```
 
-  root 'welcome#index'
+En este ejemplo estamos diciendo que cuando alguien haga una petición a `GET /products` el método `index` del controlador `ProductsController` (ubicado en `app/controllers/products_controller.rb`) es el que se va a encargar de procesar la petición.
+
+Otra forma equivalente es utilizar el operador `=>` (hashrocket) de la siguiente forma:
+
+```ruby
+get '/products' => 'products#index'
+```
+
+No importa cuál forma utilices, lo importante es ser consistente en cada proyecto.
+
+Por último, es posible omitir el controlador y el método **siempre y cuando la ruta tenga la forma `/<controlador>/<método>`**. Por ejemplo, la siguiente línea utilizará el método `index` del controlador `ProductsController`.
+
+```ruby
+get '/products/index'
+```
+
+## Los controladores
+
+Los **controladores** son clases de Ruby que extienden `ApplicationController` y tienen métodos que son los que se van a encargar de procesar las peticiones HTTP.
+
+```ruby
+class ProductsController < ApplicationController
+  def index
+    render html: "<h1>Hola Mundo</h1>".html_safe
+  end
 end
 ```
 
-Ahora ingresa a http://localhost:3000/. Debería aparecer "Hola, Rails!" nuevamente.
+En este ejemplo estamos renderizando el HTML `<h1>Hola Mundo</h1>`.
+
+El método `html_safe` es necesario para decirle a Rails que no **escape** el código HTML.
+
+## Las vistas
+
+Al igual que en **Sinatra** podemos utilizar vistas para no tener que escribir todo el código HTML en el código Ruby.
+
+Por convención Rails renderiza una vista por defecto que se debe encontrar en una ubicación específica y se debe llamar de una forma específica:
+
+* El nombre del archivo debe ser igual al método seguido de `.html.erb` (generalmente).
+* Se debe ubicar en la carpeta `app/views` dentro de una carpeta que se llame igual al controlador.
+
+Por ejemplo, el método `index` del siguiente **controlador** va a intentar renderizar la vista `app/views/products/index.html.erb`:
+
+```ruby
+class ProductsController < ApplicationController
+  def index
+  end
+end
+```
+
+### Pasando información del controlador a la vista
+
+Al igual que con **Sinatra** cualquier variable de instancia va a ser visible en la vista. Por ejemplo, si en el controlador tenemos lo siguiente:
+
+```ruby
+class ProductsController < ApplicationController
+  def index
+    @name = "Pedro"
+  end
+end
+```
+
+Podemos utilizar esa información en la vista (que debe estar ubicada en `app/views/products/index.html.erb`) de la siguiente forma:
+
+```erb
+<h1>Hola <%= @name %></h1>
+```
+
+## ActiveRecord
+
+**ActiveRecord** es la capa que nos permite acceder y manipular la información de la base de datos sin necesidad de escribir [SQL (Structured Query Language)](SQL (Structured Query Language)).
+
+## La aplicación de consola
+
+Una de las razones por las que **Ruby on Rails** es tan popular es que trae una poderosa aplicación de consola que nos permite, entre otras cosas, generar código a través de comandos llamados **generadores**.
+
+En las siguientes secciones veremos estos componentes en más detalle.
