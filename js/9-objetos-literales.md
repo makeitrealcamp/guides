@@ -1,6 +1,6 @@
 # Objetos literales
 
-Los objetos en JavaScript nos ayudan agrupar información. Un objeto no es más que un conjunto de propiedades en donde cada propiedad está compuesta de una llave y un valor. Veamos un primer ejemplo:
+Los objetos en JavaScript nos ayudan agrupar información. Un objeto no es más que un conjunto de propiedades en donde cada propiedad está compuesta de una llave y un valor. Veamos un ejemplo:
 
 ```javascript
 var persona = {
@@ -11,7 +11,7 @@ var persona = {
 }
 ```
 
-En este ejemplo estamos creando un objeto y lo estamos almacenando en la variable `persona`. Un objeto se define utilizando corchetes `{}`. Las propiedades se separan con coma (`,`) y las llaves y valores se separan con dos puntos (`:`).
+Con este código estamos creando un objeto y lo estamos almacenando en la variable `persona`. Un objeto se define utilizando corchetes `{}`. Las propiedades se separan con coma (`,`) y las llaves y valores se separan con dos puntos (`:`).
 
 En este objeto estamos almacenando la información de una persona, pero en un objeto podemos almacenar cualquier tipo de información que requiera esa asociación llave-valor.
 

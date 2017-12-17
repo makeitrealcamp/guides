@@ -22,5 +22,6 @@ La documentación completa de Express la encuentras en [https://expressjs.com/es
 * [El protocolo HTTP](2-protocolo-http.md)
 * [Rutas](3-rutas.md)
 * [Vistas](4-vistas.md)
-* [Formularios](5-formularios.md)
-* [Cookies y sesión](6-cookies-y-sesion.md)
+* [Middlewares y manejo de errores](5-middlewares.md)
+* [Formularios](6-formularios.md)
+* [Cookies y sesión](7-cookies-y-sesion.md)
