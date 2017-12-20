@@ -1,6 +1,6 @@
 # Sinatra
 
-Express es una librería de **Ruby** de código abierto para crear aplicaciones y API's Web.
+Sinatra es una librería de **Ruby** de código abierto para crear aplicaciones y API's Web.
 
 La diferencia entre una aplicación y un API Web es que la aplicación Web está diseñada para ser utilizada por humanos desde un navegador, mientras que el API Web está diseñado para que lo consuman otras aplicaciones utilizando algún formato de intercambio de información como JSON.
 

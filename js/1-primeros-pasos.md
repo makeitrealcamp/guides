@@ -1,6 +1,6 @@
 # Primeros Pasos
 
-En este libro vas a aprender las bases de JavaScript, que te serán útiles sin importar qué camino desees tomar más adelante, ya sea convertirte en Desarrollador Front End, Backend y/o Móvil.
+En esta sección vas a aprender las bases de JavaScript, que te serán útiles sin importar qué camino desees tomar más adelante, ya sea convertirte en Desarrollador Front End, Backend y/o Móvil.
 
 En este capítulo vamos a ver cómo ejecutar código JavaScript tanto en el navegador como en [Node.js](https://nodejs.org/en/), pero para la mayoría de ejemplos más adelante nos vamos a concentrar en [Node.js](https://nodejs.org/en/) únicamente. La razón es que, incluso si tu objetivo es convertirte en Desarrollador Front End, vas a necesitar [Node.js](https://nodejs.org/en/) para automatizar tareas de desarrollo y definir dependencias a librerías que utilices desde tus proyectos, así que vale la pena familiarizarse con esta plataforma desde ahora.
 
