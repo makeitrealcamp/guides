@@ -6,12 +6,12 @@ Ruby hace amplio uso de la POO y seguramente ya estás utilizando este paradigma
 
 ## Prerequisitos
 
-* [Ruby](ruby/README.md)
+* [Ruby](../ruby/README.md)
 
 ## Contenido
 
-* [Clases y objetos](ruby-oop/1-clases-y-objetos.md)
-* [Métodos y atributos de clase](ruby-oop/2-metodos-atributos-de-clase.md)
-* [Herencia](ruby-oop/3-herencia.md)
-* [Módulos](ruby-oop/4-módulos.md)
-* [Excepciones](ruby-oop/5-excepciones.md)
+* [Clases y objetos](1-clases-y-objetos.md)
+* [Métodos y atributos de clase](2-metodos-atributos-de-clase.md)
+* [Herencia](3-herencia.md)
+* [Módulos](4-modulos.md)
+* [Excepciones](5-excepciones.md)

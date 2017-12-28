@@ -20,9 +20,10 @@ Aunque no es un prerequisito, te recomendamos empezar con [Bootstrap 3](bootstra
 
 ## Contenido
 
-* [Primeros pasos](bootstrap4/1-primeros-pasos.md)
-* [Elementos básicos de HTML](bootstrap4/2-elementos-basicos-html.md)
-* [Componentes](bootstrap4/3-componentes.md)
-* [La grilla](bootsrap3/4-la-grilla.md)
-* [Personalizando Bootstrap](bootstrap4/5-personalizacion.md)
-* [Utilizando plantillas](bootstrap4/6-plantillas.md)
+* [Primeros pasos](1-primeros-pasos.md)
+* [Elementos básicos de HTML](2-elementos-basicos-html.md)
+* [Componentes](3-componentes.md)
+* [La grilla](4-la-grilla.md)
+* [Clases utilitarias](5-utilidades.md)
+* [Personalizando Bootstrap](6-personalizacion.md)
+* [Utilizando plantillas](7-plantillas.md)

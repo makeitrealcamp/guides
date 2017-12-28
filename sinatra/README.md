@@ -8,8 +8,8 @@ La documentación completa de Sinatra la encuentras en [http://sinatrarb.com/](h
 
 ## Prerequisitos
 
-* [Preparación](prep/README.md)
-* [Ruby](ruby/README.md)
+* [Preparación](../prep/README.md)
+* [Ruby](../ruby/README.md)
 
 ## Contenido
 

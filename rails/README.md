@@ -8,11 +8,11 @@ Al igual que [Ruby](https://www.ruby-lang.org/), [Ruby on Rails](http://rubyonra
 
 ## Prerequisitos
 
-* [Preparación](prep/README.md)
-* [HTML y CSS](html-css/README.md)
-* [Bootstrap 4](bootstrap4/README.md) - Opcional pero recomendado
-* [Ruby](ruby/README.md)
-* [HTTP y Sinatra](sinatra/README.md) - Opcional pero recomendado
+* [Preparación](../prep/README.md)
+* [HTML y CSS](../html-css/README.md)
+* [Bootstrap 4](../bootstrap4/README.md) - Opcional pero recomendado
+* [Ruby](../ruby/README.md)
+* [HTTP y Sinatra](../sinatra/README.md) - Opcional pero recomendado
 
 ## Contenido
 
@@ -28,7 +28,7 @@ Al igual que [Ruby](https://www.ruby-lang.org/), [Ruby on Rails](http://rubyonra
 * [ActiveRecord - Callbacks](10-callbacks.md)
 * [Recursos REST](11-recursos-rest.md)
 * [Formularios](12-formularios.md)
-* [Autenticación con Devise](13-autenticacion-devise.md)
+* [Autenticación con Devise](13-autenticacion-con-devise.md)
 * [Sass y Bootstrap](14-sass-bootstrap.md)
 * [Envío de correos](15-envio-correos.md)
 * [Carga de imágenes](16-carga-imagenes.md)

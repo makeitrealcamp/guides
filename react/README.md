@@ -6,10 +6,10 @@ React fue creada, y es mantenida, por Facebook, pero es una librería de [códig
 
 ## Prerequisitos
 
-* [Preparación](prep/README.md)
-* [JavaScript I](js/README.md)
-* [JavaScript II](js-ii/README.md)
-* [jQuery y AJAX](jquery-ajax/README.md)
+* [Preparación](../prep/README.md)
+* [JavaScript I](../js/README.md)
+* [JavaScript II](../js-ii/README.md)
+* [jQuery y AJAX](../jquery-ajax/README.md)
 
 ## Contenido
 

@@ -2,10 +2,10 @@
 
 ## Prerequisitos
 
-* [Ruby on Rails I](rails/README.md)
-* [JavaScript I](js/README.md)
-* [JavaScript II](js-ii/README.md)
-* [jQuery y AJAX](jquery-ajax/README.md)
+* [Ruby on Rails I](../rails/README.md)
+* [JavaScript I](../js/README.md)
+* [JavaScript II](../js-ii/README.md)
+* [jQuery y AJAX](../jquery-ajax/README.md)
 
 ## Contenido
 
