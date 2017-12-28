@@ -52,9 +52,9 @@ Fíjate que cada tabla tiene su propia **lave primaria** y que `products` tiene 
 
 ## Modelamiento
 
-Un **modelo de base de datos** muestra la estructura de la una base de datos: sus tablas, columnas y relaciones.
+Al proceso de diseñar el diagrama con la estructura de la base de datos (tablas, columnas y relaciones) se le conoce como **modelamiento de bases de datos** y es uno de los primeros pasos en el proceso de desarrollo de software.
 
-La forma de representar una tabla es utilizando un rectángulo que muestra el nombre de la tabla y sus columnas. Para mayor detalle se puede incluir el tipo de columna y sus características (tamaño, restricciones, etc.):
+En un **diagrama de bases de datos** la forma de representar una **tabla** es utilizando un rectángulo que muestra el nombre de la tabla y sus columnas. Para mayor detalle se puede incluir el tipo de columna y sus características (tamaño, restricciones, etc.):
 
 ![Tabla de Productos](https://s3.amazonaws.com/makeitreal/images/books/products-table.png)
 
@@ -62,7 +62,7 @@ La forma de representar una tabla es utilizando un rectángulo que muestra el no
 
 ![Diagrama de ER](https://s3.amazonaws.com/makeitreal/images/books/er-diagram.png)
 
-A este diagrama se le conoce como **diagrama de bases de datos** o **diagrama entidad/relación (ER)** y al proceso de crearlo se le conoce como **modelamiento o diseño de bases de datos**.
+A este diagrama también se le conoce como **diagrama entidad/relación (ER)**.
 
 Los adornos en los extremos de la relación indican los roles de cada tabla. En este caso, **un** producto pertenece a una categoría y una categoría puede tener **muchos** productos asociados. A esto se le conoce como una relación **uno a muchos**, y es el tipo de relación más común entre tablas.
 
@@ -81,9 +81,19 @@ Algunas opciones gratuitas (o que ofrecen una versión gratuita) son las siguien
 
 La forma más fácil de entender el proceso de modelamiento es con un ejemplo. Imagina que estamos diseñando un sistema de **pedidos en línea**. El primer paso es describir la información que necesitamos almacenar:
 
-**El sistema le permite a los clientes realizar pedidos de productos. Cada pedido tiene un número, la fecha de creación, fecha de entrega, el cliente (nombre, dirección, teléfono), los productos del pedido (nombre, cantidad y precio unitario), y el total del pedido.**
+Cada pedido tiene la siguiente información:
 
-Toda esta información se podría agrugar en una gran tabla de pedidos:
+* Número
+* Fecha de creación
+* Fecha de entrega
+* Cliente (nombre, dirección, teléfono)
+* Productos. De cada producto necesitamos lo siguiente:
+  * Nombre
+  * Cantidad
+  * Precio unitario
+* Total del pedido
+
+Toda esta información se podría agrugar en una gran tabla de pedidos con la siguiente estructura:
 
 | # | Creación | Entrega | Cliente | Productos | Total |
 |---|---|---|---|---|---|
@@ -91,10 +101,10 @@ Toda esta información se podría agrugar en una gran tabla de pedidos:
 | 2 | 2018-01-02 | 2018-01-16 | Pablo, Cll 567, Tel: 98765 | 2 Huevos (400) | 800 |
 | 3 | 2018-01-03 | 2018-01-19 | Pedro, Cra 123, Tel: 51678 | 2 de Arroz (800) | 1600 |
 
-Existen varios problemas con esta tabla:
+Aunque esta tabla incluye toda la información que nos solicitaron, existen varios problemas:
 
-* Consultar la información de los clientes y los productos implica recorrer toda la tabla.
-* Existe información repetida de los clientes y los productos.
+* Consultar la información de los clientes y productos implica recorrer toda la tabla.
+* Existe información repetida de clientes y productos.
 * Modificar la información de un cliente o producto implica recorrer toda la tabla.
 * Es sujeto a errores. ¿Qué pasa si escribimos mal la dirección de un cliente o el precio de un producto en un pedido?
 
@@ -117,6 +127,8 @@ El diagrama quedaría de la siguiente forma:
 
 ![Diagrama de pedidos](https://s3.amazonaws.com/makeitreal/images/books/orders-er-diagram.png)
 
-El pedido pertenece a un cliente y un cliente puede tener muchos pedidos. Un pedido tiene muchos ítems y cada ítem pertenece a pedido. Un ítem tiene un producto y un producto puede aparecer en muchos ítems.
+El **pedido** pertenece a un **cliente** y un **cliente** puede tener muchos **pedidos**. Un **pedido** tiene muchos **ítems** y cada **ítem** pertenece a un **pedido**. Un **ítem** tiene un **producto** y un **producto** puede aparecer en muchos **ítems**.
 
 Fíjate que en la tabla de **pedidos** no tenemos una referencia a los **ítems**. Por el contrario, cada **ítem** tiene una referencia al **pedido**. Al buscar los **ítems** de un **pedido** sólo tenemos que buscar los que coincidan con el id de ese **pedido**.
+
+**Nota:** El **modelamiento de base de datos** es una habilidad que requiere práctica y tiempo. Asegúrate **siempre** de validar tus modelos con tu mentor (o alguien con experiencia) antes de empezar a desarrollar tu aplicación, te va a ahorrar bastante tiempo más adelante.
