@@ -6,13 +6,13 @@ En esta sección vamos a tocar los temas más avanzados del lenguaje incluyendo 
 
 ## Prerequisitos
 
-* [JavaScript I](js/README.md)
-* [jQuery y AJAX](jquery-ajax/README.md)
+* [JavaScript I](../js/README.md)
+* [jQuery y AJAX](../jquery-ajax/README.md)
 
 ## Contenido
 
-* [Prototipos](js-ii/1-prototipos.md)
-* [Librerías (Node.js)](js-ii/2-librerias.md)
-* [ES6](js-ii/3-es6.md)
-* [Programación funcional](js-ii/4-programacion-funcional.md)
-* [Programación asincrónica](js-ii/5-programacion-asincronica.md)
+* [Prototipos](1-prototipos.md)
+* [Librerías (Node.js)](2-librerias.md)
+* [ES6](3-es6.md)
+* [Programación funcional](4-programacion-funcional.md)
+* [Programación asincrónica](5-programacion-asincronica.md)

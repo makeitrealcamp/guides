@@ -6,7 +6,7 @@ Hemos dividido el contenido de JavaScript en dos secciones. En esta sección vas
 
 ## Prerequisitos
 
-* [Preparación](prep/README.md)
+* [Preparación](../prep/README.md)
 
 ## Contenido
 

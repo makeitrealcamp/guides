@@ -6,8 +6,8 @@ Todo lo que puedes hacer con **jQuery** lo puedes hacer sin **jQuery**, es decir
 
 ## Prerequisitos
 
-* [Preparación](prep/README.md)
-* [JavaScript I](js/README.md)
+* [Preparación](../prep/README.md)
+* [JavaScript I](../js/README.md)
 
 ## Contenido
 

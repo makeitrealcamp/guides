@@ -12,9 +12,9 @@ La documentación completa de Express la encuentras en [https://expressjs.com/es
 
 ## Prerequisitos
 
-* [Preparación](prep/README.md)
-* [JavaScript I](js/README.md)
-* [JavaScript II](js-ii/README.md)
+* [Preparación](../prep/README.md)
+* [JavaScript I](../js/README.md)
+* [JavaScript II](../js-ii/README.md)
 
 ## Contenido
 
