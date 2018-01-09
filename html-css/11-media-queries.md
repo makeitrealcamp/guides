@@ -2,6 +2,8 @@
 
 {% youtube %} https://youtube.com/watch?v=kwr-TnUdUkc?rel=0 {% endyoutube %}
 
+<br>
+
 A través de **media queries** podemos ajustar nuestra página a diferentes dispositivos como tabletas, teléfonos inteligentes y televisores de gran tamaño. A esta técnica se le conoce como **responsive design**.
 
 Con **media queries** podemos aplicar diferentes estilos de acuerdo a alguna característica de la pantalla (p.e. la resolución, el ancho o alto de la ventana del navegador, el tamaño del dispositivo, etc).

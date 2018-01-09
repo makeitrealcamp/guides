@@ -4,7 +4,7 @@ Las librerías son una parte fundamental de cualquier lenguaje de programación 
 
 A las librerías se les llama **paquetes** en [Node.js](https://nodejs.org/en/).
 
-[Node.js](https://nodejs.org/en/) viene con un manejador de paquetes llamado [npm](https://www.npmjs.com/). Un manejador de paquetes nos permite descargar y utilizar los paquetes que han creado otros desarrolladores en nuestras propias aplicaciones. También nos permite crear y publicar nuestros propios paquetes.
+[Node.js](https://nodejs.org/en/) viene con un manejador de paquetes llamado [npm](https://www.npmjs.com/). Un manejador de paquetes nos permite descargar los paquetes que han creado otros desarrolladores y utilizarlos en nuestras propias aplicaciones. También nos permite crear y publicar nuestros propios paquetes.
 
 Hace un par de años surgió un nuevo manejador de paquetes llamado [Yarn](https://yarnpkg.com/en/) que cada día toma más fuerza. Veamos cada uno en detalle.
 
@@ -140,7 +140,7 @@ La documentación completa de [npm](https://www.npmjs.com/) se encuentra en el s
 
 ## Yarn
 
-[Yarn](https://yarnpkg.com/en/) fue el producto de en una colaboración entre Facebook y Google para crear un mejor manejador de paquetes que [npm](https://www.npmjs.com/).
+[Yarn](https://yarnpkg.com/en/) fue el producto de la colaboración entre Facebook y Google para crear un mejor manejador de paquetes que [npm](https://www.npmjs.com/).
 
 El primer paso para utilizar [Yarn](https://yarnpkg.com/en/) es instalarlo en tu máquina. Ingresa a [este enlace](https://yarnpkg.com/en/docs/install) donde encontrarás las instrucciones para tu sistema operativo.
 
