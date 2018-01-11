@@ -26,7 +26,7 @@ Algunas de las **propiedades de CSS** que introduce **Flexbox** aplican a los **
 
 Antes de describir las **propiedades de CSS** veamos algunos ejemplos para que te des una idea de lo que se puede hacer con **Flexbox**.
 
-Veamos un primer ejemplo. Imagína que queremos mostrar tres elementos dentro de un `div` separados por espacios iguales:
+Veamos un primer ejemplo. Imagína que queremos mostrar tres elementos dentro de un `div` separados por espacios iguales (consulta el HTML y CSS haciendo click en la pestaña respectiva):
 <br>
 
 [](codepen://germanescobar/opZxBp)
