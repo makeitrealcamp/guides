@@ -1,6 +1,6 @@
 # Guías de Make it Real
 
-En estas guías vas a encontrar información sobre los temas de programación que enseñamos en [Make it Real](https://makeitreal.camp/).
+En estas guías vas a encontrar información sobre los temas de programación que enseñamos en [Make it Real][1].
 
 En ves de ser una referencia completa de cada tema, nuestro propósito es explicar los conceptos de forma simple y clara, para que se conviertan en un punto de partida y un complemento al trabajo práctico que debes realizar en nuestros programas.
 
@@ -12,7 +12,9 @@ Si estás buscando algún tema en especial puedes utilizar el buscador que se en
 
 Estas guías están en constante evolución y son de código abierto. Si encuentras algún error, o quieres proponer alguna mejora, lo puedes hacer en el repositorio de Github abriendo un Pull Request, o puedes notificarnos a info@makeitreal.camp para corregirlo.
 
-<br>
+
 Germán Escobar<br>
 Fundador y CEO<br>
-[makeitreal.camp](http://makeitreal.camp/)
+[makeitreal.camp][1]
+
+[1]: https://makeitreal.camp/
