@@ -216,6 +216,17 @@ if (color === "rojo" || color === "negro") {
 }
 ```
 
+## Operador condicional (ternario)
+
+Los operadores ternarios se utilizan con frecuencia como atajos para los condicionales `if`. Este está compuesto de la siguiente forma `<condición> ? <expr1> : <expr2>`. Ahora desglosémoslo paso a paso para entender un poco mejor como funciona. 
+
+Lo primero que se está haciendo y lo que esta antes de `?` es la condición que queremos validar; si esto es verdadero se ejecutara la `expr1` de lo contrario se ejecutara la `expr2`.
+
+```js
+var num = 10;
+
+num >= 15 ? console.log('Es mayor o igual que 15') : console.log('Es menor que 15');
+```
 ## Pensando como un programador
 
 Vamos a jugar un juego llamado **Verdadero o Falso**. Yo digo una afirmación y tu debes reponder si es verdadera o falsa. Trata de no mirar las respuestas debajo. Después comparas:

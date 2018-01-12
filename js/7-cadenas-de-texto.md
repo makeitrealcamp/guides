@@ -51,7 +51,7 @@ Podemos recorrer por los caracteres de una cadena utilizando un ciclo. Crea un a
 ```js
 var str = "Hola Mundo";
 
-for (var i=0; i < str.length; i++) {
+for (var i = 0; i < str.length; i ++) {
   console.log(str[i]);
 }
 ```
@@ -72,7 +72,7 @@ El método `split` recibe el caracter por el que quieres partir la cadena. Por e
 
 ```
 $ node
-> "prueba,separar,cadenas".split(" ")
+> "prueba,separar,cadenas".split(",")
 [ 'prueba', 'separar', 'cadenas' ]
 ```
 
@@ -157,4 +157,10 @@ Puedes reemplazar un trozo de la cadena por otro con el método `replace`:
 ```
 > "Hola Mundo".replace("Mundo", "Germán")
 'Hola Germán'
+```
+Puedes validar si la cadena contiene una subcadena específica con el método `includes`.
+
+```
+> "Hola Mundo".includes("Hola")
+true
 ```

@@ -19,7 +19,7 @@ Por otro lado, ejemplos de nombres no válidos incluyen `443german`, porque no p
 
 Las palabras reservadas de JavaScript no se pueden usar como nombres de variables.
 
-Como buena práctica se recomienda empezar las variables con una letra en minúscula y, si el nombre se compone de varias palabras, capitalizar cada palabra después de la primera. Por ejemplo `videoTranscoder` o `firstName`.
+Como buena práctica se recomienda empezar las variables con una letra en minúscula y, si el nombre se compone de varias palabras, capitalizar cada palabra después de la primera (más conocido como camel case). Por ejemplo `videoTranscoder` o `firstName`.
 
 Los nombres de las variables diferencian mayúsculas y minúsculas (p.e. `firstname` es diferente a `firstName`).
 
@@ -93,9 +93,9 @@ undefined
 De hecho, incrementar el valor de una variable es tan común que existe un atajo para eso. Asumiendo que sigues en la consola de Node.js intenta lo siguiente:
 
 ```
-> count++
+> count ++
 3
-> count++
+> count ++
 4
 ```
 
