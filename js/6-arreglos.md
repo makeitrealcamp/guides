@@ -35,6 +35,13 @@ false
 "Juan"
 ```
 
+Puedes obtener el ultimo elemento del arreglo obteniendo la longitud de este y restandole 1, lo cual seria [array.length - 1]. Hay que tener en cuenta que la longitud del arreglo no comienza desde 0 sino desde 1.
+
+````
+> array[array.length - 1]
+"Juan"
+```
+
 ## Recorriendo un arreglo
 
 En el ejemplo anterior pudimos imprimir cada una de las posiciones porque era un arreglo de pocos elementos. Sin embargo esto no siempre es práctico. Primero, el arreglo puede ser muy grande o puede que no sepamos el tamaño del arreglo. Crea un archivo llamado `arrays.js` y escribe el siguiente código:
@@ -42,7 +49,7 @@ En el ejemplo anterior pudimos imprimir cada una de las posiciones porque era un
 ```ruby
 var array = [1, "Pedro", true, false, "Juan"];
 
-for (var i=0; i < array.length; i++) {
+for (var i = 0; i < array.length; i ++) {
   console.log(array[i]);
 }
 ```

@@ -145,7 +145,7 @@ Traduzcamos eso a código JavaScript. Crea un archivo llamado `bmi.js` (BMI por 
 
 ```js
 function bmi(weight, height) {
-  return weight / height**2
+  return weight / height ** 2
 }
 
 console.log("Tu IMC es: " + bmi(80, 1.8));

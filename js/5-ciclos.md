@@ -102,7 +102,7 @@ for (<inicialización>; <condición>; <incrementador>) {
 El ejemplo anterior lo podemos reescribir de la siguiente forma:
 
 ```js
-for (var i=0; i < 850; i++) {
+for (var i = 0; i < 850; i ++) {
   console.log("Hola mundo");
 }
 ```
