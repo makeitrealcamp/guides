@@ -1,6 +1,10 @@
 # Conceptos básicos
 
-El desarrollo Web es uno de los campos más emocionantes de la actualidad. Surgió a principios de los años 90's gracias a la creación de la **WWW (World Wide Web)**, una red de documentos interconectados por vínculos, que fue popularizado por los navegadores gráficos (aplicaciones que nos permiten "navegar" por esta red de documentos) como Internet Explorer, Firefox y Chrome.
+El desarrollo Web es uno de los campos más emocionantes de la actualidad. Surgió a principios de los años 90's gracias a la creación de la **WWW (World Wide Web)**.
+
+El objetivo inicial de la **WWW** era crear una red de documentos interconectados por vínculos (principalmente documentos científicos).
+
+Con la aparición de los navegadores gráficos (aplicaciones que nos permiten "navegar" por esta red de documentos) como Internet Explorer, Firefox y Chrome, la **WWW** se popularizó y hoy su alcance es mucho más amplio.
 
 ## Sitios Web vs Aplicaciones Web
 
