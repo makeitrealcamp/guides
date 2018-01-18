@@ -61,10 +61,24 @@ Otra operación muy útil con los arreglos es convertirlos en algo completamente
 En JavaScript todos los arreglos tienen un método `reduce` que se utiliza precisamente para esto. Por ejemplo, si queremos sumar todos los elementos en `arr` podemos hacer lo siguiente:
 
 ```js
-const sum = arr.reduce((acc, elem) => acc + sum);
+const sum = arr.reduce((acc, elem) => acc + elem);
 console.log(sum); // 6
 ```
 
 `reduce` recibe un **callback** (una función) y, opcionalmente, un valor inicial. El **callback** recibe dos parámetros: un acumulador y un elemento. Lo que retorne el **callback** se va a utilizar como el acumulador del siguiente elemento. En nuestro caso vamos acumulando la suma.
+
+También podemos utilizar `reduce` para operaciones un poco más complejas, al saber que podemos ir acumulando valores con el valor inicial podríamos utilizarlo para contar cuantas veces se repite una letra, espacio o carácter especial en una cadena de texto.
+
+```js
+const input = "Make it real"
+const response = input.split('').reduce((prev, now) => {
+  prev[now] ? prev[now] ++ : prev[now] = 1;
+  return prev;
+}, {})
+    
+console.log(response) // { M: 1, a: 2, k: 1, e: 2, ' ': 2, i: 1, t: 1, r: 1, l: 1 }
+```
+
+En este caso estamos separado la cadena de texto con `split('')` haciendo que esta se convierta en un arreglo, el cual podemos utilizar para reducirlo y contar las letras. Al reducirlo estamos definiendo como valor anterior `{}` (un objeto vacío) el cual definimos al crear la función; cada vez que lo estamos reduciendo validamos si la letra esta creada en el valor anterior (en este caso el objeto); si existe, le sumamos 1 (`++`) a la propiedad del objeto, de lo contrario la creamos y le asignamos el valor 1. Cada vez que se está reduciendo retornamos el valor anterior para que el nuevo valor tenga un punto de referencia.
 
 ## Funciones que retornan funciones

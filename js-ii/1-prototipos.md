@@ -21,8 +21,8 @@ var Persona = function(name) {
 Fíjate que para definir las propiedades utilizamos la palabra clave `this`. Aunque parece una función normal (y en cierta forma lo es), con esta función podemos crear varios objetos utilizando la palabra clave `new`.
 
 ```js
-p1 = new Persona("Pedro");
-p2 = new Persona("Juan");
+var p1 = new Persona("Pedro");
+var p2 = new Persona("Juan");
 ```
 
 **Nota:** No olvides el `new` cuando utilices una función constructura. Por convención las funciones constructoras se nombran en mayúsculas para diferenciarlas de una función normal. Siempre que veas una función en mayúscula ya sabes que es una función constructura y que debes utilizar `new` para invocarla.
