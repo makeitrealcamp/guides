@@ -1,6 +1,6 @@
 # Componentes
 
-<iframe width="853" height="480" src="https://www.youtube.com/embed/BZ_dm32OHKc?rel=0" frameborder="0" allowfullscreen></iframe>
+{% youtube %} https://youtube.com/watch?v=BZ_dm32OHKc?rel=0 {% endyoutube %}
 
 <br>
 En React se introduce el concepto de **componentes** para crear la interfaz gráfica de nuestra aplicación.

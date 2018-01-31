@@ -1,6 +1,6 @@
 # Primeros pasos
 
-<iframe width="853" height="480" src="https://www.youtube.com/embed/_0FHpdMwZFM?rel=0" frameborder="0" allowfullscreen></iframe>
+{% youtube %} https://youtube.com/watch?v=_0FHpdMwZFM?rel=0 {% endyoutube %}
 
 <br>
 Aunque existen varias formas de empezar con React, quizá la forma más fácil es con [create-react-app](https://github.com/facebookincubator/create-react-app), una aplicación de consola que nos va a permitir crear una aplicación en React rápidamente.
