@@ -1,11 +1,11 @@
 # Más sobre estado
 
-<iframe width="853" height="480" src="https://www.youtube.com/embed/JYiGMrVToBM?rel=0" frameborder="0" allowfullscreen></iframe>
+{% youtube %} https://youtube.com/watch?v=JYiGMrVToBM?rel=0 {% endyoutube %}
 
 <br>
 En React cada **componente** maneja su propio estado.
 
-El estado de un componente es un objeto que no debes modificar directamente como en el siguiente ejemplo:
+El estado de un componente es un objeto **de sólo lectura** que no debes modificar directamente como en el siguiente ejemplo:
 
 ```js
 // mal - no hagas esto
@@ -24,6 +24,93 @@ Acostumbrarse a escribir código inmutable toma algún tiempo pero es una buena 
 
 ## Arreglos
 
-Veamos como insertar, modificar y eliminar elementos de un arreglo de forma inmutable.
+En vez de modificar el arreglo original para insertar, actualizar y eliminar elementos, lo que vamos a hacer es construir un **nuevo** arreglo con el cambio. Veamos cómo hacerlo.
 
 ### Insertando elementos
+
+Para insertar un elemento a un arreglo utiliza el método `concat` que retorna un nuevo arreglo con el nuevo elemento:
+
+```js
+const arr = [1, 2, 3];
+const newArr = arr.concat(4); // [1, 2, 3, 4]
+
+// arr sigue siendo [1, 2, 3]
+```
+
+### Cambiando un elemento
+
+Existen varias formas de cambiar un elemento de forma inmutable. La primera es con el método `map`:
+
+```js
+const arr = [1, 2, 3];
+
+// vamos a cambiar la segunda posición por un 0
+const idx == 1;
+const newArr = arr.map((elem, i) =>
+  idx === i ? 0 : elem
+);
+
+// arr: [1, 2 3]
+// newArr: [1, 0, 3]
+```
+
+La segunda es utilizando el método `slice` y `concat`:
+
+```js
+const arr = [1, 2, 3];
+
+const idx == 1;
+const newArr = arr.slice(0. idx)
+                  .concat(0)
+                  .concat(arr.slice(idx + 1));
+```
+
+La tercera es con el nuevo operador `...` (spread) de JavaScript:
+
+```js
+const arr = [1, 2, 3];
+
+const idx == 1;
+const newArr = [
+  ...arr.slice(0, idx),
+  0,
+  ...arr.slice(idx + 1)
+];
+```
+
+### Removiendo un elemento
+
+Puedes remover un elemento de forma inmutable de varias formas. La primera es con el método `filter`:
+
+```js
+const arr = [1, 2, 3];
+
+// vamos a remover la segunda posición
+const idx == 1;
+const newArr = arr.filter((e, i) => idx != i);
+
+// arr: [1, 2 3]
+// newArr: [1, 3]
+```
+
+La segunda es utilizando el método `slice` y `concat`:
+
+```js
+const arr = [1, 2, 3];
+
+const idx == 1;
+const newArr = arr.slice(0, idx).
+                  .concat(arr.slice(idx + 1));
+```
+
+La tercera es con el nuevo operador `...` (spread):
+
+```js
+const arr = [1, 2, 3];
+
+const idx == 1;
+const newArr = [
+  ...arr.slice(0, idx),
+  ...arr.slice(idx + 1)
+];
+```

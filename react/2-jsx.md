@@ -1,6 +1,6 @@
 # JSX
 
-<iframe width="853" height="480" src="https://www.youtube.com/embed/IBwhZCLNWOA?rel=0" frameborder="0" allowfullscreen></iframe>
+{% youtube %} https://youtube.com/watch?v=IBwhZCLNWOA?rel=0 {% endyoutube %}
 
 <br>
 **JSX** (JavaScript XML) es la sintaxis que se utiliza para construir el markup de los componentes de React. Veamos un ejemplo tomado del código que genera [create-react-app](https://github.com/facebookincubator/create-react-app):
