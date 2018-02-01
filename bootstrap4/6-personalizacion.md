@@ -2,27 +2,26 @@
 
 Existen varias formas de personalizar Bootstrap:
 
-1. Descargando una versión personalizada en la página oficial de [Bootstrap](http://getbootstrap.com/customize/).
+1. Descargando una plantilla.
 
-2. Descargando un tema.
+2. Sobrescribiendo los estilos.
 
-3. Sobrescribiendo los estilos.
+4. Utilizando Sass
 
-## Descargando versión personalizada
+## Descargando una plantilla
 
-En la página oficial de Bootstrap ingresa a la opción **Customize** en el menú principal. Allí podrás seleccionar los componentes que deseas incluir y modificar las variables.
-
-Al final existe un botón para descargar esa versión personalizada, que es la que vas a incluir en tu proyecto.
-
-## Descargando un tema
-
-En Internet puedes buscar "Free Bootstrap Themes" y vas a encontrar una gran variedad de temas personalizados que puedes descargar.
-
-Dos sitios conocidos de temas son:
-
-* https://bootswatch.com/
-* https://startbootstrap.com/
+En Internet puedes buscar "Bootstrap 4 themes" y vas a encontrar una gran variedad de temas personalizados que puedes descargar y adaptar. Algunos son gratuitos, otros requieren atribución y otros son pagos.
 
 ## Sobrescribiendo los estilos
 
-Otra opción es sobrescribir los estilos en tu CSS. Esto muchas veces requiere entrar a **inspeccionar** los elementos en las **herramientas de desarrollador del navegador** para encontrar los selectores de los elementos que quieres personalizar.
+Otra opción es sobrescribir los estilos en tu CSS. Esto muchas veces requiere entrar a **inspeccionar** los elementos en [las herramientas de desarrollador del navegador](https://blog.makeitreal.camp/herramientas-de-desarrollador-o-developer-tools/) para encontrar los selectores de los elementos que quieres personalizar.
+
+## Utilizando Sass
+
+Sass es una extensión de CSS que ofrece funcionalidades como variables, condicionales, ciclos y reutilización de código, entre otros.
+
+El código Sass debe ser convertido a CSS.
+
+Esta es una forma avanzada de personalización que depende del proyecto en el que estés trabajando y las tecnologías que estés utilizando.
+
+Para más información sobre Sass te recomendamos [este enlace](https://sass-lang.com/) y [este video](https://www.youtube.com/watch?v=xWVDcmj8RHo).

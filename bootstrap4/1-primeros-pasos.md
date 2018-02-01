@@ -53,10 +53,8 @@ Por último, fíjate que estamos incluyendo los archivos **JavaScript** al final
 
 * Una grilla para organizar los elementos de nuestra página fácilmente.
 
-* Algunas clases de CSS útiles para trabajar con texto y responsive design.
+* Algunas clases de CSS útiles para trabajar con márgenes, paddings, texto y responsive design.
 
 ## La documentación
 
-Puedes encontrar la documentación de Bootstrap 3 en https://getbootstrap.com/.
-
-La documentación está en Inglés pero es muy completa. Te recomendamos usarla como referencia.
+Puedes encontrar la documentación de Bootstrap 4 en https://getbootstrap.com/. Está en Inglés pero es muy completa. Te recomendamos usarla como referencia.

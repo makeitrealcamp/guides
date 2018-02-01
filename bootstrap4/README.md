@@ -2,9 +2,7 @@
 
 Bootstrap es el framework CSS más popular de la actualidad y se utiliza para crear páginas Web con un diseño consistente, que se adapta a diferentes tipos de pantallas (responsive design), utilizando componentes prediseñados que pueden ser fácilmente modificados.
 
-Boostrap 4 es la versión más reciente de Bootstrap, a la fecha (Diciembre 2017) aún se encuentra en beta, así que no se recomienda usarlo en producción aún.
-
-Quizá los cambios más importantes de la nueva versión de Bootstrap son:
+**Boostrap 4** es la versión más reciente de Bootstrap. Quizá los cambios más importantes de la nueva versión de Bootstrap son:
 
 * Se abandonó el soporte a Internet Explorer 8 y 9. Si necesitas soporte para estos navegadores deberás continuar usando Bootstrap 3.
 * Flexbox viene habilitado por defecto y se utiliza parar organizar la grilla y otros componentes (en Bootstrap 3 se utilizan floats y otros trucos).
@@ -26,4 +24,3 @@ Aunque no es un prerequisito, te recomendamos empezar con [Bootstrap 3](bootstra
 * [La grilla](4-la-grilla.md)
 * [Clases utilitarias](5-utilidades.md)
 * [Personalizando Bootstrap](6-personalizacion.md)
-* [Utilizando plantillas](7-plantillas.md)
