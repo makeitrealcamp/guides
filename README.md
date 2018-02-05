@@ -2,7 +2,7 @@
 
 En estas guías vas a encontrar información sobre los temas de programación que enseñamos en [Make it Real][1].
 
-En ves de ser una referencia completa de cada tema, nuestro propósito es explicar los conceptos de forma simple y clara, para que se conviertan en un punto de partida y un complemento al trabajo práctico que debes realizar en nuestros programas.
+En vez de ser una referencia completa de cada tema, nuestro propósito es explicar los conceptos de forma simple y clara, para que se conviertan en un punto de partida y un complemento al trabajo práctico que debes realizar en nuestros programas.
 
 Las secciones empiezan con una breve descripción del tema (p.e. HTML y CSS, Ruby, etc.), lo que debes saber para empezar a estudiar ese tema (prerequisitos) y la tabla de contenido.
 
