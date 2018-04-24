@@ -1,1 +1,0 @@
-# Carga de imágenes

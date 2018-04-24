@@ -6,18 +6,19 @@ React fue creada, y es mantenida, por Facebook, pero es una librería de [códig
 
 ## Prerequisitos
 
-* [Preparación](../prep/README.md)
-* [JavaScript I](../js/README.md)
-* [JavaScript II](../js-ii/README.md)
-* [jQuery y AJAX](../jquery-ajax/README.md)
+* [Preparación](../preparacion/)
+* [JavaScript I](../javascript-i/)
+* [JavaScript II](../javascript-ii/)
+* [jQuery y AJAX](../jquery-y-ajax/)
 
 ## Contenido
 
-* [Primeros pasos](1-primeros-pasos.md)
-* [JSX](2-jsx.md)
-* [Componentes](3-componentes.md)
-* [Más sobre estado](4-mas-sobre-estado.md)
-* [Formularios](5-formularios.md)
-* [Peticiones HTTP con Axios](6-axios.md)
-* [React Bootstrap](7-bootstrap.md)
-* [React Router](8-router.md)
+* [Primeros pasos](primeros-pasos.md)
+* [JSX](jsx.md)
+* [Componentes](componentes.md)
+* [Más sobre estado](mas-sobre-estado.md)
+* [Formularios](formularios.md)
+* [Peticiones HTTP con Axios](peticiones-http-con-axios.md)
+* [React Bootstrap](react-bootstrap.md)
+* [React Router](react-router.md)
+
