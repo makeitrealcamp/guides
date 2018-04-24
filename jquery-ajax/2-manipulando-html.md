@@ -74,3 +74,65 @@ $('div.step-2').show();
 ```
 
 En este ejemplo estamos ocultando el `div` con clase `step-1` y mostrando el `div` con clase `step-2`.
+
+### Agregando y removiendo clases de CSS
+
+Para agregar y remover clases de uno o más elementos utiliza los métodos `addClass`, `removeClass` y `toggleClass`:
+
+```javascript
+$('div.step-1').addClass("active");
+$('div.step-2').removeClass("active");
+
+$('div.step-1').toggleClass("active"); // si tiene la clase la remueve, de lo contrario la agrega
+```
+
+Para verificar si un elemento tiene una clase utiliza el método `hasClass` que retorna `true` si alguno de los elementos seleccionados tiene la clase o `false` de lo contrario.
+
+```javascript
+if ($('div.step-1').hasClass("active")) {
+  // el código que queremos ejecutar si tiene la case "active"
+}
+```
+
+### Cambiando los estilos en línea
+
+Utiliza el método `css` para cambiar los estilos en línea de uno o más elementos:
+
+```javascript
+$('div.step-1').css("background", "red");
+```
+
+Esto modifica el atributo `style` del elemento que quedaría de la siguiente forma:
+
+```HTML
+<div class="step-1" style="background: red">...</div>
+```
+
+Si necesitas cambiar varias propiedades puedes encadenar métodos:
+
+```javascript
+$('div.step-1').css("background", "red").css("font-size", "1.3rem");
+```
+
+También puedes pasarle un objeto al método `css` de la siguiente forma:
+
+```javascript
+$('div.step-1').css({
+  "background": "red",
+  "font-size": "1.3rem"
+}
+```
+
+## Encadenando métodos
+
+Con **jQuery** puedes realizar varias acciones sobre los mismos elementos como lo hicimos en la sección anterior donde encadenamos dos veces el método `css`.
+
+En el siguiente ejemplo vamos a realizar varias acciones sobre los `div`s del documento. Primero les agregamos la clase `active`, después les removemos la clase `pending` y, por último, les agregamos un párrafo con el texto "Hola Mundo":
+
+```javascript
+$('div').addClass("active")
+        .removeClass("pending")
+        .append("<p>Hola Mundo</p>");
+```
+
+Puedes encadenar todos los métodos en una misma línea o los puedes separar en diferentes líneas como lo hicimos en este ejemplo para mayor claridad.

@@ -16,7 +16,7 @@ El método `on` recibe el **nombre del evento** que queremos escuchar (en el eje
 
 A la **función** que recibe el método `on` se le llama un **callback** y puede recibir un argumento con **información del evento**. De esto hablaremos más adelante.
 
-**Nota: ** En algunos proyectos verás la siguiente forma de escuchar los eventos, que es equivalente a la anterior:
+**Nota:** En algunos proyectos verás la siguiente forma de escuchar los eventos, que es equivalente a la anterior:
 
 ```javascript
 $('p').click(function() {

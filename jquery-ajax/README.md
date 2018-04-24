@@ -14,5 +14,6 @@ Todo lo que puedes hacer con **jQuery** lo puedes hacer sin **jQuery**, es decir
 * [Primeros pasos](1-primeros-pasos.md)
 * [Manipulando HTML](2-manipulando-html.md)
 * [Escuchando eventos](3-escuchando-eventos.md)
-* [JSON](4-json.md)
-* [Realizando peticiones con AJAX](5-ajax.md)
+* [Plugins](4-plugins.md)
+* [JSON](5-json.md)
+* [Realizando peticiones con AJAX](6-ajax.md)
