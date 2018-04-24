@@ -63,7 +63,7 @@
   * [Primeros pasos](jquery-ajax/1-primeros-pasos.md)
   * [Manipulando HTML](jquery-ajax/2-manipulando-html.md)
   * [Escuchando eventos](jquery-ajax/3-escuchando-eventos.md)
-  * [Plugins](jquery-ajax)(4-plugins.md)
+  * [Plugins](jquery-ajax/4-plugins.md)
   * [JSON](jquery-ajax/5-json.md)
   * [Realizando peticiones con AJAX](jquery-ajax/6-ajax.md)
 * [JavaScript II](js-ii/README.md)
