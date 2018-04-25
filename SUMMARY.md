@@ -99,7 +99,7 @@
   * [ActiveRecord - Callbacks](ruby-on-rails-i/activerecord-callbacks.md)
   * [Recursos REST](ruby-on-rails-i/recursos-rest.md)
   * [Formularios](ruby-on-rails-i/formularios.md)
-  * Autenticación con Devise
+  * [Autenticación con Devise](ruby-on-rails-i/devise.md)
   * [Sass y Bootstrap](ruby-on-rails-i/sass-y-bootstrap.md)
   * [Envío de correos](ruby-on-rails-i/envio-de-correos.md)
   * [Carga de imágenes](ruby-on-rails-i/carga-de-imagenes.md)
@@ -144,4 +144,3 @@
   * Operaciones asincrónicas con redux-thunk
   * Combinando funciones reductoras
   * Testing con Jest y Enzyme
-

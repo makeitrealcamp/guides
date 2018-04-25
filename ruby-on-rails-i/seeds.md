@@ -1,10 +1,10 @@
 # Seeds
 
-Es buena práctica crear con un conjunto de datos iniciales que otros desarrolladores puedan utilizar para poblar la base de datos de su ambiente de desarrollo local cuando realicen una nueva instalación.
+Es buena práctica crear con un conjunto de datos que otros desarrolladores puedan utilizar para poblar su base de datos local.
 
 En las aplicaciones de Ruby on Rails vas a encontrar un archivo llamado `seeds.rb` dentro de la carpeta `db` que nos va a permitir definir ese conjunto de datos iniciales utilizando los modelos de la aplicación.
 
-Por ejemplo, puedes tener el siguiente código en `db/seeds.rb` que va a crear 3 usuarios (asumiendo que ya existe ese modelo `User` en tu aplicación):
+Por ejemplo, puedes tener el siguiente código en `db/seeds.rb`, que va a crear 3 usuarios (asumiendo que ya existe ese modelo `User` en tu aplicación):
 
 ```ruby
 User.create(email: "user1@example.com", age: 45)
