@@ -28,10 +28,9 @@ Al igual que [Ruby](https://www.ruby-lang.org/), [Ruby on Rails](http://rubyonra
 * [ActiveRecord - Callbacks](activerecord-callbacks.md)
 * [Recursos REST](recursos-rest.md)
 * [Formularios](formularios.md)
-* [Autenticación con Devise](https://github.com/makeitrealcamp/guias-de-make-it-real/tree/c2b90a7a324e43c4dc6689e308b6fc3f19e612d4/rails/13-autenticacion-con-devise.md)
+* [Autenticación con Devise](devise.md)
 * [Sass y Bootstrap](sass-y-bootstrap.md)
 * [Envío de correos](envio-de-correos.md)
 * [Carga de imágenes](carga-de-imagenes.md)
 * [Seeds](seeds.md)
 * [Heroku](heroku.md)
-
