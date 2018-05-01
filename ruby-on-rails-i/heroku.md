@@ -1,16 +1,16 @@
 # Heroku
 
-[Heroku](https://heroku.com/) es un servicio que nos va a permitir publicar nuestras aplicaciones en Internet sin necesidad de preocuparnos por configurar servidores, instalar Ruby on Rails, configurar la base de datos, etc.
+[Heroku](https://heroku.com/) es un servicio que nos permite publicar nuestras aplicaciones en Internet sin necesidad de preocuparnos por configurar servidores, instalar Ruby on Rails, configurar la base de datos, etc.
 
-[Heroku](https://heroku.com/) tiene un plan gratis (con algunas limitaciones) para aplicaciones en prueba o con poco tráfico, y planes pagos para aplicaciones con mayor necesidad de procesamiento y memoria. Puedes consultar los precios en [esta página](https://www.heroku.com/pricing).
+[Heroku](https://heroku.com/) tiene un plan gratuito que, aunque tiene algunas limitaciones, es más que suficiente para empezar. También existen planes pagos para aplicaciones en producción que necesiten más procesamiento y/o memoria; puedes consultar los precios en [esta página](https://www.heroku.com/pricing).
 
 Si aún no tienes una cuenta en [Heroku](https://heroku.com/), ingresa a la [página principal](https://heroku.com/) y crea una.
 
 ## Heroku CLI
 
-Una vez que tengas una cuenta en [Heroku](https://heroku.com/) debes descargar el [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli), una aplicación para la línea de comandos que te permitirá interactuar con [Heroku](https://heroku.com/). En [este enlace](https://devcenter.heroku.com/articles/heroku-cli) encontrarás las instrucciones para descargarlo e instalarlo.
+Una vez que tengas una cuenta en [Heroku](https://heroku.com/) debes descargar el [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli), una aplicación para la línea de comandos que te permitirá interactuar con [Heroku](https://heroku.com/). En [este enlace](https://devcenter.heroku.com/articles/heroku-cli) encontrarás las instrucciones para descargarla e instalarla.
 
-Una vez que lo hayas instalado verifica la instalación ejecutando el siguiente comando:
+Una vez que la hayas instalado verifica la instalación ejecutando el siguiente comando:
 
 ```
 $ heroku --version
@@ -18,7 +18,7 @@ $ heroku --version
 
 Deberías ver `heroku/x.y.z` en el resultado.
 
-Por último ejecuta el siguiente comando:
+Por último ejecuta el siguiente comando para autenticarte:
 
 ```
 $ heroku login
