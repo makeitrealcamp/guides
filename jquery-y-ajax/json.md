@@ -74,6 +74,5 @@ console.log(obj.name); // Pedro
 También es posible convertir un objeto de JavaScript a **JSON** con [JSON.stringify](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify):
 
 ```javascript
-JSON.strinfigy({ name: "Pedro" }); // '{ "name": "Pedro" }'
+JSON.stringify({ name: "Pedro" }); // '{ "name": "Pedro" }'
 ```
-
