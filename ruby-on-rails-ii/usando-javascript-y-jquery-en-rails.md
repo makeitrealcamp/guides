@@ -4,7 +4,9 @@
 
 **jQuery** viene incluído por defecto en la versión **5.0.x** o inferior de **Ruby on Rails**.
 
-Desde la versión **5.1** debes instalarlo utilizando un manejador de paquetes llamado [Yarn](https://yarnpkg.com/en/):
+Desde la versión **5.1** debes instalarlo utilizando la gema [jquery-rails](https://github.com/rails/jquery-rails) o un manejador de paquetes llamado [Yarn](https://yarnpkg.com/en/).
+
+La forma más fácil es utilizar la gema. Sin embargo, si quieres utilizar [Yarn](https://yarnpkg.com/en/) puedes seguir estos pasos:
 
 1. Instala [Yarn](https://yarnpkg.com/en/) del siguiente enlace: [https://yarnpkg.com/en/docs/install](https://yarnpkg.com/en/docs/install).
 2. Desde la consola ejecuta `yarn install jquery`.
@@ -107,4 +109,3 @@ En [este post de Make it Real](https://blog.makeitreal.camp/modales-bootstrap-ru
 ## Turbolinks
 
 [https://blog.makeitreal.camp/turbolinks/](https://blog.makeitreal.camp/turbolinks/)
-

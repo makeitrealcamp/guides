@@ -6,11 +6,11 @@ En este capítulo vamos a mostrar los pasos con [Paperclip](https://github.com/t
 
 Por defecto [Paperclip](https://github.com/thoughtbot/paperclip) almacena la imagen de forma local pero más adelante veremos cómo almacenarla en servicios externos.
 
-## ImageMagik
+## ImageMagick
 
-Independiente de la gema que utilices vas a necesitar instalar [ImageMagik](https://www.imagemagick.org/script/index.php), una herramienta que permite manipular imágenes.
+Independiente de la gema que utilices vas a necesitar instalar [ImageMagick](https://www.imagemagick.org/script/index.php), una herramienta que permite manipular imágenes.
 
-Para instalar [ImageMagik](https://www.imagemagick.org/script/index.php) en Ubuntu (or any Debian base Linux distribution) utiliza el siguiente comando:
+Para instalar [ImageMagcik](https://www.imagemagick.org/script/index.php) en Ubuntu (or any Debian base Linux distribution) utiliza el siguiente comando:
 
 ```
 $ sudo apt-get install imagemagick -y
