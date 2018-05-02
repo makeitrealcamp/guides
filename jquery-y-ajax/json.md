@@ -6,7 +6,7 @@
 
 Veamos un primer ejemplo de JSON en el que estamos representando un vuelo:
 
-```javascript
+```json
 {
   "airline": "Oceanic",
   "status": "crashed",
