@@ -1,8 +1,8 @@
 # MongoDB
 
-[MongoDB](https://www.mongodb.com/) es quizá la base de datos **NoSQL** (o **no relacional**) más popular de la actualidad. Está diseñada para manejar grandes cantidades de datos distribuídos en varios servidores.
+[MongoDB](https://www.mongodb.com/) es quizá la base de datos **no relacional** más popular de la actualidad. Está diseñada para manejar grandes cantidades de datos distribuídos en varios servidores.
 
-[MongoDB](https://www.mongodb.com/) es gratis y de código abierto. Sin embargo ofrecen una versión empresarial paga con mayor soporte para despliegues más complejos.
+MongoDB es gratis y de código abierto. Sin embargo existe una versión paga con mayor soporte para despliegues más complejos (para empresas que estén dispuestas a pagar).
 
 ## Conceptos
 
@@ -10,17 +10,17 @@ Los conceptos más importantes de MongoDB son la **base de datos**, la **colecci
 
 ### Base de datos
 
-En MongoDB una base de datos es una conjunto de **colecciones**. Un servidor de MongoDB generalmente tiene muchas base de datos.
+En MongoDB una base de datos es una conjunto de **colecciones**. Un servidor de MongoDB generalmente contiene muchas base de datos.
 
 ### Colección
 
-Una colección es un grupo de documentos. Es lo equivalente a una tabla en una base de datos relacional.
+Una colección es un grupo de documentos. Es lo equivalente a una **tabla** en una base de datos relacional.
 
 ### Documento
 
-Es el equivalente a un registro de una tabla en una base de datos relacional.
-
 Un documento es un conjunto de llaves y valores que se almacena en un formato llamado BSON (Binary JSON). BSON es muy similar a JSON (JavaScript Object Notation) pero con algunos tipos adicionales que no son soportados en JSON.
+
+Un documento es el equivalente a un **registro** de una tabla en una base de datos relacional.
 
 A diferencia de una tabla, en donde todos los registros tienen las mismas columnas, en MongoDB cada documento puede contener diferentes llaves (columnas).
 
@@ -57,7 +57,7 @@ Fíjate que los comentarios están incluidos en el documento. En una base de dat
 
 Puedes descargar, instalar y ejecutar MongoDB en tu máquina o puedes utilizar un servicio como [mLab](https://mlab.com/) que te permite crear instancias de MongoDB en la nube.
 
-Sin embargo, así quieras utilizar [mLab](https://mlab.com/) vas a necesitar instalar el cliente de MongoDB, llamado **Mongo Shell**, que nos va a permitir interactuar con el servidor de MongoDB.
+Sin embargo, así quieras utilizar [mLab](https://mlab.com/) vas a necesitar instalar el cliente de MongoDB, llamado **`mongo` shell**, que nos va a permitir interactuar con el servidor de MongoDB.
 
 ### Instalación local
 
@@ -69,7 +69,7 @@ Una vez hayas instalado el servidor puedes utilizar el cliente de MongoDB, llama
 $ mongo
 ```
 
-Si funciona bien deberías ver algo parecido a lo siguiente inmediatamente después de ejecutar el comando:
+Si funciona bien deberías ver algo parecido a lo siguiente, inmediatamente después de ejecutar el comando:
 
 ```
 MongoDB shell version v3.6.4
@@ -240,21 +240,21 @@ Para listar documentos dentro de una colección utiliza el método `db.<collecti
 > db.users.find();
 ```
 
-Para encontrar documentos por uno o más campo específicos le puedes pasar un objeto con las llaves y los valores por los que quieras buscar. Por ejemplo:
+Para buscar documentos por uno o más campo específicos le puedes pasar un objeto con las llaves y los valores por los que quieras buscar. Por ejemplo:
 
 ```
 > db.users.find({ _id: 5 });
 > db.users.find({ email: "pedro@example.com" });
 ```
 
-Para encontrar documentos que cumplan más de una condición puedes separar las expresiones por coma o utilizar el operador `$and`:
+También es posible buscar documentos que cumplan más de una condición puedes separar las expresiones por coma o utilizar el operador `$and`:
 
 ```
 > db.users.find({ name: "Pedro Perez", age: 20 });
 > db.users.find({ $and: [{ name: "Pedro Perez" }, { age: 20 }] });
 ```
 
-Para encontrar documentos que cumplan una condición u otra utiliza el operador `$or`:
+Por último, si quieres buscar documentos que cumplan una condición u otra utiliza el operador `$or`:
 
 ```
 > db.users.find({ $or: [{ name: "Pedro Perez" }, { age: 20 }] });
