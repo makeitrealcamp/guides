@@ -120,13 +120,13 @@
   * [Formularios](express.js/formularios.md)
   * [Cookies y sesión](express.js/cookies-y-sesion.md)
 * [Express.js II](express.js-ii/README.md)
-  * Mongoose
-  * Web Sockets
-  * Autenticación
-  * Cargar imágenes
-  * Deployment
-  * Testing
-  * Creando una Web API
+  * [Mongoose](express.js-ii/mongoose.md)
+  * [Web Sockets](express.js-ii/web-sockets.md)
+  * [Autenticación](express.js-ii/autenticacion.md)
+  * [Cargar imágenes](express.js-ii/carga-de-imagenes.md)
+  * [Deployment](express.js-ii/deployment.md)
+  * [Testing](express.js-ii/testing.md)
+  * [Creando una Web API](express.js-ii/web-api.md)
 * [React](react/README.md)
   * [Primeros pasos](react/primeros-pasos.md)
   * [JSX](react/jsx.md)
