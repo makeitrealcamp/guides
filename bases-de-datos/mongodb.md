@@ -305,3 +305,27 @@ Para eliminar documentos de una colección utiliza el método `db.<collection>.r
 ```
 > db.users.remove({ age: { $lt: 20 } });
 ```
+
+### Índices
+
+Los índices permiten acelerar la búsqueda de documentos por llaves diferentes a la primaria (`_id`).
+
+Para crear un índice utiliza el método `db.<collection>.createIndex`. Por ejemplo, para crear un índice ascendente sobre el campo `age` de la colección `users`:
+
+```
+db.users.createIndex({ age: 1 });
+```
+
+Para crear un índice descendente utiliza un valor de -1.
+
+Para obtener los índices de una colección utiliza el método `db.<collection>.getIndexes()`. Por ejemplo:
+
+```
+> db.users.getIndexes();
+```
+
+Para remover un índice utiliza el método `db.<collection>.dropIndex`. Por ejemplo:
+
+```
+> db.users.dropIndex({ age: 1 });
+```
