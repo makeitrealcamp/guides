@@ -84,3 +84,5 @@ app.get("/", requireUser, (req, res) => {
   res.render("index");
 });
 ```
+
+Para ver un ejemplo completo de autenticación de usuarios con **Express.js** y **MongoDB** te recomendamos ver la aplicación que se encuentra en [este repositorio de Github](https://github.com/makeitrealcamp/node-auth-example).
