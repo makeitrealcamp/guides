@@ -2,21 +2,19 @@
 
 El desarrollo Web es uno de los campos más emocionantes de la actualidad. Surgió a principios de los años 90's gracias a la creación de la **WWW \(World Wide Web\)**.
 
-El objetivo inicial de la **WWW** era crear una red de documentos interconectados por vínculos \(principalmente documentos científicos\).
+El objetivo inicial de la **WWW** era crear una red de documentos interconectados por vínculos \(principalmente documentos científicos\) pero con la aparición de los navegadores gráficos como Internet Explorer, Firefox y Chrome la **WWW** se popularizó y hoy tenemos Youtube, Netflix y Twitter, entre muchas otras aplicaciones interesantes.
 
-Con la aparición de los navegadores gráficos \(aplicaciones que nos permiten "navegar" por esta red de documentos\) como Internet Explorer, Firefox y Chrome, la **WWW** se popularizó y hoy su alcance es mucho más amplio.
+## ¿Qué es una Aplicación Web?
+
+Una **aplicación Web** es un programa alojado en un servidor que se accede a través de un navegador Web.
+
+Para construir una **aplicación Web** necesitas aprender mínimo **HTML** y **CSS**. **HTML** permite definir la estructura de una página Web mientras que **CSS** define la apariencia. También es muy importante aprender **JavaScript**, que es el lenguaje de programación que entienden los navegadores.
+
+Por otro lado, necesitas aprender al menos un **lenguaje de programación** del lado del servidor \(p.e. PHP, Java, Ruby, Python, etc.\). Incluso **JavaScript** se puede utilizar del lado del servidor. En el servidor se puede generar el contenido \(HTML\) de forma dinámica, generalmente a partir de información almacenada en una **base de datos**.
 
 ## Sitios Web vs Aplicaciones Web
 
-Los **sitios Web** consisten únicamente de contenido _estático_ mientras que las **aplicaciones Web** consisten también de contenido **dinámico**.
-
-Hace algunos años los **sitios Web** eran sólo informativos y lo único que necesitabas aprender para construirlos era **HTML y CSS**.
-
-**HTML** permite definir la estructura de una página Web mientras que **CSS** define la apariencia.
-
-Por otro lado, para crear **aplicaciones Web** necesitas aprender al menos un **lenguaje de programación** en el servidor \(p.e. PHP, Java, Ruby, Python, etc.\) y generar el contenido \(HTML\) de forma dinámica, generalmente a partir de la información almacenada en una **base de datos**.
-
-Sin embargo, hoy incluso los sitios Web más básicos tienen algúna forma de interacción y contenido dinámico, así que la diferencia entre sitios Web y apicaciones Web es cada vez más borrosa.
+Los **sitios Web** consisten únicamente de contenido _estático_ mientras que las **aplicaciones Web** consisten también de contenido **dinámico**. Sin embargo, hoy incluso los sitios Web más básicos tienen algúna forma de interacción y contenido dinámico, así que la diferencia entre sitios Web y apicaciones Web es cada vez más borrosa.
 
 ## ¿Qué hace un desarrollador Web?
 
@@ -120,9 +118,37 @@ En los lenguajes **compilados** se debe ejecutar una aplicación que genera otro
 
 Los lenguajes **interpretados** son traducidos a **lenguaje de máquina** a medida que son ejecutados. Ejemplos de lenguajes interpretados incluyen Ruby y Python, entre otros.
 
+## Internet
+
+A Internet se le conoce como la red global de computadores interconectados. Sin embargo, para ser más exactos, Internet es la unión de muchas redes. Muchas de esas redes son operadas por ISP's (Internet Service Providers), empresas como Claro, Movistar y Tigo que ofrecen servicios de Internet a usuarios finales. Los ISP's están interconectados a traves de otras empresas, menos conocidas, llamadas NSP's (Network Service Providers).
+
+También existen redes locales que pueden tener conexión a Internet o no, por ejemplo la red Wi-Fi de tu hogar.
+
+Quizá los dispositivo más importantes de Internet son los enrutadores. Como su nombre lo indica, los enrutadores se encargan de enrutar el tráfico de una red a otra. Por ejemplo, el enrutador que tienes en tu hogar se encarga de enrutar el trafico de tu computador (que se encuentra en tu red local) hacia Internet. Gracias a los enrutadores podemos acceder a Internet por diferentes medios (inalámbrico, celular, etc.).
+
+Cada dispositivo conectado a una red tiene una **dirección IP** única en esa red. Una **dirección IP** esta compuesta de cuatro números separados por punto (p.e. 63.123.8.32 o 192.168.0.1). Existen rangos de direcciones IP's públicas y privadas.
+
+Las direcciones IP públicas son manejadas por una organización sin ánimo de lucro llamada [IANA (https://en.wikipedia.org/wiki/Internet_Assigned_Numbers_Authority)](https://en.wikipedia.org/wiki/Internet_Assigned_Numbers_Authority) que le asigna un rango a cada ISP. El enrutador que utilizas en tu hogar tiene una IP pública que puedes consultar en [esta página](https://www.whatismyip.com/).
+
+Las direcciones IP privadas se utilizan para redes locales (como la de tu hogar).
+
+Sobre Internet se han implementado una multitud de servicios como correo electrónico, la World Wide Web (WWW), voz y video sobe IP (p.e. Skype), entre otros.
+
+Otros conceptos importantes que debes saber sobre Internet son los siguientes:
+
+#### Dominios
+
+Un dominio es un nombre que está asociado a una dirección IP. Ejemplos de dominios incluyen youtube.com, twitter.com, etc.
+
+Cualquier persona puede comprar un dominio que esté libre a través de un **registrador de dominios** como [Namecheap](https://www.namecheap.com/) y [GoDaddy](https://godaddy.com/), entre muchos otros.
+
+#### Domain Name Server (DNS)
+
+Un DNS es un servicio que se encarga de traducir nombres de dominios a direcciones IP.
+
 ## Recursos adicionales
 
 * [La era de la información digital](https://blog.makeitreal.camp/la-era-de-la-informacion-digital/) - Blog de Make it Real.
 * [Aprende a leer código binario](https://blog.makeitreal.camp/aprende-a-leer-en-codigo-binario/) - Blog de Make it Real.
 * [¿Qué es código?](https://blog.makeitreal.camp/que-es-codigo/) - Blog de Make it Real.
-
+* [Un muy breve historia de Internet](https://blog.makeitreal.camp/una-breve-historia-de-internet/) - Blog de Make it Real
