@@ -16,4 +16,4 @@ En esta sección vamos a tocar los temas más avanzados del lenguaje incluyendo 
 * [ES6](es6.md)
 * [Programación funcional](programacion-funcional.md)
 * [Programación asincrónica](programacion-asincronica.md)
-
+* [Testing](testing.md)
