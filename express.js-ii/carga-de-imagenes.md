@@ -25,7 +25,7 @@ app.post('/profile', upload.single('avatar'), (req, res) => {
 ...
 ```
 
-En la línea 3 estamos configurando [multer](https://github.com/expressjs/multer) para que las imágenes queden almacenadas en la carpeta `uploads`. En la línea 20 estamos creando la ruta `/profile` y como segundo parámetro le estamos pasando el **middleware** de **multer** que va a recibir la imagen del formulario y guardarla en la carpeta `uploads`.
+En la línea 3 estamos configurando [multer](https://github.com/expressjs/multer) para que las imágenes queden almacenadas en la carpeta `uploads`. En la línea 7 estamos creando la ruta `/profile` y como segundo parámetro le estamos pasando el **middleware** de **multer** que va a recibir la imagen del formulario y guardarla en la carpeta `uploads`.
 
 El formulario sería el siguiente:
 

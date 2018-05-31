@@ -31,8 +31,8 @@ Aunque existen muchas librerías de testing en Ruby, incluso uno podría escribi
 [Minitest](https://github.com/seattlerb/minitest) inició como una gema pero ahora viene incluído en las últimas versiones de Ruby.
 
 ```ruby
-require “minitest/autorun”
-require “./calculator”
+require "minitest/autorun"
+require "./calculator"
 
 class CalculatorTest < Minitest::Test
   def test_adds_two_positive_numbers
@@ -57,11 +57,11 @@ Este **assertion** verifica que al llamar el método `add` de la clase `Calculat
 [RSpec](http://rspec.info/) es una gema para realizar pruebas automatizadas utilizando BDD:
 
 ```ruby
-require “./calculator”
+require "./calculator"
 
 describe Calculator do
-  describe “#add” do
-    it “adds two positive numbers” do
+  describe "#add" do
+    it "adds two positive numbers" do
       calculator = Calculator.new
       expect(calculator.add(2, 3)).to eq(5)
     end
@@ -142,4 +142,3 @@ class CalculatorTest < Minitest::Test
   end
 end
 ```
-

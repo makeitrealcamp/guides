@@ -75,6 +75,7 @@
   * [ES6](javascript-ii/es6.md)
   * [Programación funcional](javascript-ii/programacion-funcional.md)
   * [Programación asincrónica](javascript-ii/programacion-asincronica.md)
+  * [Testing](javascript-ii/testing.md)
 * [HTTP y Sinatra](http-y-sinatra/README.md)
   * [Primeros pasos con Sinatra](http-y-sinatra/primeros-pasos-con-sinatra.md)
   * [El protocolo HTTP](http-y-sinatra/el-protocolo-http.md)
