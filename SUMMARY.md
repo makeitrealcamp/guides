@@ -138,10 +138,9 @@
   * [React Bootstrap](react/react-bootstrap.md)
   * [React Router](react/react-router.md)
 * [Redux y testing](redux-y-testing/README.md)
-  * Primeros pasos
-  * Action creators
-  * Usando la librería react-redux
-  * Middlewares
-  * Operaciones asincrónicas con redux-thunk
-  * Combinando funciones reductoras
-  * Testing con Jest y Enzyme
+  * [Primeros pasos](redux-y-testing/primeros-pasos.md)
+  * [Action creators](redux-y-testing/action-creators.md)
+  * [Usando la librería react-redux](redux-y-testing/react-redux.md)
+  * [Middlewares](redux-y-testing/middlewares.md)
+  * [Operaciones asincrónicas con redux-thunk](redux-y-testing/redux-thunk.md)
+  * [Combinando funciones reductoras](redux-y-testing/combinando-reductoras.md)
