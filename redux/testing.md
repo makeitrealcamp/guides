@@ -41,7 +41,7 @@ it("renders no tasks when store is empty", () => {
 
 El siguiente video muestra lo que acabamos de hacer en más detalle.
 
-{% youtube src="https://www.youtube.com/watch?v=Tos2l5uTBjA" %}{% endyoutube %}
+{% youtube %} https://www.youtube.com/watch?v=Tos2l5uTBjA {% endyoutube %}
 
 ## Probando las funciones constructoras
 
@@ -90,7 +90,7 @@ describe("tasks", () => {
 // more tests
 ```
 
-{% youtube src="https://www.youtube.com/watch?v=XaXFAVnb5ok" %}{% endyoutube %}
+{% youtube %} https://www.youtube.com/watch?v=XaXFAVnb5ok {% endyoutube %}
 
 ### Probando los action creators
 
@@ -109,4 +109,4 @@ it("creates the new task action", () => {
 
 Para conocer otra forma y probar action creators con [redux-thunk](https://github.com/reduxjs/redux-thunk) mira el siguiente video:
 
-{% youtube src="https://www.youtube.com/watch?v=h7dFY-8XNxY" %}{% endyoutube %}
+{% youtube %} https://www.youtube.com/watch?v=h7dFY-8XNxY {% endyoutube %}

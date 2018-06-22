@@ -111,4 +111,4 @@ const TaskList = ({ tasks, newTask, removeTask }) => {
 // ...
 ```
 
-{% youtube src="https://www.youtube.com/watch?v=dAm3jicYvR8" %}{% endyoutube %}
+{% youtube %} https://www.youtube.com/watch?v=dAm3jicYvR8 {% endyoutube %}

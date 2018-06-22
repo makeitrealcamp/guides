@@ -1,9 +1,8 @@
 # Primeros pasos
 
-{% embed data="{\"url\":\"https://youtube.com/watch?v=\_0FHpdMwZFM?rel=0\",\"type\":\"video\",\"title\":\"\",\"icon\":{\"type\":\"icon\",\"url\":\"https://www.youtube.com/yts/img/favicon\_144-vfliLAfaB.png\",\"width\":144,\"height\":144,\"aspectRatio\":1},\"thumbnail\":{\"type\":\"thumbnail\",\"url\":\"https://i.ytimg.com/vi/\_0FHpdMwZFM/maxresdefault.jpg\",\"width\":1280,\"height\":720,\"aspectRatio\":0.5625},\"embed\":{\"type\":\"player\",\"url\":\"https://www.youtube.com/embed/\_0FHpdMwZFM?rel=0&showinfo=0\",\"html\":\"<div style=\\"left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.2493%;\\"><iframe src=\\"https://www.youtube.com/embed/\_0FHpdMwZFM?rel=0&amp;showinfo=0\\" style=\\"border: 0; top: 0; left: 0; width: 100%; height: 100%; position: absolute;\\" allowfullscreen scrolling=\\"no\\"></iframe></div>\",\"aspectRatio\":1.7778}}" %}
+{% youtube %} https://youtube.com/watch?v=_0FHpdMwZFM {% endyoutube %}
 
-  
- Aunque existen varias formas de empezar con React, quizá la forma más fácil es con [create-react-app](https://github.com/facebookincubator/create-react-app), una aplicación de consola que nos va a permitir crear una aplicación en React rápidamente.
+Aunque existen varias formas de empezar con React, quizá la forma más fácil es con [create-react-app](https://github.com/facebookincubator/create-react-app), una aplicación de consola que nos va a permitir crear una aplicación en React rápidamente.
 
 El primer paso es instalar [create-react-app](https://github.com/facebookincubator/create-react-app) con npm o Yarn:
 
@@ -88,4 +87,3 @@ En la carpeta del proyecto puedes ejecutar los siguientes comandos:
 ## Hot reloading
 
 Una de las funcionalidades más importantes de los proyectos creados con [create-react-app](https://github.com/facebookincubator/create-react-app) es la capacidad de hacer cambios en caliente sin necesidad de reiniciar el servidor. Si haces un cambio en algún archivo en `src` o `public` el navegador se refresca automáticamente.
-

@@ -44,4 +44,4 @@ const newTask = task => {
 
 Eso es todo. La ventaja es que no es necesario cambiar nada en el resto de nuestro código.
 
-{% youtube src="https://www.youtube.com/watch?v=dRlD0YqU6w4" %}{% endyoutube %}
+{% youtube %} https://www.youtube.com/watch?v=dRlD0YqU6w4 {% endyoutube %}

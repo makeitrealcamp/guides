@@ -57,4 +57,4 @@ const store = createStore(
 
 En la práctica es raro que escribas un middleware para una aplicación. Sin embargo, existen librerías como [redux-thunk](https://github.com/reduxjs/redux-thunk) o [redux-saga](https://github.com/redux-saga/redux-saga) que hacen uso de los middlewares.
 
-{% youtube src="https://www.youtube.com/watch?v=szelbsBXxfs" %}{% endyoutube %}
+{% youtube %} https://www.youtube.com/watch?v=szelbsBXxfs {% endyoutube %}

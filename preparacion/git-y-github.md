@@ -6,7 +6,7 @@ El concepto más importante de **git** es el **commit**. Un **commit** es una fo
 
 **Git** es una aplicación de consola con varios subcomandos que nos permiten, entre otras cosas, hacer **commits**, ver los cambios a los que no les hemos hecho **commit**, listar los **commits**. y ver la diferencia entre **commits**.
 
-{% embed data="{\"url\":\"https://youtube.com/watch?v=hcMp9JUXw3A?rel=0\",\"type\":\"video\",\"title\":\"\",\"icon\":{\"type\":\"icon\",\"url\":\"https://www.youtube.com/yts/img/favicon\_144-vfliLAfaB.png\",\"width\":144,\"height\":144,\"aspectRatio\":1},\"thumbnail\":{\"type\":\"thumbnail\",\"url\":\"https://i.ytimg.com/vi/hcMp9JUXw3A/maxresdefault.jpg\",\"width\":1280,\"height\":720,\"aspectRatio\":0.5625},\"embed\":{\"type\":\"player\",\"url\":\"https://www.youtube.com/embed/hcMp9JUXw3A?rel=0&showinfo=0\",\"html\":\"<div style=\\"left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.2493%;\\"><iframe src=\\"https://www.youtube.com/embed/hcMp9JUXw3A?rel=0&amp;showinfo=0\\" style=\\"border: 0; top: 0; left: 0; width: 100%; height: 100%; position: absolute;\\" allowfullscreen scrolling=\\"no\\"></iframe></div>\",\"aspectRatio\":1.7778}}" %}
+{% youtube %} https://youtube.com/watch?v=hcMp9JUXw3A {% endyoutube %}
 
 ## Instalación
 
@@ -67,7 +67,7 @@ El flujo de trabajo más simple con **git** es el siguiente
 
 ## Github
 
-{% embed data="{\"url\":\"https://youtube.com/watch?v=Da5DUDDPi2Q?rel=0\",\"type\":\"video\",\"title\":\"\",\"icon\":{\"type\":\"icon\",\"url\":\"https://www.youtube.com/yts/img/favicon\_144-vfliLAfaB.png\",\"width\":144,\"height\":144,\"aspectRatio\":1},\"thumbnail\":{\"type\":\"thumbnail\",\"url\":\"https://i.ytimg.com/vi/Da5DUDDPi2Q/maxresdefault.jpg\",\"width\":1280,\"height\":720,\"aspectRatio\":0.5625},\"embed\":{\"type\":\"player\",\"url\":\"https://www.youtube.com/embed/Da5DUDDPi2Q?rel=0&showinfo=0\",\"html\":\"<div style=\\"left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.2493%;\\"><iframe src=\\"https://www.youtube.com/embed/Da5DUDDPi2Q?rel=0&amp;showinfo=0\\" style=\\"border: 0; top: 0; left: 0; width: 100%; height: 100%; position: absolute;\\" allowfullscreen scrolling=\\"no\\"></iframe></div>\",\"aspectRatio\":1.7778}}" %}
+{% youtube %} https://youtube.com/watch?v=Da5DUDDPi2Q {% endyoutube %}
 
 [Github](https://github.com) es un servicio que nos brinda la posibilidad de crear una réplica de nuestro repositorio local en la nube.
 
@@ -90,4 +90,3 @@ Por último te va a aparecer una pantalla como la que ves a continuación. Copia
 La primera línea configura el repositorio remoto en tu repositorio local. **Esta línea sólo la debes ejecutar una vez por repositorio remoto**.
 
 La segunda línea es la que está empujando los commits que ya has creado localmente al repositorio remoto. Esta línea la debes ejecutar cada vez que haces nuevos commits \(los commits no se envían al repositorio remoto de forma automática\).
-

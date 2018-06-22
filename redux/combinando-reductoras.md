@@ -35,4 +35,4 @@ const store = createStore(combineReducers({ tasks: reducer1, users: reducer2 }))
 
 Algo particular de este código es que estamos inicializando el estado en los argumentos de las **funciones reductoras** y ya no estamos utilizando el segundo argumento de `createStore` que recibe el estado inicial. Esto se debe a que `combineReducers`, al principio, llama a todas las **funciones reductoras** pasándoles `undefined` como primer argumento.
 
-{% youtube src="https://www.youtube.com/watch?v=G_dbuk9B2pQ" %}{% endyoutube %}
+{% youtube %} https://www.youtube.com/watch?v=G_dbuk9B2pQ {% endyoutube %}

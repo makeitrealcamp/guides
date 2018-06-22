@@ -35,4 +35,4 @@ Las ventajas son las siguientes:
 3. Facilitan conocer los parámetros que necesita la acción.
 4. Permiten agregar lógica adicional (esto va a ser muy importante más adelante cuando hablemos de los middlewares).
 
-{% youtube src="https://www.youtube.com/watch?v=5ewsUa1nfiU" %}{% endyoutube %}
+{% youtube %} https://www.youtube.com/watch?v=5ewsUa1nfiU {% endyoutube %}

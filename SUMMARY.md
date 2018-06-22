@@ -138,7 +138,7 @@
   * [React Bootstrap](react/react-bootstrap.md)
   * [React Router](react/react-router.md)
   * [Testing](react/testing.md)
-* [Redux y testing](redux/README.md)
+* [Redux](redux/README.md)
   * [Primeros pasos](redux/primeros-pasos.md)
   * [Action creators](redux/action-creators.md)
   * [Usando la librería react-redux](redux/react-redux.md)
