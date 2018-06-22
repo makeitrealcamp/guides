@@ -44,11 +44,10 @@ Crea una archivo llamado `test/test.js` con el siguiente contenido:
 
 ```javascript
 const assert = require("assert");
-const sum = require('../sum');
 
 describe("sum", () => {
-  it("should add 1 + 2 to equal 3", () => {
-    assert.equal(sum(1, 2), 3);
+  it("should add 1 + 2 correctly", () => {
+    assert.equal(1 + 2, 3);
   });
 });
 ```
@@ -77,10 +76,10 @@ Este ejemplo muestra varios conceptos importantes de testing. El **test** empiez
 Un **test** se compone de uno o más **assertions**, que son los que realizan las verificaciones sobre el código. En el ejemplo anterior la siguiente línea es el **assertion**:
 
 ```javascript
-assert.equal(sum(1, 2), 3);
+assert.equal(1 + 2, 3);
 ```
 
-En este caso el **assertion** está verificando que el método `sum` nos devuelva el resultado correcto.
+En este caso el **assertion** está verificando que `1 + 2` sea igual a `3`.
 
 Mocha no incluye una librería para hacer los **assertions** pero, en este caso, estamos utilizando la librería `assert` que viene incluída en Node.js. Sin embargo, existen otras librerías para hacer **assertions**, la más popular con Mocha se llama [Chai](http://www.chaijs.com/) que permite realizar los **assertions** utilizando diferentes estilos, el más común siendo el `expect`:
 
@@ -88,7 +87,7 @@ Mocha no incluye una librería para hacer los **assertions** pero, en este caso,
 const expect = chai.expect;
 
 // ...
-expect(sum(1, 2)).to.equal(3);
+expect(1 + 2).to.equal(3);
 ```
 
 Pero la idea es la misma, poder realizar verificaciones sobre nuestro código.
@@ -112,8 +111,8 @@ Ahora escribamos la prueba. Crea un archivo `sum.test.js` con el siguiente conte
 ```javascript
 const sum = require('./sum');
 
-test('adds 1 + 2 to equal 3', () => {
-  expect(sum(1, 2)).toBe(3);
+test('1 + 2 equals 3', () => {
+  expect(1 + 2).toBe(3);
 });
 ```
 
@@ -132,6 +131,8 @@ Y ejecútalo con el siguiente comando:
 ```javascript
 $ npm test
 ```
+
+#### matchers
 
 [Jest](https://facebook.github.io/jest/) utiliza algunos métodos (llamados **matchers**) para verificar los valores de diferentes formas.
 
@@ -155,11 +156,69 @@ test("opuesto de toBe", () => {
 });
 ```
 
-Otros **matchers** utilizados son:
+Otros **matchers** comunes son:
 
 * `toBeNull` verifica que el valor sea `null`.
+* `toBeGreaterThan` verifica que el valor sea mayor a un número específico, también existe `toBeGreaterThanOrEqual`.
 * `toMatch` verifica contra una expresión regular.
 * `toContain` verifica que un array tenga un valor específico.
 * `toThrow` verifica que se haya lanzado una excepción.
 
 Otros matchers y la referencia a la lista completa de **matchers** la encuentras en el [este enlace](https://facebook.github.io/jest/docs/en/using-matchers.html).
+
+#### Probando código asincrónico
+
+El reto de probar código asincrónico es ejecutar los **assertions** antes de que el test termine. Para esto Jest nos ofrece varias soluciones.
+
+La primera es agregarle un argumento `done` a la prueba. Ese argumento es una función que se debe invocar cuando finalice la prueba:
+
+```javascript
+it("waits for asynchronous code", done => {
+  setTimeout(() => {
+    expect(2 + 1).toBe(3);
+    done();
+  }, 1000);
+});
+```
+[Jest](https://facebook.github.io/jest/) espera a que `done` sea invocado antes de continuar con la siguiente prueba o terminar.
+
+Si estás utilizando **promesas** es más fácil, simplemente retorna la promesa y Jest va a esperar a que la promesa se resuelva para continuar:
+
+```javascript
+it("waits for promise to complete", () => {
+  return fetchData().then(data => {
+    expect(data.x).toBe(1);
+  });
+});
+```
+
+Por último, puedes utilizar **async/await** en tus pruebas agregando la palabra `async` a la función que se le pasa al test, y utiliza `await` donde realices llamados a funciones asincrónicas:
+
+```javascript
+it("supports async/await", async () => {
+  const data = await fetchData();
+  expect(data.x).toBe(1);
+});
+```
+
+#### `setup` and `teardown`
+
+Es posible ejecutar código antes de cada test, después de cada test, antes de todos los tests y después de todos los test con los métodos `beforeEach`, `afterEach`, `beforeAll` y `afterAll`:
+
+```javascript
+beforeEach(() => {
+  // este código se ejecuta antes de cada test
+});
+
+afterEach(() => {
+  // este código se ejecuta después de cada test
+});
+
+beforeAll(() => {
+  // este código se ejecuta antes de todos los tests
+});
+
+afterAll(() => {
+  // este código se ejecuta después de todos los tests
+});
+```
