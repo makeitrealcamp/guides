@@ -130,4 +130,4 @@ it("renders task list" () => {
 
 El listado completo de métodos se encuentra en [este enlace](http://airbnb.io/enzyme/docs/api/).
 
-{% youtube src="https://www.youtube.com/watch?v=phuXKvUsYi8" %}{% endyoutube %}
+{% youtube %} https://www.youtube.com/watch?v=phuXKvUsYi8 {% endyoutube %}

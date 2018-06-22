@@ -100,6 +100,6 @@ En aplicaciones reales el estado es generalmente un objeto y una de las crítica
 
 Otra crítica a Redux es que la **función constructura** se puede volver grande e inmanejable cuando se tengan muchos tipos de **acciones**. Sin embargo, más adelante vamos a ver cómo dividir la **función constructora** en funciones más manejables.
 
-{% youtube src="https://www.youtube.com/watch?v=RZNNu2pO49g" %}{% endyoutube %}
+{% youtube %} https://www.youtube.com/watch?v=RZNNu2pO49g {% endyoutube %}
 
-{% youtube src="https://www.youtube.com/watch?v=aaMoVAcP5-w" %}{% endyoutube %}
+{% youtube %} https://www.youtube.com/watch?v=aaMoVAcP5-w {% endyoutube %}

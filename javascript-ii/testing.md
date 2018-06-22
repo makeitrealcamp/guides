@@ -24,16 +24,9 @@ Por ejemplo, una prueba para que verifica que los usuarios se pueden registrar c
 
 ## Librerías más populares
 
-Existen varias librerías para realizar pruebas automatizadas en JavaScript como [Mocha](https://mochajs.org/), [Jasmine](https://jasmine.github.io/) y [Jest](https://facebook.github.io/jest/), entre otros.
+Existen varias librerías para realizar pruebas automatizadas en JavaScript como [Mocha](https://mochajs.org/), [Jasmine](https://jasmine.github.io/) y [Jest](https://facebook.github.io/jest/), entre otras.
 
-Empecemos creando el código que vamos a utilizar para ver un ejemplo en cada una de las librerías. Crea un archivo llamado `sum.js` con el siguiente contenido:
-
-```javascript
-function sum(a, b) {
-  return a + b;
-}
-module.exports = sum;
-```
+En este capítulo vamos cómo configurar y utilizar [Mocha](https://mochajs.org/) y [Jest](https://facebook.github.io/jest/), pero nos concentraremos principalmente en [Jest](https://facebook.github.io/jest/), que es la que vamos a utilizar más adelante en los módulos de [Express II](../express-ii), [React](../react) y [Redux](../redux) más adelante.
 
 ### Mocha
 

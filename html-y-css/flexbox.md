@@ -2,7 +2,7 @@
 
 **Flexbox** es una nueva forma de organizar y distribuir los elementos HTML.
 
-{% embed data="{\"url\":\"https://youtube.com/watch?v=cjsvASZWsxs?rel=0\",\"type\":\"video\",\"title\":\"\",\"icon\":{\"type\":\"icon\",\"url\":\"https://www.youtube.com/yts/img/favicon\_144-vfliLAfaB.png\",\"width\":144,\"height\":144,\"aspectRatio\":1},\"thumbnail\":{\"type\":\"thumbnail\",\"url\":\"https://i.ytimg.com/vi/cjsvASZWsxs/maxresdefault.jpg\",\"width\":1280,\"height\":720,\"aspectRatio\":0.5625},\"embed\":{\"type\":\"player\",\"url\":\"https://www.youtube.com/embed/cjsvASZWsxs?rel=0&showinfo=0\",\"html\":\"<div style=\\"left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.2493%;\\"><iframe src=\\"https://www.youtube.com/embed/cjsvASZWsxs?rel=0&amp;showinfo=0\\" style=\\"border: 0; top: 0; left: 0; width: 100%; height: 100%; position: absolute;\\" allowfullscreen scrolling=\\"no\\"></iframe></div>\",\"aspectRatio\":1.7778}}" %}
+{% youtube %} https://youtube.com/watch?v=cjsvASZWsxs {% endyoutube %}
 
 **Flexbox** incluye un nuevo valor `flex` para la propiedad `display` de CSS y un conjunto de nuevas **propiedades de CSS** como `justify-content`, `align-items` y `flex-direction`, entre otros.
 
@@ -69,7 +69,7 @@ Por defecto, si no hay suficiente espacio en el **contenedor**, los **ítems** s
 **Nota:** si cambias la propiedad `flex-direction` a `column` o `column-reverse`, los **ítems** se ubican en nuevas columnas, no filas, cuando utilizas el valor `wrap` o `wrap-reverse`.
 
 Por ejemplo, si queremos que los elementos que no quepan se ubiquen en nuevas filas podemos asignarle el valor `wrap` a `flex-wrap`:   
- 
+
 
 ### Alineación horizontal
 
@@ -128,4 +128,3 @@ La propiedad `flex` es un atajo para definir las propiedades `flex-grow`, `flex-
 ### Alineación
 
 La propiedad `self-align` permite sobrescribir el valor de la pripiedad `align-items` del **contenedor**.
-
