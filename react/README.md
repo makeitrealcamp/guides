@@ -21,4 +21,4 @@ React fue creada, y es mantenida, por Facebook, pero es una librería de [códig
 * [Peticiones HTTP con Axios](peticiones-http-con-axios.md)
 * [React Bootstrap](react-bootstrap.md)
 * [React Router](react-router.md)
-
+* [Testing](testing.md)

@@ -37,7 +37,7 @@ module.exports = sum;
 
 ### Mocha
 
-Mocha (se pronuncia moca, como en mochaccino) es una de las librerías de testing más antiguas y populares. Para usarla primero debes agregar la librería a tu proyecto:
+Mocha (se pronuncia como en mochaccino) es una de las librerías de testing más antiguas y populares. Para usarla primero debes agregar la librería a tu proyecto:
 
 ```
 # yarn
@@ -102,7 +102,7 @@ Pero la idea es la misma, poder realizar verificaciones sobre nuestro código.
 
 ### Jest
 
-Jest es una librería de testing creada por Facebook y cada vez está ganando más popularidad por su facilidad de uso. A diferencia de Mocha, Jest ya trae incluidos los métodos para hacer los **assertions**.
+[Jest](https://facebook.github.io/jest/) es una librería de testing creada por Facebook y cada vez está ganando más popularidad por su facilidad de uso. A diferencia de Mocha, Jest ya trae incluidos los métodos para hacer los **assertions**.
 
 Empieza por agregar la librería:
 
@@ -139,3 +139,34 @@ Y ejecútalo con el siguiente comando:
 ```javascript
 $ npm test
 ```
+
+[Jest](https://facebook.github.io/jest/) utiliza algunos métodos (llamados **matchers**) para verificar los valores de diferentes formas.
+
+En la prueba anterior vimos el método `toBe` que verifica que el valor sea exactamente igual.
+
+Una variación del `toBe` es `toEqual` que se utiliza para verificar objetos:
+
+```javascript
+test('igualdad de objetos', () => {
+  const data = { one: 1 };
+  data['two'] = 2;
+  expect(data).toEqual({ one: 1, two: 2 });
+});
+```
+
+El opuesto del `toBe` es `not.toBe`:
+
+```javascript
+test("opuesto de toBe", () => {
+  expect(2 + 2).not.toBe(5);
+});
+```
+
+Otros **matchers** utilizados son:
+
+* `toBeNull` verifica que el valor sea `null`.
+* `toMatch` verifica contra una expresión regular.
+* `toContain` verifica que un array tenga un valor específico.
+* `toThrow` verifica que se haya lanzado una excepción.
+
+Otros matchers y la referencia a la lista completa de **matchers** la encuentras en el [este enlace](https://facebook.github.io/jest/docs/en/using-matchers.html).
