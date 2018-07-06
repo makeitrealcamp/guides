@@ -26,7 +26,7 @@ Por ejemplo, una prueba para que verifica que los usuarios se pueden registrar c
 
 Existen varias librerías para realizar pruebas automatizadas en JavaScript como [Mocha](https://mochajs.org/), [Jasmine](https://jasmine.github.io/) y [Jest](https://facebook.github.io/jest/), entre otras.
 
-En este capítulo vamos cómo configurar y utilizar [Mocha](https://mochajs.org/) y [Jest](https://facebook.github.io/jest/), pero nos concentraremos principalmente en [Jest](https://facebook.github.io/jest/), que es la que vamos a utilizar más adelante en los módulos de [Express II](../express-ii), [React](../react) y [Redux](../redux) más adelante.
+En este capítulo vamos cómo configurar y utilizar [Mocha](https://mochajs.org/) y [Jest](https://facebook.github.io/jest/), pero nos concentraremos principalmente en [Jest](https://facebook.github.io/jest/), que es la que vamos a utilizar en los módulos de [Express II](../express-ii), [React](../react) y [Redux](../redux) más adelante.
 
 ### Mocha
 
@@ -164,7 +164,7 @@ Otros **matchers** comunes son:
 * `toContain` verifica que un array tenga un valor específico.
 * `toThrow` verifica que se haya lanzado una excepción.
 
-Otros matchers y la referencia a la lista completa de **matchers** la encuentras en el [este enlace](https://facebook.github.io/jest/docs/en/using-matchers.html).
+La referencia a la lista completa de **matchers** la encuentras en [este enlace](https://facebook.github.io/jest/docs/en/using-matchers.html).
 
 #### Probando código asincrónico
 
