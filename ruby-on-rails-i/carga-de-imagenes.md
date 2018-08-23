@@ -1,14 +1,16 @@
 # Carga de imágenes
 
-La forma más fácil de implementar la carga de imágenes en tus aplicaciones es con una gema como [CarrierWave](https://github.com/jnicklas/carrierwave), [Paperclip](https://github.com/thoughtbot/paperclip) o [Dragonfly](http://markevans.github.com/dragonfly/).
+Hasta la versión 5.1 de **Ruby on Rails**, la forma más fácil de implementar carga de imágenes, y de archivos en general, es con alguna gema como [CarrierWave](https://github.com/jnicklas/carrierwave), [Paperclip](https://github.com/thoughtbot/paperclip) o [Dragonfly](http://markevans.github.com/dragonfly/).
 
-En este capítulo vamos a mostrar los pasos con [Paperclip](https://github.com/thoughtbot/paperclip). Sin embargo, cada gema tiene unas instrucciones que puedes seguir para configurarla y utilizarla.
+Sin embargo, desde la versión 5.2, **Ruby on Rails** incluye una módulo para cargar archivos llamado **ActiveStorage**.
+
+En este capítulo vamos a mostrar primero cómo configurar [Paperclip](https://github.com/thoughtbot/paperclip), que es quizá la gema más popular. Luego hablaremos de **ActiveStorage**.
 
 Por defecto [Paperclip](https://github.com/thoughtbot/paperclip) almacena la imagen de forma local pero más adelante veremos cómo almacenarla en servicios externos.
 
 ## ImageMagick
 
-Independiente de la gema que utilices vas a necesitar instalar [ImageMagick](https://www.imagemagick.org/script/index.php), una herramienta que permite manipular imágenes.
+Independiente de si utilizas una gema o **ActiveStorage** vas a necesitar instalar [ImageMagick](https://www.imagemagick.org/script/index.php), una herramienta que permite manipular imágenes.
 
 Para instalar [ImageMagcik](https://www.imagemagick.org/script/index.php) en Ubuntu (or any Debian base Linux distribution) utiliza el siguiente comando:
 
@@ -24,7 +26,7 @@ $ brew install imagemagick
 
 En Windows ... estás por tu cuenta amigo (mentira, queda pendiente esta parte ;)
 
-## Instalación
+## Paperclip (Rails 5.1 y anterior)
 
 El primer paso es incluir la gema en tu `Gemfile`:
 
@@ -151,7 +153,7 @@ validates_attachment :image, presence: true,
   size: { in: 0..10.kilobytes }
 ```
 
-## Almacenamiento
+### Almacenamiento
 
 Por defecto [Paperclip](https://github.com/thoughtbot/paperclip) viene con 3 adaptadores de almacenamiento:
 
@@ -182,6 +184,8 @@ config.paperclip_defaults = {
   }
 ```
 
+**Nota:** Si quieres configurar [Amazon S3](https://aws.amazon.com/s3/) en producción modificarías `config/environments/production.rb`.
+
 Por último, crea un archivo `config/initializers/aws.rb` con el siguiente contenido reemplazando los valores que están entre `<` y `>`:
 
 ```ruby
@@ -191,3 +195,134 @@ Aws.config.update({
 ```
 
 Una recomendación es utilizar la gema [Figaro](https://github.com/laserlemon/figaro) para utilizar variables de entorno.
+
+## ActiveStorage (Rails 5.2 y superior)
+
+El primer paso para utilizar **ActiveStorage** es ejecutar los siguientes comandos:
+
+```
+$ rails active_storage:install
+$ rails db:migrate
+```
+
+Esos comandos crean dos tablas: `active_storage_blobs` and `active_storage_attachments`.
+
+### Configurando el modelo
+
+Para asociar un archivo a un modelo utilizamos `has_one_attached` seguido del nombre que le queremos dar a nuestro archivo. Por ejemplo:
+
+```ruby
+class Report < ApplicationRecord
+  has_one_attached :screenshot
+end
+```
+
+Si queremos asociar varios archivos utilizamos `has_many_attached`:
+
+```ruby
+class Product < ApplicationRecord
+  has_many_attached :images
+end
+```
+
+### Agregando la imagen al formulario
+
+En el formulario para crear y editar productos debes agregar el campo y asegurarte que el formulario tenga la opción de `multipart`:
+
+```erb
+<%= form_for @product, html: { multipart: true } do |form| %>
+  <%= form.file_field :image %>
+  <%= form.submit %>
+<% end %>
+```
+
+En el controlador debes permitir el nuevo campo `image`:
+
+```ruby
+def create
+  @product = Product.create(product_params)
+end
+
+private
+  def product_params
+    params.require(:product).permit(:image)
+  end
+```
+
+### Mostrando la imagen en una vista
+
+Para mostar la imagen utilizamos el método preview:
+
+```erb
+<%= image_tag product.image.preview(resize_to_limit: [100, 100]) %>
+```
+
+### Verificando si existe una imagen
+
+Para determinar si una imagen existe utiliza el método `attached?`:
+
+```ruby
+product.image.attached?
+```
+
+### Eliminando una imagen
+
+Para eliminar una imagen de un modelo utiliza el método `purge`:
+
+```ruby
+product.image.purge
+```
+
+### Validaciones
+
+**ActiveStorage** no incluye validaciones para las imágenes, así que debemos implementar nuestra propia validación. Por ejemplo, para validar que un archivo exista y sea una imagen utilizaríamos el siguiente código:
+
+```ruby
+class Product < ApplicationRecord
+  has_one_attached :image
+
+  validate :image_validator
+
+  private
+    def image_validator
+      if !image.attached?
+        errors.add(:image, "is required")
+      elsif image.content_type.in?(%w(image/png image/jpeg))
+        errors.add(:image, 'must be an image')
+      end
+    end
+end
+```
+
+### Almacenamiento
+
+Por defecto **ActiveStorage** almacena la información localmente en una carpeta de tu computador. Sin embargo, al igual que con [Paperclip](https://github.com/thoughtbot/paperclip), esto es configurable para cada uno de los ambientes (desarrollo, producción y pruebas).
+
+Para usar [Amazon S3](https://aws.amazon.com/s3/) vas a necesitar una cuenta en AWS y crear un bucket (un directorio) en S3 (región "us-east-1") antes de continuar.
+
+El primer paso es configurar el servicio en el archivo `config/storage.yml`:
+
+```yml
+amazon:
+  service: S3
+  access_key_id: <%= ENV['aws_key']%>
+  secret_access_key: <%= ENV['aws_secret'] %>
+  region: us-east-1
+  bucket: <nombre_del_bucket>
+```
+
+**Nota:** estamos utilizando variables de entorno para almacenar las llaves de AWS.
+
+Ahora, en la carpeta `config/environments/` ubica el ambiente para el que deseas configurar AWS (`development.rb` o `production.rb`) y modifica la opción `config.active_storage.service` con el valor `:amazon`:
+
+```ruby
+config.active_storage.service = :amazon
+```
+
+Por último, no olvides agregar la siguiente línea al `Gemfile`:
+
+```ruby
+gem "aws-sdk-s3", require: false
+```
+
+Y ejecutar `bundle install`.
