@@ -237,7 +237,7 @@ También existe el método `insert` que permite insertar uno o más documentos:
 Para listar documentos dentro de una colección utiliza el método `db.<collection>.find`. Por defecto, si no le pasas ningún parámetro a este método retorna todos los registros de la colección. Por ejemplo, para listar todos los documentos de la colección `users` ingresa lo siguiente:
 
 ```
-> db.users.find();
+> db.users.find({});
 ```
 
 Para buscar documentos por uno o más campo específicos le puedes pasar un objeto con las llaves y los valores por los que quieras buscar. Por ejemplo:
@@ -293,10 +293,10 @@ Si queremos encontrar los documentos que tengan primer nombre "Pedro" utilizarí
 Para actualizar un documento utiliza el método `db.<collection>.updateOne`, que recibe un filtro y los campos que se quieren actualizar. Por ejemplo:
 
 ```
-> db.users({ _id: 5 }, { $set: { email: "daniel@example.com", name: "Daniel Gael" } });
+> db.users.updateOne({ _id: 5 }, { $set: { email: "daniel@example.com", name: "Daniel Gael" } });
 ```
 
-Por defecto `updateOne` actualizar el primer documento que coincida con el filtro. Para actualizar todos los documentos que coincidan utilizat el método `db.<collection>.update`.
+Por defecto `updateOne` actualiza el primer documento que coincida con el filtro. Para actualizar todos los documentos que coincidan utiliza el método `db.<collection>.update`.
 
 ### Eliminando un documento
 
@@ -305,6 +305,55 @@ Para eliminar documentos de una colección utiliza el método `db.<collection>.r
 ```
 > db.users.remove({ age: { $lt: 20 } });
 ```
+
+Para eliminar **todos** los documentos de una colección puedes pasarle un objeto vacío al método `db.<collection>.remove`:
+
+```
+> db.users.remove({});
+```
+
+### Ordenar y agregar documentos
+
+Los métodos y operadores de agregación nos permiten agrupar, contar, sumar y ordenar documentos, entre otras operaciones.
+
+Quizá la operación de agregación más común es contar el número de documentos en una colección:
+
+```
+> db.users.count({});
+```
+
+Para agrupar registros utiliza el método `db.<collection>.aggregate` y los operadores `$group` y `$sum`, entre otros. Por ejemplo:
+
+```
+> db.orders.aggregate([{
+  $group: {
+    _id: "$productId",
+    count: { $sum: 1 },
+    total: { $sum: "$amount" }
+  }
+}]);
+```
+
+También puedes ordenar los documentos con el mismo método `aggregate` y el operador `$sort`. Por ejemplo, el siguiente comandos devolvería todas las `orders` ordenadas por `date` de forma descendente:
+
+```
+> db.orders.aggregate([{ $sort: { date: -1 } }]);
+```
+
+1 es ascendente, -1 descendente.
+
+Por último, puedes limitar el número de registros con `$limit` o saltarlos con `$skip`:
+
+```
+> db.orders.aggregate([
+    { $skip: 5 },
+    { $limit: 10 }
+  ]);
+```
+
+`aggregate` recibe un arreglo de objetos. Cada uno de los objetos va realizando una nueva operación sobre los datos. A esto se le conoce como el [pipeline de agregación](https://docs.mongodb.com/manual/aggregation/#aggregation-pipeline).
+
+Existen otros operadores que puedes consultar en la [documentación oficial de MongoDB](https://docs.mongodb.com/manual/reference/operator/aggregation-pipeline/).
 
 ### Índices
 
