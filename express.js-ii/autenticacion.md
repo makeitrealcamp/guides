@@ -1,6 +1,6 @@
 # Autenticación
 
-En este capitulo vamos a ver cómo almacenar las contraseñas de los usuarios, y cómo utilizar JWT (JSON Web Tokens) y  cookies para identificar las peticiones HTTP.
+En este capitulo vamos a ver cómo almacenar las contraseñas de los usuarios, y cómo identificar las peticiones HTTP.
 
 Recuerda que HTTP es un protocolo sin estado, lo que quiere decir que el servidor Web no mantiene un registro de quién está visitando una página.
 
@@ -38,46 +38,68 @@ bcrypt.compare("otra-contraseña", hash).then(function(res) {
 
 ## Identificando las peticiones
 
-Para identificar las peticiones debemos guardar el id del usuario en una cookie cuando ingrese su usuario y contraseña. Vamos a utilizar [JSON Web Tokens](https://github.com/auth0/node-jsonwebtoken), que es una forma de garantizar que la información que vamos a almacenar en la cookie fue generada por nuestro servidor.
+Para identificar las peticiones debemos guardar el `id` del usuario en la **sesión** cuando ingrese su usuario y contraseña.
 
-El primer paso es agregar la librería a nuestro proyecto:
+Asegurarte que hayas instalado y configurado [cookie-session](https://github.com/expressjs/cookie-session) como se muestra en el capítulo de [Cookies y sesión de Express I](../express.js/cookies-y-sesion.md).
 
-```
-$ yarn add jsonwebtoken
-```
-
-El siguiente paso es requerir la librería y utilizarla para generar el token firmado que vamos a almacenar en la cookie.
+El siguiente paso es agregar el `id` del usuario a la sesión, por ejemplo, si estás utilizando [Mongoose](http://mongoosejs.com/):
 
 ```javascript
-var jwt = require("jsonwebtoken");
-
 app.post("/login", function(req, res) {  
-  jwt.sign({ userId: 1 }, "secretcode", (err, token) => {
-    res.cookie("token", token, { httpOnly: true });
-  });
+  const email = req.body.email;
+  const password = req.body.password;
+
+  try {
+    const user = await User.authenticate(email, password);
+    if (user) {
+      req.session.userId = user._id; // acá guardamos el id en la sesión
+      return res.redirect("/");
+    } else {
+      res.render("/login", { error: "Wrong email or password. Try again!" });
+    }
+  } catch (e) {
+    return next(e);
+  }
 });
 ```
 
-Para autenticar las peticiones podemos crear un middleware que redireccione al usuario al formulario de login si no existe el token o es inválido:
+El método `authenticate` del modelo `User` sería el siguiente:
 
 ```javascript
-const requireUser = (req, res, next) => {
-  const token = req.cookies.token;
-  if (!token) {
-    return res.redirect("/login");
-  } else {
-    jwt.verify(token, "secretcode", (err, decoded) => {
-      if (err) {
-        res.clearCookie("token");
-        return res.redirect("/login");
-      }
-      next();
+schema.statics.authenticate = async (email, password) => {
+  const user = await mongoose.model("User").findOne({ email: email });
+  if (user) {
+    return new Promise((resolve, reject) => {
+      bcrypt.compare(password, user.password, (err, result) => {
+        if (err) reject(err);
+        resolve(result === true ? user : null);
+      });
     });
+    return user;
   }
+
+  return null;
 };
 ```
 
-Y por último, podemos utilizar el middleware en las rutas que necesiten autenticación:
+[bcrypt](https://github.com/kelektiv/node.bcrypt.js) no soporta aún `async/await` así que estamos envolviendo el código que hace la verificación en una promesa.
+
+Por último, para identificar las peticiones HTTP creamos un **middleware** que verifique si la sesión tiene un `userId` y cargue al usuario:
+
+```javascript
+const requireUser = async (req, res, next) => {
+  const userId = req.session.userId;
+  if (userId) {
+    const user = await User.findOne({ _id: userId });
+    res.locals.user = user;
+    next();
+  } else {
+    return res.redirect("/login");
+  }
+}
+```
+
+Ahora, en todas las rutas que requieran autenticación podemos agregar este **middleware**. Por ejemplo:
 
 ```javascript
 app.get("/", requireUser, (req, res) => {
