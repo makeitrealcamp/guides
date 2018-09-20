@@ -38,11 +38,11 @@ bcrypt.compare("otra-contraseña", hash).then(function(res) {
 
 ## Identificando las peticiones
 
-Para identificar las peticiones debemos guardar el `id` del usuario en la **sesión** cuando ingrese su usuario y contraseña.
+Para identificar las peticiones debemos guardar el `id` del usuario en la **sesión** cuando este se autentique.
 
-Asegurarte que hayas instalado y configurado [cookie-session](https://github.com/expressjs/cookie-session) como se muestra en el capítulo de [Cookies y sesión de Express I](../express.js/cookies-y-sesion.md).
+El primer paso es asegurarte que hayas instalado y configurado la librería  [cookie-session](https://github.com/expressjs/cookie-session) como se muestra en el capítulo de [Cookies y sesión de Express I](../express.js/cookies-y-sesion.md).
 
-El siguiente paso es agregar el `id` del usuario a la sesión, por ejemplo, si estás utilizando [Mongoose](http://mongoosejs.com/):
+El siguiente paso es agregar el `id` del usuario a la **sesión**. Por ejemplo, si tu ruta de autenticación es `POST /login` y si estás utilizando [Mongoose](http://mongoosejs.com/):
 
 ```javascript
 app.post("/login", function(req, res) {  
@@ -66,9 +66,14 @@ app.post("/login", function(req, res) {
 El método `authenticate` del modelo `User` sería el siguiente:
 
 ```javascript
-schema.statics.authenticate = async (email, password) => {
+const UserSchema = new mongoose.Schema({ // ... });
+
+UserSchema.statics.authenticate = async (email, password) => {
+  // buscamos el usuario utilizando el email
   const user = await mongoose.model("User").findOne({ email: email });
+
   if (user) {
+    // si existe comparamos la contraseña
     return new Promise((resolve, reject) => {
       bcrypt.compare(password, user.password, (err, result) => {
         if (err) reject(err);
@@ -82,9 +87,9 @@ schema.statics.authenticate = async (email, password) => {
 };
 ```
 
-[bcrypt](https://github.com/kelektiv/node.bcrypt.js) no soporta aún `async/await` así que estamos envolviendo el código que hace la verificación en una promesa.
+[bcrypt](https://github.com/kelektiv/node.bcrypt.js) no soporta aún `async/await` así que en la línea 9 estamos envolviendo el código que hace la verificación en una **promesa**.
 
-Por último, para identificar las peticiones HTTP creamos un **middleware** que verifique si la sesión tiene un `userId` y cargue al usuario:
+Por último, para identificar las peticiones HTTP creamos un **middleware** que verifica si la sesión tiene un `userId` y carga al usuario:
 
 ```javascript
 const requireUser = async (req, res, next) => {

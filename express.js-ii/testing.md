@@ -1,10 +1,10 @@
 # Testing
 
-En este capítulo vamos a ver cómo escribir **pruebas automatizadas** para las rutas de Express.js y de integración (que incluyen la interacción con el navegador).
+En este capítulo vamos a ver cómo escribir **pruebas automatizadas** para tus aplicaciones de [Express](https://expressjs.com/). Vamos a ver cómo crear pruebas para las rutas y pruebas de sistema (que incluyen desde la interacción en el navegador hasta la base de datos).
 
 ## Probando las rutas
 
-Asumiendo que ya has incluído Express.js, el primer paso es incluir las librerías que vamos a utilizar para hacer las pruebas: [Jest](https://facebook.github.io/jest/docs/en/getting-started.html), [Supertest](https://github.com/visionmedia/supertest) y [Superagent](https://github.com/visionmedia/superagent):
+Asumiendo que ya has incluído [Express](https://expressjs.com/), el primer paso es incluir las librerías que vamos a utilizar para hacer las pruebas: [Jest](https://facebook.github.io/jest/docs/en/getting-started.html), [Supertest](https://github.com/visionmedia/supertest) y [Superagent](https://github.com/visionmedia/superagent):
 
 ```
 # yarn
@@ -67,7 +67,7 @@ $ npm test
 
 ### MongoDB
 
-Si estás utilizando MongoDB utiliza una variable de entorno para pasarle la URL de conexión:
+Si estás utilizando MongoDB utiliza una variable de entorno en la aplicación para pasarle la URL de conexión:
 
 ```javascript
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/<dev-db-name>', { useNewUrlParser: true });
@@ -153,9 +153,9 @@ describe("GET /private", () => {
 
 En la línea 13 creamos un método `signIn` que se va a encargar de autenticar al usuario haciendo `POST` a `/login`. Después tenemos dos pruebas, una que verifica que el usuario sea redirigido a `/login` si no está autenticado y otra que permita el acceso si está autenticado.
 
-## Pruebas de integración
+## Pruebas de sistema
 
-Las pruebas de integración se utilizan para probar la interacción desde el navegador hasta la base de datos. Son el tipo de pruebas más completas pero también las más lentas.
+Las pruebas de sistema se utilizan para probar la interacción desde el navegador hasta la base de datos. Son el tipo de pruebas más completas, aunque también las más lentas.
 
 El primer paso es instalar [Puppeteer](https://github.com/GoogleChrome/puppeteer):
 
@@ -163,7 +163,7 @@ El primer paso es instalar [Puppeteer](https://github.com/GoogleChrome/puppeteer
 $ npm install --save-dev puppeteer
 ```
 
-La siguiente es un ejemplo de una prueba de integración:
+La siguiente es un ejemplo de una prueba de sistema:
 
 
 ```javascript

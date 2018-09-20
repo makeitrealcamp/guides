@@ -22,9 +22,9 @@ app.post('/users', (req, res) => {
 
 La función que se pasa como **callback** de cada ruta recibe dos objetos, generalmente nombrados `req` y `res`.
 
-El primer argumento \(`res`\) representa la petición HTTP y tiene propiedades para acceder el cuerpo del mensaje, los encabezados, el query string, etc. La lista completa de propiedades la encuentras en [este enlace](https://expressjs.com/en/4x/api.html#req).
+El primer argumento \(`req`\) representa la petición HTTP y tiene propiedades para acceder el cuerpo del mensaje, los encabezados, el query string, etc. La lista completa de propiedades la encuentras en [este enlace](https://expressjs.com/en/4x/api.html#req).
 
-El segundo argumento \(`req`\) representa el mensaje de respuesta que Express le va a enviar al cliente. A continuación vamos a ver cómo utilizar este objeto para escribir el cuerpo, los encabezados y el código de respuesta, pero la lista completa de propiedades y métodos la encuentas en [este enlace](https://expressjs.com/en/4x/api.html#res).
+El segundo argumento \(`res`\) representa el mensaje de respuesta que Express le va a enviar al cliente. A continuación vamos a ver cómo utilizar este objeto para escribir el cuerpo, los encabezados y el código de respuesta, pero la lista completa de propiedades y métodos la encuentas en [este enlace](https://expressjs.com/en/4x/api.html#res).
 
 ## Escribiendo el cuerpo, código de respuesta y los encabezados
 
@@ -136,4 +136,3 @@ En vez de definir la carpeta de forma relativa, una mejor práctica es utilizar 
 ```javascript
 app.use(express.static(path.join(__dirname, 'public')));
 ```
-
