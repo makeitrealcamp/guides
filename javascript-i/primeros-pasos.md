@@ -33,11 +33,11 @@ También existe un atajo del teclado para abrir y cerrar las herramientas de des
 
 Una de las herramientas que incluyen las herramientas de desarrollador es la **Consola**, que la puedes abrir haciendo click en la pestaña "Consola" \(o en Inglés "Console"\) como se muestra en la siguiente imagen.
 
-![Herramientas de Desarrollador](https://github.com/makeitrealcamp/guias-de-make-it-real/tree/c2b90a7a324e43c4dc6689e308b6fc3f19e612d4/js/images/developer-tools.jpg)
+![Herramientas de Desarrollador](images/developer-tools.jpg)
 
 En la **Consola** podemos escribir una expresión de JavaScript, oprimir Enter, y ver el resultado de esa expresión en la siguiente línea. Por ejemplo, escribe `1+2` y oprime Enter. Deberás ver el número `3` en la siguiente línea como se muestra en la siguiente imagen.
 
-![La Consola](https://github.com/makeitrealcamp/guias-de-make-it-real/tree/c2b90a7a324e43c4dc6689e308b6fc3f19e612d4/js/images/developer-tools-console.jpg)
+![La Consola](images/developer-tools-console.jpg)
 
 ### A través de un documento HTML
 
@@ -225,4 +225,3 @@ console.log("Esto está muy bacano");
 ```
 
 Fíjate que la última línea del comentario es código JavaScript válido. Sin embargo, **ese código no se ejecuta porque está como comentario**.
-

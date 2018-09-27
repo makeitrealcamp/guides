@@ -21,7 +21,7 @@ Los **SGBD no relacionales** \(también conocidas como **NoSQL**\) modelan la in
 
 ## Prerequisitos
 
-* [Preparación](https://github.com/makeitrealcamp/guias-de-make-it-real/tree/c2b90a7a324e43c4dc6689e308b6fc3f19e612d4/db/prep/README.md)
+* [Preparación](../preparacion/)
 
 Para MongoDB se recomiendan los siguientes temas:
 
@@ -35,4 +35,3 @@ Para MongoDB se recomiendan los siguientes temas:
 * [SQL](sql.md)
 * [DDL](ddl.md)
 * [MongoDB](mongodb.md)
-
