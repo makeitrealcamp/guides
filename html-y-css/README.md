@@ -4,7 +4,7 @@
 
 ## Prerequisitos
 
-* [Preparación](https://github.com/makeitrealcamp/guias-de-make-it-real/tree/c2b90a7a324e43c4dc6689e308b6fc3f19e612d4/html-css/prep/README.md)
+* [Preparación](../preparacion/)
 
 ## Contenido
 
@@ -20,4 +20,3 @@
 * [Bordes, sombras y gradientes](bordes-sombras-y-gradientes.md)
 * [Media Queries](media-queries.md)
 * [Flexbox](flexbox.md)
-

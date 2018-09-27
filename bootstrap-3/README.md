@@ -6,8 +6,8 @@ Aunque la versión más reciente de Bootstrap es la 4, aún vale la pena aprende
 
 ## Prerequisitos
 
-* [Preparación](https://github.com/makeitrealcamp/guias-de-make-it-real/tree/c2b90a7a324e43c4dc6689e308b6fc3f19e612d4/bootstrap3/prep/README.md)
-* [HTML y CSS](https://github.com/makeitrealcamp/guias-de-make-it-real/tree/c2b90a7a324e43c4dc6689e308b6fc3f19e612d4/bootstrap3/html-css/README.md)
+* [Preparación](../preparacion/)
+* [HTML y CSS](../html-css/README.md)
 
 ## Contenido
 
@@ -17,4 +17,3 @@ Aunque la versión más reciente de Bootstrap es la 4, aún vale la pena aprende
 * [La grilla](la-grilla.md)
 * [Personalizando Bootstrap](personalizando-bootstrap.md)
 * [Utilizando plantillas](utilizando-plantillas.md)
-

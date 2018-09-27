@@ -12,9 +12,9 @@ Bootstrap es el framework CSS más popular de la actualidad y se utiliza para cr
 
 ## Prerequisitos
 
-* [HTML y CSS](https://github.com/makeitrealcamp/guias-de-make-it-real/tree/c2b90a7a324e43c4dc6689e308b6fc3f19e612d4/bootstrap4/html-css/README.md) - Especialmente te recomendamos estudiar Flexbox bien antes de empezar con Bootstrap 4.
+* [HTML y CSS](../html-css/README.md) - Especialmente te recomendamos estudiar Flexbox bien antes de empezar con Bootstrap 4.
 
-Aunque no es un prerequisito, te recomendamos empezar con [Bootstrap 3](https://github.com/makeitrealcamp/guias-de-make-it-real/tree/c2b90a7a324e43c4dc6689e308b6fc3f19e612d4/bootstrap4/bootstrap3/README.md).
+Aunque no es un prerequisito, te recomendamos empezar con [Bootstrap 3](../bootstrap3/README.md).
 
 ## Contenido
 
@@ -24,4 +24,3 @@ Aunque no es un prerequisito, te recomendamos empezar con [Bootstrap 3](https://
 * [La grilla](la-grilla.md)
 * [Clases utilitarias](clases-utilitarias.md)
 * [Personalizando Bootstrap](personalizando-bootstrap.md)
-

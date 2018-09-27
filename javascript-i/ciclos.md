@@ -108,7 +108,7 @@ for (var i = 0; i < 850; i ++) {
 
 Son equivalentes, la única diferencia es que el inicializador, la condición y el incrementador están definidos en la misma línea, pero se ejecuta de la misma forma que el `while`:
 
-![Flujo de la iteraci&#xF3;n](https://github.com/makeitrealcamp/guias-de-make-it-real/tree/c2b90a7a324e43c4dc6689e308b6fc3f19e612d4/js/images/iteration-flow2.png)
+![Flujo de la iteración](images/iteration-flow2.png)
 
 * La **inicialización** se ejecuta antes de evaluar la **condición** por primera vez.
 * La **condición** se ejecuta cada vez que se itera.
@@ -168,4 +168,3 @@ while (i > 0) {
   i--;
 }
 ```
-

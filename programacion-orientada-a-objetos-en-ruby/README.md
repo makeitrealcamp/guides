@@ -13,6 +13,5 @@ Ruby hace amplio uso de la POO y seguramente ya estás utilizando este paradigma
 * [Clases y objetos](clases-y-objetos.md)
 * [Métodos y atributos de clase](metodos-y-atributos-de-clase.md)
 * [Herencia](herencia.md)
-* [Módulos](https://github.com/makeitrealcamp/guias-de-make-it-real/tree/c2b90a7a324e43c4dc6689e308b6fc3f19e612d4/ruby-oop/4-modulos.md)
+* [Módulos](modulos.md)
 * [Excepciones](excepciones.md)
-

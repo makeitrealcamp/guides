@@ -18,11 +18,10 @@ La documentación completa de Express la encuentras en [https://expressjs.com/es
 
 ## Contenido
 
-* [Primeros Pasos](https://github.com/makeitrealcamp/guias-de-make-it-real/tree/c2b90a7a324e43c4dc6689e308b6fc3f19e612d4/express/1-primeros-pasos/README.md)
+* [Primeros Pasos](1-primeros-pasos.md)
 * [El protocolo HTTP](el-protocolo-http.md)
 * [Rutas](rutas.md)
 * [Vistas](vistas.md)
 * [Middlewares y manejo de errores](middlewares-y-manejo-de-errores.md)
 * [Formularios](formularios.md)
 * [Cookies y sesión](cookies-y-sesion.md)
-
