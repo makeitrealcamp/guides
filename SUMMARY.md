@@ -49,7 +49,7 @@
   * [Clases y objetos](programacion-orientada-a-objetos-en-ruby/clases-y-objetos.md)
   * [Métodos y atributos de clase](programacion-orientada-a-objetos-en-ruby/metodos-y-atributos-de-clase.md)
   * [Herencia](programacion-orientada-a-objetos-en-ruby/herencia.md)
-  * Módulos
+  * [Módulos](programacion-orientada-a-objetos-en-ruby/modulos.md)
   * [Excepciones](programacion-orientada-a-objetos-en-ruby/excepciones.md)
 * [JavaScript I](javascript-i/README.md)
   * [Primeros pasos](javascript-i/primeros-pasos.md)

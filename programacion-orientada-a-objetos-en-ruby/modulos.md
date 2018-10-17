@@ -2,7 +2,9 @@
 
 Los **módulos** en Ruby cumplen una doble función: evitan colisiones de nombres y nos ayudan a reutilizar código.
 
-Un **módulo** es un contenedor de clases, métodos y constantes. Los módulos se definen utilizando la palabra clave `module`. Creemos un módulo `MyModule`:
+Un **módulo** es un contenedor de clases, métodos y constantes. Los módulos se definen utilizando la palabra clave `module`.
+
+Creemos un módulo `MyModule`:
 
 ```ruby
 module MyModule
