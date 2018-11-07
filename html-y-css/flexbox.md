@@ -26,13 +26,13 @@ Antes de describir las **propiedades de CSS** veamos algunos ejemplos para que t
 
 Veamos un primer ejemplo. Imagína que queremos mostrar tres elementos dentro de un `div` separados por espacios iguales \(consulta el HTML y CSS haciendo click en la pestaña respectiva\):   
 
-[](codepen://germanescobar/opZxBp)
+{% embed url="https://codepen.io/germanescobar/pen/opZxBp" %}
 
 Aunque antes existían varios trucos para obtener el mismo resultado, con **Flexbox** ahora tenemos una forma más fácil y estándar de hacerlo.
 
 Veamos otro ejemplo, uno que es particularmente difícil sin **Flexbox**: centrar un elemento vertical y horizontalmente:
 
-[](codepen://germanescobar/KZWQxV)
+{% embed url="https://codepen.io/germanescobar/pen/KZWQxV" %}
 
 ## Propiedades para el contenedor
 
@@ -46,7 +46,7 @@ Para utilizar **Flexbox** debes aplicarle `display: flex` al **contendor**. Por 
 
 Eso es todo! Por defecto, los **ítems** \(los hijos del **contenedor**\) se van a posicionar de forma horizontal de izquierda a derecha **en una misma línea**, sin importar si son elementos de bloque o en línea:
 
-[](codepen://germanescobar/PEpQLr)
+{% embed url="https://codepen.io/germanescobar/pen/PEpQLr" %}
 
 Para cambiar la distribución de los **ítems** se utilizan las propiedades `flex-direction`, `flex-wrap`, `justify-content` y `align-items` sobre el **contenedor**.
 
@@ -61,7 +61,7 @@ Por defecto los **ítems** se ubican de izquierda a derecha. Sin embargo podemos
 
 Por ejemplo, para mostrar los elementos de derecha a izquierda podemos utilizar el valor `row-reverse`:
 
-[](codepen://germanescobar/xpqWZz)
+{% embed url="https://codepen.io/germanescobar/pen/xpqWZz" %}
 
 Puedes editar este ejemplo y cambiar el valor de `flex-direction` para experimentar.
 
@@ -77,7 +77,7 @@ Por defecto, si no hay suficiente espacio en el **contenedor**, los **ítems** s
 
 Por ejemplo, si queremos que los elementos que no quepan se ubiquen en nuevas filas podemos asignarle el valor `wrap` a `flex-wrap`:
 
-[](codepen://germanescobar/rpydLp)
+{% embed url="https://codepen.io/germanescobar/pen/rpydLp" %}
 
 ### Alineación horizontal
 
@@ -91,7 +91,7 @@ Para alinear los ítems de forma horizontal se utiliza la propiedad `justify-con
 
 Por ejemplo, el valor `space-around` se ve de la siguiente forma:
 
-[](codepen://germanescobar/vpxzJy)
+{% embed url="https://codepen.io/germanescobar/pen/vpxzJy" %}
 
 **Nota:** si cambias la propiedad `flex-direction` a `column` o `column-reverse`, `justify-content` se utiliza para alinear los ítems de forma vertical \(por eso se utiliza `flex-start` y `flex-end` en vez de `left` y `right`\).
 
@@ -107,7 +107,7 @@ Para alinear los ítems de forma vertical se utiliza la propiedad `align-items` 
 
 Por ejemplo, el valor `flex-end` se ve de la siguiente forma cuando los ítems tienen diferentes tamaños:
 
-[](codepen://germanescobar/xpqaXb)
+{% embed url="https://codepen.io/germanescobar/pen/xpqaXb" %}
 
 **Nota:** si cambias la propiedad `flex-direction` a `column` o `column-reverse`, `align-items` se utiliza para alinear los ítems de forma horizontal \(por eso se utiliza `flex-start` y `flex-end` en vez de `top` y `bottom`\).
 

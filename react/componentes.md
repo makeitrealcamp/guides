@@ -135,6 +135,6 @@ class Welcome extends Component {
 
 Veamos el mismo ejemplo en Codepen, haz click sobre el `h1`:
 
-[](codepen://germanescobar/xpZzrx)
+{% embed url="https://codepen.io/germanescobar/pen/xpZzrx" %}
 
 **Nota:** Utiliza siempre el método `setState` para cambiar el estado, de lo contrario la vista no se va a actualizar.

@@ -34,11 +34,11 @@ Por defecto **Bootstrap 4** utiliza la [fuente nativa](https://getbootstrap.com/
 
 Además de los encabezados `h1` a `h6`, **Boostrap** ahora incluye las clases `display-1`, `display-2`, `display-3` y `display-4` para crear encabezados que sobresalen sobre los normales:
 
-[](codepen://germanescobar/dZLdNG)
+{% embed url="https://codepen.io/germanescobar/pen/dZLdNG" %}
 
 Utiliza la clase `lead` en los párrafos que quieres que sobresalgan y la clase `blockquote` en las etiquetas `<blockquote>` para citar:
 
-[](codepen://germanescobar/EbJQmq)
+{% embed url="https://codepen.io/germanescobar/pen/EbJQmq" %}
 
 ### Tamaño
 
@@ -93,7 +93,7 @@ Para aplicarle los estilos de **Bootstrap** a las tablas debes agregar la clase 
 
 Veamos un ejemplo que puedes editar para probar diferentes configuraciones:
 
-[](codepen://germanescobar/XzQErm)
+{% embed url="https://codepen.io/germanescobar/pen/XzQErm" %}
 
 ### Encabezados
 

@@ -4,7 +4,7 @@ La grilla nos permite organizar nuestro contenido en la pantalla más facilmente
 
 El siguiente ejemplo muestra un contenedor con **2 filas**. La primera fila tiene **12 secciones** \(cada una de **1 columna**\) y la segunda fila tiene **2 secciones** \(cada una de **6 columnas**\).
 
-[](codepen://germanescobar/POLdbZ)
+{% embed url="https://codepen.io/germanescobar/pen/POLdbZ" %}
 
 Fíjate que entre las **secciones** hay un espacio, llamado gutter. Por defecto ese espacio \(padding\) es de `15px` a cada lado. Entre una fila y otra no existe ningún espacio.
 
@@ -82,7 +82,7 @@ El siguiente ejemplo tiene una fila dividida en **3 secciones**, cada una de **4
 
 Dentro de una **sección** puedes anidar otra **fila** que nuevamente se va a dividir en **12 columnas** como se muestra a continuación:
 
-[](codepen://germanescobar/BmbObZ)
+{% embed url="https://codepen.io/germanescobar/pen/BmbObZ" %}
 
 El siguiente ejemplo tiene una **fila** que se divide en dos **secciones**, cada una de **6 columnas**. Dentro de la primera **sección** estamos definiendo otra **fila** con una **sección** de **12 columnas**:
 
