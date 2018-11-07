@@ -2,6 +2,8 @@
 
 Antes de continuar te recomendamos ver el siguiente video que muestra una introducción a Bootstrap 3 para que te des una idea de lo que puedes hacer con este framework:
 
+{% youtube %} https://youtube.com/watch?v=Zes1j_Vol9s {% endyoutube %}
+
 ## Empezando con Bootstrap
 
 Aunque existen varias formas de empezar con Bootstrap, quizá la forma más fácil es utilizar la siguiente plantilla HTML:
@@ -39,4 +41,3 @@ Estamos usando un **CDN \(Content Delivery Network\)** que se encarga de alojar 
 Puedes encontrar la documentación de Bootstrap 3 en [https://getbootstrap.com/docs/3.3/](https://getbootstrap.com/docs/3.3/).
 
 La documentación está en Inglés pero es muy completa. Te recomendamos usarla como referencia.
-

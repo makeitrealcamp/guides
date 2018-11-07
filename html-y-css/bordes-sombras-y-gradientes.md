@@ -8,6 +8,8 @@ Antes se utilizaban trucos para lograr el mismo efecto con imágenes pero ahora 
 
 Veamos primero un ejemplo de bordes redondeados \(consulta el HTML y CSS en la pestaña respectiva\):
 
+[](codepen://germanescobar/QampxP)
+
 Para crear bordes redondeados utiliza la propiedad `border-radius`.
 
 `border-radius` recibe un tamaño \(puede ser en pixeles, rems, etc.\) como valor.
@@ -65,6 +67,8 @@ Utiliza la propiedad `box-shadow` para agregarle sombra a una caja y `text-shado
 
 Veamos primero un ejemplo \(consulta el HTML y CSS en la pestaña respectiva\):
 
+[](codepen://germanescobar/jYZKYV)
+
 Para agregarle sombra a una caja utiliza la propiedad `box-shadow`.
 
 `box-shadow` recibe los siguientes valores separados por espacio:
@@ -78,6 +82,8 @@ Para agregarle sombra a una caja utiliza la propiedad `box-shadow`.
 ### Sombra de texto
 
 Veamos primero un ejemplo \(consulta el HTML y CSS en la pestaña respectiva\):
+
+[](codepen://germanescobar/VyXWga)
 
 Para agregarle sombra al texto utiliza la propiedad `text-shadow`.
 
@@ -109,6 +115,8 @@ Para crear un gradiente lineal utiliza la función `linear-gradient` en la propi
 
 Por defecto la dirección es de arriba hacia abajo:
 
+[](codepen://germanescobar/bavrNv)
+
 #### Dirección
 
 Para cambiar la **dirección** puedes pasarle un primer argumento a `linear-gradient`. Los posibles valores son:
@@ -135,6 +143,8 @@ Puedes utilizar más de dos colores en tu gradiente:
 
 Veamos este ejemplo en Codepen:
 
+[](codepen://germanescobar/Ozwdjv)
+
 También puedes cambiar la ubicación donde cambia cada color:
 
 ```css
@@ -142,6 +152,8 @@ También puedes cambiar la ubicación donde cambia cada color:
   background: linear-gradient(to right, blue 20%, red 60%, yellow, green);
 }
 ```
+
+[](codepen://germanescobar/JMBxMK)
 
 #### Transparencias
 
@@ -152,6 +164,8 @@ Los gradientes soportan transparencias que se pueden utilizar para crear efectos
   background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1));
 }
 ```
+
+[](codepen://germanescobar/wpxNYY)
 
 ### Gradientes radiales
 
@@ -165,6 +179,8 @@ Para crear un gradiente radial utiliza la función `radial-gradient` en la propi
 
 Por defecto el gradiente inicia en el centro de la caja y tiene forma de elipse:
 
+[](codepen://germanescobar/zpLeXB)
+
 Si quieres cambiar el centro del gradiente puedes pasarle un primer argumento a `radial-gradient`:
 
 ```css
@@ -175,6 +191,8 @@ Si quieres cambiar el centro del gradiente puedes pasarle un primer argumento a 
 
 Veamos este ejemplo en Codepen:
 
+[](codepen://germanescobar/ZvjPzb)
+
 Además de posiciones exactas puedes utilizar `top`, `right`, `bottom`, `left`, `top right`, etc.
 
 También puedes cambiar la forma del gradiente a un círculo de la siguiente forma:
@@ -184,4 +202,3 @@ También puedes cambiar la forma del gradiente a un círculo de la siguiente for
   background: radial-gradient(circle at 20px 20px, red, yellow);
 }
 ```
-

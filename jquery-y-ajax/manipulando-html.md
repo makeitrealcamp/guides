@@ -30,6 +30,8 @@ La variable `$` es una función que recibe como primer parámetro un selector CS
 
 En nuestro ejemplo estamos seleccionando el elemento `body`. Después del selector va la acción que queremos realizar sobre el elemento, o los elementos, seleccionados. En este caso `.append("<h1>Hola Mundo</h1>")`, es decir, agregar un `h1` al final del `body`:
 
+[](codepen://germanescobar/zwrPVa)
+
 Fíjate que el `append` agrega el contenido **después** del párrafo. Si quieres insertarlo antes puedes utilizar `prepend`:
 
 ```javascript
@@ -134,4 +136,3 @@ $('div').addClass("active")
 ```
 
 Puedes encadenar todos los métodos en una misma línea o los puedes separar en diferentes líneas como lo hicimos en este ejemplo para mayor claridad.
-
