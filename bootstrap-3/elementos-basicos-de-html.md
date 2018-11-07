@@ -8,6 +8,8 @@ Utiliza los encabezados `<h1>` a `<h6>` normalmente en tus páginas.
 
 También puedes utilizar la etiqueta `<small>` para agregar texto secundario como se muestra en el siguiente ejemplo:
 
+[](codepen://germanescobar/QOPagd)
+
 ## Alineación
 
 Utiliza las clases `text-left`, `text-center`, `text-right` y `text-justify` en párrafos para alinearlos a la izquierda, centro, derecha y justificados respectivamente.
@@ -23,6 +25,8 @@ Para aplicarle los estilos de **Bootstrap** a las tablas debes agregar la clase 
 ```
 
 Veamos un ejemplo que puedes editar para probar diferentes configuraciones:
+
+[](codepen://germanescobar/ZKNWQW)
 
 [Ver la documentación de Bootstrap](https://getbootstrap.com/docs/3.3/css/#tables).
 
@@ -122,6 +126,8 @@ Agrega la clase `btn` sobre las etiquetas `<a>` y `<button>`, en conjunto con un
 
 Veamos un ejemplo con diferentes tipos de botones:
 
+[](codepen://germanescobar/VbOaGV)
+
 [Abrir en la documentación de Bootstrap](http://getbootstrap.com/css/#buttons)
 
 ### Tamaños
@@ -165,4 +171,3 @@ Utiliza la clase `img-thumbnail` para agregarle un bordes redondeados y un borde
 ```markup
 <img src="..." alt="..." class="img-thumbnail">
 ```
-

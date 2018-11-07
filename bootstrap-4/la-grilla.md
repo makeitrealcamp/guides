@@ -4,6 +4,8 @@ La grilla nos permite organizar nuestro contenido en la pantalla más facilmente
 
 El siguiente ejemplo muestra un contenedor con **2 filas**. La primera fila tiene **12 secciones** \(cada una de **1 columna**\) y la segunda fila tiene **2 secciones** \(cada una de **6 columnas**\).
 
+[](codepen://germanescobar/YEMaJO)
+
 Fíjate que entre las **secciones** hay un espacio, llamado **gutter**. Por defecto ese espacio \(padding\) es de `15px` a cada lado. Entre una fila y otra no existe ningún espacio.
 
 ## Contenedores
@@ -129,6 +131,8 @@ Si las secciones no ocupan las **12 columnas** las puedes alinear de varias form
 
 El siguiente ejemplo muestra diferentes alineaciones con **2 secciones** en cada fila:
 
+[](codepen://germanescobar/WXWKvP)
+
 ## Alineación vertical
 
 Puedes alinear las secciones de diferentes formas \(de nuevo, gracias a Flexbox\). Las siguientes clases las puedes agregar a las filas \(`row`\) o a las secciones:
@@ -145,6 +149,8 @@ Los espacios entre columnas se pueden remover agregando la clase `no-gutters` a 
 
 Dentro de una **sección** puedes anidar otra **fila** que nuevamente se va a dividir en **12 columnas** como se muestra a continuación:
 
+[](codepen://germanescobar/MORBJw)
+
 El siguiente ejemplo mostraría una **fila** que se divide en dos **secciones**, cada una de **6 columnas**. Dentro de la primera **sección** estamos definiendo otra **fila** con una **sección** de **12 columnas**:
 
 ```markup
@@ -159,4 +165,3 @@ El siguiente ejemplo mostraría una **fila** que se divide en dos **secciones**,
 ```
 
 Esto nos permite distribuir los elementos de la página en configuraciones bastante complejas.
-
