@@ -36,7 +36,7 @@ Para cada una de estas categorías existen varios algoritmos que debemos conocer
 * [Describiendo un algoritmo](describiendo-algoritmos.md)
 * [Complejidad (Big-O)](complejidad.md)
 * [Estructuras de datos](estructuras-de-datos.md)
-* [Recursión](recursión.md)
+* [Recursión](recursion.md)
 * [Ordenamiento](ordenamiento.md)
 * [Búsqueda](busqueda.md)
 * [Grafos](grafos.md)

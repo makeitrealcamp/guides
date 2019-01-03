@@ -150,7 +150,7 @@
   * [Describiendo un algoritmo](algoritmos/describiendo-algoritmos.md)
   * [Complejidad (Big-O)](algoritmos/complejidad.md)
   * [Estructuras de datos](algoritmos/estructuras-de-datos.md)
-  * [Recursión](algoritmos/recursión.md)
+  * [Recursión](algoritmos/recursion.md)
   * [Ordenamiento](algoritmos/ordenamiento.md)
   * [Búsqueda](algoritmos/busqueda.md)
   * [Grafos](algoritmos/grafos.md)
