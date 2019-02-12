@@ -50,4 +50,8 @@ La lista se divide en la mitad. Si la longitud no es par, una de las listas va a
 
 La unión de las listas se hace comparando cada posición e insertando en una nueva lista primero el menor y luego el mayor de cada posición.
 
-## Otros algoritmos de ordenamiento
+## Quick sort
+
+Este algoritmo también es muy eficiente con complejidad O(n log n) y, como el merge sort, se basa en la idea de que es más fácil unir dos listas previamente ordenadas que tratar con una gran lista desordenada.
+
+En el quick sort se selecciona un valor del arreglo (de forma aleatoria o el de la mitad) llamado el **pivote**. Se empieza a recorrer el arreglo desde los extremos intercambiando los elementos para que todos los que sean mayores al **pivote** queden a la derecha de todos los elementos menores al pivote. Eso crea una división natural que se utiliza para ordenar las listas de forma recursiva y al final unirlas.

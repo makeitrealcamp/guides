@@ -16,13 +16,15 @@ Los arreglos dinámicos son mucho más flexibles pero pueden llegar a ser lentos
 
 Los diccionarios están compuestos de llaves y valores. La principal característica de un diccionario es que la búsqueda de un elemento por llave es constante `O(1)`.
 
+La mayoría de lenguajes incluyen diccionarios. En Ruby se llaman hashes, en JavaScript objetos y en Python diccionarios.
+
 ## Listas encadenadas
 
 Las listas encadenadas son similares a los arreglos, en el sentido que son una lista de elementos, pero la implementación es diferente.
 
 Una lista encadenada está compuesta de nodos. Cada nodo tiene un valor y una referencia al siguiente nodo como se muestra en la siguiente imagen:
 
-
+![Lista encadenada](https://s3.amazonaws.com/makeitreal/images/full-stack-curriculum/linked-list.png)
 
 La ventaja principal de una lista encadenada (sobre un arreglo) es que insertar elementos en la mitad de la lista es muy fácil (sólo se deben cambiar las referencias de los nodos). Sin embargo, la desventaja es que no se puede acceder a una posición aleatoria (toca recorrer la lista hasta llegar a la posición).
 
@@ -51,21 +53,45 @@ list.forEach((val, i) => {
 list.removeAt(0);
 ```
 
-`add` es `O(n)` aunque se puede mantener una referencia interna al último nodo de la lista y se convertiría en `O(1)`.
+La operación `add` es `O(n)` aunque se puede mantener una referencia interna al último nodo de la lista y se convertiría en `O(1)`.
 
-`addAt`, `valueAt` y `removeAt` son `O(n)` porque toca recorrer la lista hasta llegar a la posición deseada.
+Las operaciones `addAt`, `valueAt` y `removeAt` son `O(n)` porque toca recorrer la lista hasta llegar a la posición deseada.
 
-En la vida real las listas encadenadas no son muy comunes (los arreglos funcionan bien en la mayoría de los casos) pero igual es importante saber que existen y es un buen ejercicio hacer la implementación.
+En la vida real las listas encadenadas **no** son muy comunes (los arreglos funcionan bien en la mayoría de los casos) pero igual es importante saber que existen y es un buen ejercicio hacer la implementación.
 
 ## Árboles
 
 Los árboles están compuestos de nodos como las listas encadenadas. Sin embargo, un árbol tiene un nodo raíz con referencia a cero o más nodos hijos. Estos nodos, a su vez, tienen referencias a otros nodos hijos, y así sucesivamente.
 
-Cuando un nodo no tiene referencia a otros nodos se le conoce como un nodo hoja.
+![Árbol](https://s3.amazonaws.com/makeitreal/images/full-stack-curriculum/tree.png)
 
-Un árbol en el que cada nodo puede tener máximo dos hijos se le conoce como un **àrbol binario**.
+A los nodos que no tienen hijos se le conoce como un nodo hoja.
 
-En la vida real los árboles se utilizan para optimizar búsquedas.
+Un árbol en el que cada nodo puede tener máximo dos hijos se le conoce como un **árbol binario**.
+
+Un árbol puede ser ordenado o desordenado.
+
+En la vida real los árboles se utilizan para representar jerarquías (p.e. las posiciones en una empresa, los elementos en HTML, etc.) y optimizar búsquedas.
+
+La forma más fácil de implementar un árbol es utilizando nodos interconectados, similar a como se implementan las listas encadenadas. La diferencia es que la lista encadenada sólo tiene una referencia a otro nodo mientras que los árboles pueden tener varias referencias a otros nodos.
+
+Las operaciones más importantes de un árbol son:
+
+* Insertar un nodo (dependiendo del tipo de árbol la ubicación puede ser asignada automática o manualmente).
+* Remover un nodo
+* Recorrer el árbol
+
+Existen dos formas de recorrer un árbol. La primera es empezar por la raíz y recorrer la rama izquierda. Una vez se ha recorrido toda esa rama se realiza el mismo proceso con las demás ramas que se desprenden de la raíz. A este proceso se le conoce como **búsqueda por profunidad**, en inglés Depth-First Search (DFS).
+
+La otra forma es ir imprimiendo nivel por nivel. Se inicia por la raíz, después se imprimen todos los hijos de la raíz. Después se imprimen todos los nietos y así sucesivamente (por niveles). A este proceso se le conoce como **búsqueda en anchura**, en inglés Breadth-First Search (BFS).
+
+### Ejercicio
+
+Implementar un árbol binario que vamos a utilizar de la siguiente forma:
+
+```javascript
+const root = 
+```
 
 ## Grafos
 

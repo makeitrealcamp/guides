@@ -1,6 +1,6 @@
 # Algoritmos
 
-Un algoritmo describe una serie de pasos que se utilizan para solucionar un problema o realizar alguna tarea específica.
+Un algoritmo describe una serie de pasos que se utilizan para resolver alguna clase de problemas (p.e. ordenar una lista) o realizar una tarea específica.
 
 Un algoritmo puede ser ejecutado por personas o computadores, pero en esta sección nos vamos a concentrar en algoritmos que van a ser ejecutados por computadores (obviamente).
 
@@ -16,7 +16,7 @@ Por otro lado, el rendimiento de un algoritmo también es importante y para eso 
 
 Además de arreglos y diccionarios, vamos a ver otras estructuras de datos como matrices, listas encadenadas (linked lists), árboles, grafos, colas (queues) y pilas (stacks). Muchos algoritmos dependen de estas estructuras de datos específicas. Por ejemplo, encontrar la ruta más corta es más fácil utilizando un grafo.
 
-Existen varias categorías de algoritmos e identificar a cuál categoría pertenece un problema es un primer paso. Algunas categorías son:
+Existen varias clases de algoritmos e identificar a cuál clase pertenece un problema es un primer paso. Algunas clases son:
 
 * Ordenamiento de listas (p.e. ordenar una lista de números en un arreglo)
 * Búsqueda en listas (p.e. encontrar un número dentro de un arreglo)
@@ -24,7 +24,7 @@ Existen varias categorías de algoritmos e identificar a cuál categoría perten
 * Programación dinámica
 * Conjuntos y cadenas (p.e. criptografía)
 
-Para cada una de estas categorías existen varios algoritmos que debemos conocer y aprender a utilizar para resolver diversos problemas.
+Para cada una de estas clases existen varios algoritmos que debemos conocer y aprender a utilizar para resolver diversos problemas.
 
 ## Prerequisitos
 
