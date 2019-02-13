@@ -42,8 +42,8 @@ MergeSort(lista)
     divida la lista en dos (lista1 y lista2)
     lista1 = MergeSort(lista1)
     lista2 = MergeSort(lista2)
-    una lista1 y lista2
-    retorne la lista unida
+    mezcle lista1 y lista2
+    retorne la lista mezclada
 ```
 
 La lista se divide en la mitad. Si la longitud no es par, una de las listas va a tener un elemento de más.
@@ -52,6 +52,22 @@ La unión de las listas se hace comparando cada posición e insertando en una nu
 
 ## Quick sort
 
-Este algoritmo también es muy eficiente con complejidad O(n log n) y, como el merge sort, se basa en la idea de que es más fácil unir dos listas previamente ordenadas que tratar con una gran lista desordenada.
+Este algoritmo también es muy eficiente con complejidad O(n log n) y se basa en la idea de que es mejor ordenar dos listas independientes y después unirlas.
 
-En el quick sort se selecciona un valor del arreglo (de forma aleatoria o el de la mitad) llamado el **pivote**. Se empieza a recorrer el arreglo desde los extremos intercambiando los elementos para que todos los que sean mayores al **pivote** queden a la derecha de todos los elementos menores al pivote. Eso crea una división natural que se utiliza para ordenar las listas de forma recursiva y al final unirlas.
+En el quick sort se selecciona un valor de la lista (de forma aleatoria o el de la mitad) llamado el **pivote**. Se empieza a recorrer el arreglo desde los extremos intercambiando los elementos para que todos los que sean menores al **pivote** queden a la izquierda de todos los elementos mayores al pivote.
+
+Eso crea una división natural que se utiliza para ordenar las listas de forma recursiva y al final unirlas. La lista se divide en dos y se vuelve a aplicar quicksort a cada uno de las listas. Por último se unen las dos listas ordenadas.
+
+```
+QuickSort(lista)
+  Si la lista es vacía o tiene un elemento
+    retorne la lista
+  De lo contrario
+    seleccione el pivote (p.e. elemento de la mitad de la lista)
+    recorra la lista desde los extremos intercambiando los elementos
+    divida la lista en dos (lista1 y lista 2)
+    lista1 = QuickSort(lista1)
+    lista2 = Quicksort(lista2)
+    una lista1 y lista2
+    retorne la lista unida
+```

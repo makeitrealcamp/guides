@@ -18,13 +18,19 @@ La siguiente gráfica muestra la relación entre el número de datos (eje x) y e
 
 El ejemplo del capítulo anterior en el que describimos una búsqueda simple en un arreglo es un ejemplo de una complejidad lineal O(n).
 
-### Complejidad exponencial - O(n^2)
+También puede ocurrir que recibamos dos listas como datos de entrada y debamos recorrerlas de forma independiente. En este caso la complejidad sería `O(n+m)` donde `n` es la longitud de la primera lista y `m` la longitud de la segunda lista.
 
-A medida que aumenta la cantidad de datos, el número de operaciones crece de forma exponencial. Por ejemplo, si para un dato necesitamos 2 operaciones, para 2 datos vamos a necesitar 4 operaciones, para 3 datos 8 operaciones y así sucesivamente.
+### Complejidad exponencial - O(n^2), O(n^3), etc.
+
+A medida que aumenta la cantidad de datos, el número de operaciones crece de forma exponencial. Por ejemplo, una complejidad cuadrática (`O(n^2)`) si para un dato necesitamos 2 operaciones, para 2 datos vamos a necesitar 4 operaciones, para 3 datos 9 operaciones y así sucesivamente.
 
 ![Complejidad exponencial](https://s3.amazonaws.com/makeitreal/images/full-stack-curriculum/on2.png)
 
 En la vida real la complejidad exponencial ocurre cuando tenemos ciclos anidados. Dos ciclos anidados generan una complejidad O(n^2), tres ciclos anidados O(n^3) y así sucesivamente.
+
+También puede ocurrir que recibamos dos listas que debamos recorrer de forma anidada. En este caso la complejidad sería `O(n*m)` donde `n` es la longitud de la primera lista y `m` la longitud de la segunda lista.
+
+**Nota:** No confundir `O(n*m)` que es exponencial con `O(n+m)` que es lineal.
 
 ### Complejidad logarítmica O(log n)
 
