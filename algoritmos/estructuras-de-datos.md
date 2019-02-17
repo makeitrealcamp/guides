@@ -59,6 +59,32 @@ Las operaciones `addAt`, `valueAt` y `removeAt` son `O(n)` porque toca recorrer 
 
 En la vida real las listas encadenadas **no** son muy comunes (los arreglos funcionan bien en la mayoría de los casos) pero igual es importante saber que existen y es un buen ejercicio hacer la implementación.
 
+## Colas (queues)
+
+Una cola es una estructura que permite agregar elementos al final de la lista y obtener el primero de la lista (como una fila de pago en un supermercado). A esto se le conoce como PEPS (primero en entrar, primero en salir).
+
+Las operaciones principales de una cola son:
+
+* Agregar un valor.
+* Obtener el primer valor.
+* Obtener el tamaño.
+
+Las colas se usan en programación principalmente para almacenar información que va a ser procesada en el futuro.
+
+Las colas se pueden implementar sobre un arreglo limitando las operaciones para que se comporte como una cola (p.e. no se debe poder obtener un elemento por posición ni insertar en cualquier posición).
+
+## Pilas (stacks)
+
+Una pila es una estructua que permite agregar elementos al principio de una lista y obtener el primero de esa lista (como una pila de libros en la que solo puedes tomar el libro de la parte superior, y en la que solo puedes ubicar libros encima de los demás). A esto se le conoce como UEPS (último en entrar, primero en salir).
+
+Las operaciones principales de una pila son:
+
+* Agregar un valor.
+* Obtener el último valor agregado.
+* Obtener el tamaño.
+
+Las pilas se pueden implementar utilizando un arreglo y limitando las operaciones para que se comporte como una pila (p.e. no se debe poder obtener un elemento por posición ni insertar en cualquier posición).
+
 ## Árboles
 
 Los árboles están compuestos de nodos como las listas encadenadas. Sin embargo, un árbol tiene un nodo raíz con referencia a cero o más nodos hijos. Estos nodos, a su vez, tienen referencias a otros nodos hijos, y así sucesivamente.
@@ -90,42 +116,133 @@ La otra forma es ir imprimiendo nivel por nivel. Se inicia por la raíz, despué
 Implementar un árbol binario que vamos a utilizar de la siguiente forma:
 
 ```javascript
-const root = 
+const tree = new BinaryTree();
+tree.add(4);
+tree.add(2);
+tree.add(7);
+tree.add(1);
+tree.add(3);
+```
+
+El árbol debe queda de la siguiente forma:
+
+```
+     4
+   /   \
+  2     7
+ / \
+1   3
+```
+
+Adicionalmente al método `add` intenta implementar el método `traverseDFS` (recorrido de profundidad) y `traverseBFS` (recorrido de anchura) que reciben una función:
+
+```javascript
+tree.traverseDFS(function(e) { console.log(e); });
+// 4
+// 2
+// 1
+// 3
+// 7
+// 5
+
+tree.traverseBFS(function(e) { console.log(e); });
+// 4
+// 2
+// 7
+// 1
+// 3
+// 5
 ```
 
 ## Grafos
 
-Los grafos son nodos interconectados entre sí.
+Los grafos son **nodos** interconectados entre sí a través de **conexiones**.
 
-Los gráfos pueden ser cíclicos o acíclicos.
+![Grafo direccionado](https://s3.amazonaws.com/makeitreal/images/full-stack-curriculum/graph-directed.png)
 
-Los grafos pueden ser direccionados o no direccionados.
+**Nota:** A los nodos se les conoce como **vértices** y a las conexiones como **aristas** (en Inglés **edges**).
 
-## Colas (queues)
+El grafo de la imagen está direccionado, es decir, cada conexión va en un solo sentido o dirección. Un grafo también puede ser doblemente direccionado (las conexiones van en ambos sentidos) como se muestra en la siguiente imagen:
 
-Una cola es una estructura que permite agregar elementos al final de la lista y obtener el primero de la lista (como una fila de pago en un supermercado). A esto se le conoce como PEPS (primero en entrar, primero en salir).
+![Grafo doblemente direccionado](https://s3.amazonaws.com/makeitreal/images/full-stack-curriculum/graph-undirected.png)
 
-Las operaciones principales de una cola son:
+Las **conexiones** pueden tener un peso (un valor) como se muestra en la siguiente imagen:
 
-* Agregar un valor.
-* Obtener el primer valor.
-* Obtener el tamaño.
+![Grafo con pesos](https://s3.amazonaws.com/makeitreal/images/full-stack-curriculum/graph-edge-values.png)
 
-Las colas se usan en programación principalmente para almacenar información que va a ser procesada en el futuro.
+Los gráfos pueden contener ciclos o ser acíclico (sin ciclos).
 
-Las colas se pueden implementar sobre un arreglo limitando las operaciones para que se comporte como una cola (p.e. no se debe poder obtener un elemento por posición ni insertar en cualquier posición).
+Existen muchas formas de implementar los grafos: lista de adyacencia, matriz de adyacencia o como una lista de nodos con referencia a otros nodos (similar a como se implementaría una lista encadenada o un árbol). La implementación depende en gran parte del problema que se quiere solucionar.
 
-## Pilas (stacks)
+**Nota:** Las listas encadenadas y los árboles son grafos con ciertas restricciones (p.e. una lista encadenada es un grafo acíclico que tiene una cabeza y en donde cada nodo solo puede estar conectado a máximo otro nodo).
 
-Una pila es una estructua que permite agregar elementos al principio de una lista y obtener el primero de esa lista (como una pila de libros en la que solo puedes tomar el libro de la parte superior, y en la que solo puedes ubicar libros encima de los demás). A esto se le conoce como UEPS (último en entrar, primero en salir).
+### Listas de adyacencia
 
-Las operaciones principales de una pila son:
+Se utiliza un diccionario en donde la llave representa el nodo y el valor es un arreglo que hace referencia a los otros nodos a los que está conectado.
 
-* Agregar un valor.
-* Obtener el último valor agregado.
-* Obtener el tamaño.
+```javascript
+const graph = {
+  "A": ["C", "G"],
+  "B": ["A"],
+  "C": ["E"],
+  "D": ["A", "F"],
+  "E": [],
+  "F": [],
+  "G": ["E"]
+}
+```
 
-Las pilas se pueden implementar utilizando un arreglo y limitando las operaciones para que se comporte como una pila (p.e. no se debe poder obtener un elemento por posición ni insertar en cualquier posición).
+Si las conexiones tienen un peso se puede agregar esta información en la lista de adyacencia, por ejemplo:
+
+```javascript
+const graph = {
+  "A": [{ n: "C", p: 6 }, { n: "G", 3 }],
+  ...
+}
+```
+
+### Matrices de adyacencia
+
+Se utiliza una matriz (un arreglo de arreglos) para representar las relaciones en donde cada fila y columna representa un **nodo**. Las intersecciones representan las conexiones, se utiliza un `0` si no hay conexión y un `1` si la hay.
+
+```javascript
+const graph: [
+  [-1, 0, 1, 0, 0, 1, 0],
+  [1, -1, 0, 0, 0, 0, 0],
+  [0, 0, -1, 0, 1, 0, 0],
+  [1, 0, 0, -1, 0, 1, 0],
+  [0, 0, 0, 0, -1, 0, 0],
+  [0, 0, 0, 0, 1, -1, 0],
+  [0, 0, 0, 0, 0, 0, -1]
+];
+```
+
+Si las conexiones tienen peso se puede utilizar el peso en vez de `1` para representar las conexiones.
+
+### Nodos interconectados
+
+Se utiliza una estructura de datos adicional que tiene un nombre (o un valor) y un arreglo de referencia a otros nodos:
+
+```javascript
+function Node(name, refs) {
+  this.name = name;
+  this.refs = refs;
+}
+
+const a = new Node("A");
+const b = new Node("B");
+const c = new Node("C");
+const d = new Node("D");
+const e = new Node("E");
+const f = new Node("F");
+const g = new Node("F");
+
+a.refs.push(c, g);
+b.refs.push(a);
+c.refs.push(e);
+d.refs.push(a, f);
+g.refs.push(e);
+```
 
 ## Conjuntos (sets)
 
