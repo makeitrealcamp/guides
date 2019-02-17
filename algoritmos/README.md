@@ -39,5 +39,4 @@ Para cada una de estas clases existen varios algoritmos que debemos conocer y ap
 * [Recursión](recursion.md)
 * [Ordenamiento](ordenamiento.md)
 * [Búsqueda](busqueda.md)
-* [Grafos](grafos.md)
 * [Programación dinámica](programacion-dinamica.md)

@@ -153,5 +153,4 @@
   * [Recursión](algoritmos/recursion.md)
   * [Ordenamiento](algoritmos/ordenamiento.md)
   * [Búsqueda](algoritmos/busqueda.md)
-  * [Grafos](algoritmos/grafos.md)
   * [Programación dinámica](algoritmos/programacion-dinamica.md)
