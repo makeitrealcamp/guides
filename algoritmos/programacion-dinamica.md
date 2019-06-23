@@ -12,4 +12,4 @@ El problema es que estamos calculando `f(3)` dos veces y `f(2)` tres veces. Pode
 
 Utilizando el objeto adicional, nuestra recursión quedaría de la siguiente forma, en donde los valores en naranja ya se encuentran en el objeto:
 
-![Los valores en naranja ya están calculados](https://s3.amazonaws.com/makeitreal/images/full-stack-curriculum/dynamic-programming-2.png)
+![Los valores en naranja ya están calculados o son casos base](https://s3.amazonaws.com/makeitreal/images/full-stack-curriculum/dynamic-programming-2.png)
