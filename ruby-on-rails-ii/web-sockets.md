@@ -2,15 +2,15 @@
 
 Web Sockets es una tecnología que permite a los navegadoress recibir información del servidor y actualizarse en tiempo real, sin necesidad de refrescar la página.
 
-La forma en que funciona Web Sockets es que el navegador, a través de JavaScript, abre una conexión HTTP con el servidor y **maniente esa conexión abierta** para que el servidor pueda enviarle información al navegador en cualquier momento (el cliente también puede enviarle información al servidor a través de esta conexión).
+La forma en que funciona Web Sockets es que el navegador, a través de JavaScript, abre una conexión HTTP con el servidor y **mantiene esa conexión abierta** para que el servidor pueda enviarle información al navegador en cualquier momento (el cliente también puede enviarle información al servidor a través de esta conexión).
 
-Para que Web Sockets funcione se debe escribir código tanto en el cliente (con JavaScript) como en el servidor (en este caso con Ruby).
+Para que Web Sockets funcione se debe escribir código tanto en el cliente (con JavaScript o CoffeeScript) como en el servidor (p.e. con Ruby).
 
-Rails 5 introduce Action Cable, un módulo facilita la implementación de WebSockets en nuestras aplicaciones.
+Rails 5 introduce [Action Cable](https://guides.rubyonrails.org/action_cable_overview.html), un módulo que facilita la implementación de WebSockets en nuestras aplicaciones.
 
 ## Conceptos básicos
 
-En Action Cable se manejan algunos conceptos que vamos a listar y definir a continuación:
+Antes de empezar a trabajar con Action Cable debes conocer los siguientes conceptos:
 
 * **Connection:** representa la conexión HTTP entre el cliente y servidor, generalmente se abre una única conexión por sesión (por pestaña del navegador).
 * **Channel:** los canales son lo equivalente a los controladores en Rails, nos permiten organizar la comunicación entre el servidor y los clientes.
@@ -18,7 +18,7 @@ En Action Cable se manejan algunos conceptos que vamos a listar y definir a cont
 
 ## Nuestro primer canal
 
-Lo primer que se debe pensar en las aplicaciones que requieren comunicación en tiempo real es qué canales necesitamos crear en la aplicaciónn. Es similar al proceso de pensar qué controladores necesitamos crear.
+Lo primero que debemos pensar en nuestras aplicaciones es qué **canales** vamos a necesitar crear.
 
 Por ejemplo, si estamos creando un sistema de chat con "cuartos" donde varias personas pueden interactuar en un mismo cuarto, podríamos pensar en un canal llamado `Room` que represente cada cuarto que se cree. Cuando un usuario ingresa a un cuarto se suscribe al canal de ese cuarto para recibir los mensajes de otras personas.
 
@@ -31,26 +31,28 @@ $ rails generate channel room
 El comando anterior crea dos archivos:
 
 * `app/channels/room_channel.rb` - nos permite configurar el canal y recibir información del cliente desde el servidor.
-* `app/assets/javascripts/channels/room.coffee` - crea la conexión al canal y nos permite recibir información del servidor en el cliente.
+* `app/assets/javascripts/channels/room.coffee` - crea la conexión al canal y nos permite enviar y recibir información al servidor (desde el cliente).
 
 Ahora podemos empezar a enviar información del servidor al cliente y viceversa!
 
-**Nota:** De esta forma se crear un único canal al que todos los clientes se van a conectar automáticamente. Más adelante vamos a ver cómo pasarle parámetros a los canales.
+**Nota:** Con el comando anterior se crea un único canal al que todos los clientes se van a conectar automáticamente. Más adelante vamos a ver cómo pasarle parámetros a los canales.
 
 ### Enviando información al cliente (desde el servidor)
 
 Para enviar un mensaje a todos los clientes conectados a un canal utilizamos el método `ActionCable.server.broadcast` desde cualquier canal, controlador, modelo o helper:
 
-```
+```ruby
 data = { message: "Hola Amigos", user: "pedro0553" }
-ActionCable.server.broadcast("RoomChannel", data);
+ActionCable.server.broadcast("RoomChannel", data)
 ```
+
+**Nota:** Estas líneas **no** las puedes ejecutar desde `rails console` ni desde un background job. Para hacerlo debes utilizar Redis como vamos a ver el final de este capítulo.
 
 ### Recibiendo información en el cliente
 
 Para recibir información en el cliente se debe modificar el archivo que fue generado para el cliente cuando se creó el canal, en nuestro ejemplo `app/assets/javascripts/channels/room.coffee`:
 
-```
+```coffeescript
 App.room = App.cable.subscriptions.create "RoomChannel",
   connected: ->
 
@@ -129,7 +131,7 @@ Sin embargo, no queremos que siempre se conecte al cuarto `micuarto`, así que l
 ```coffeescript
 window.subscribeToRoom = (room) => {
   App.room = App.cable.subscriptions.create { channel: "RoomChannel", name: room },
-    cconnected: ->
+    connected: ->
 
     disconnected: ->
 
@@ -166,4 +168,27 @@ end
 
 En este ejemplo estamos identificando la conexión utilizando una variable `current_user` que inicializamos en el método `connect` (es decir, cuando se abre la conexión con el servidor). Fíjate que es necesario acceder a las **cookies** para encontrar el `id` del usuario.
 
-**Nota:** Ojalá más adelante integren Action Cable conn Devise para no tener que hacer este paso manualmente y que la autenticación funcione como funciona en los controladores!
+**Nota:** Ojalá más adelante integren Action Cable con Devise para no tener que hacer este paso manualmente y que la autenticación funcione como funciona en los controladores!
+
+## Comunicación entre procesos
+
+Para desplegar en producción (p.e. en Heroku) o para probar desde `rails console` debes instalar y utilizar [Redis](https://redis.io/).
+
+Por defecto, la configuración de Action Cable se encuentra en el archivo `config/cable.yml`, que se puede configurar de la siguiente manera:
+
+```
+development:
+  adapter: async
+
+test:
+  adapter: async
+
+production:
+  adapter: redis
+  url: redis://10.10.3.153:6381
+  channel_prefix: appname_production
+```
+
+El adaptador `async` es para desarrollo y testing, no para producción. Este adaptador no permite la comunicación entre procesos.
+
+El adaptador `redis` se recomienda para producción y si quieres probar el `broadcast` desde `rails console` o desde un background job.
