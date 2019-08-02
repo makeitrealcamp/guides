@@ -7,9 +7,6 @@ En este capítulo vamos a ver cómo escribir **pruebas automatizadas** para tus 
 Asumiendo que ya has incluído [Express](https://expressjs.com/), el primer paso es incluir las librerías que vamos a utilizar para hacer las pruebas: [Jest](https://facebook.github.io/jest/docs/en/getting-started.html), [Supertest](https://github.com/visionmedia/supertest) y [Superagent](https://github.com/visionmedia/superagent):
 
 ```
-# yarn
-$ yarn add jest supertest superagent --dev
-
 # npm
 $ npm install jest supertest superagent --save-dev
 ```

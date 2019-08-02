@@ -21,6 +21,9 @@ app.get("/api/books", async (req, res) => {
 });
 ```
 
+Este código es muy similar al que ya habíamos visto con la diferencia que ahora, en vez de retornar HTML vamos a retornar JSON.
+
+
 
 ## Identificando las peticiones
 
