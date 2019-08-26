@@ -20,11 +20,16 @@ Para definir una relación uno a muchos se deben realizar lo siguientes pasos:
 2. Crear el modelo que va a estar relacionado al anterior utilizando `references` para crear la referencia. Por ejemplo:
 
    ```text
-    $ rails g model Note user:references content:text
-    `
+   $ rails g model Note user:references content:text
    ```
 
    El `user:references` crea la llave foránea \(`user_id`\) y le agrega el `belongs_to :user` a `Note`.
+
+   Si el modelo ya está creado y quieres agregar la relación utiliza el siguiente comando:
+
+   ```
+   $ rails g migration add_user_to_notes user:references
+   ```
 
 3. Agregar el `has_many` al primer modelo que se creó. Por ejemplo:
 
@@ -33,6 +38,8 @@ Para definir una relación uno a muchos se deben realizar lo siguientes pasos:
       has_many :notes
     end
    ```
+
+**Nota:** si el modelo ya está creado debes realizar una migración para
 
 Veamos ahora las acciones comunes que se realizan con las relaciones uno a muchos:
 
@@ -233,4 +240,3 @@ Para implementar esta asociación seguiríamos estos pasos:
       belongs_to :commentable, polymorphic: true
     end
    ```
-
