@@ -1,4 +1,4 @@
-# *Canvas*
+# Canvas
 
 **Canvas** es una etiqueta de **HTML5** que nos permite trabajar con animaciones avanzadas, dibujar elementos, crear juegos, entre otros.
 
@@ -8,19 +8,19 @@ Es importante conocer cómo funciona este sistema de coordenadas ya que por medi
 
 Todas las interacciones que vayamos a tener con nuestro **canvas** se deben realizar a través de un lenguaje de scripting. En este caso vamos a utilizar JavaScript.
 
-## *Primeros pasos*
+## Primeros pasos
 
 Para empezar a trabajar con el API de **canvas**, primero debemos crear el elemento en nuestro HTML, luego lo seleccionamos con nuestro JavaScript, y por último obtenemos el **contexto** sobre el cual vamos a trabajar.
 
 Cabe resaltar que si queremos cambiar el tamaño del canvas lo debemos hacer a través de las propiedades **width** y **height** de la etiqueta `<canvas>` y no usando CSS. De la primera manera definimos la resolución actual del **canvas**, de la segunda manera el contenido del **canvas** se estira o encoge para coincidir con el espacio definido.
 
-## *El contexto*
+## El contexto
 
 El **contexto** es el plano sobre el cual vamos a trabajar, este puede ser 2D, 3D usando WebGL, o un renderizado de Bitmap.
 
 El **contexto** lo obtenemos utilizando el método `getContext()` sobre nuestro elemento **canvas**. Este método recibe como argumento el contexto sobre el cual vamos a trabajar. Ejemplo: 2d, webgl, bitmaprenderer.
 
-## *Algunos ejemplos*
+## Algunos ejemplos
 
 En este primer ejemplo veamos dos opciones para dibujar un cuadrado en nuestro **canvas**. En la primera opción vamos a construir un cuadrado utilizando 4 lineas individuales, y en la segunda opción usamos el método `rect()` del API de **canvas**.
 
