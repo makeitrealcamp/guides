@@ -19,6 +19,7 @@
   * [Bordes, sombras y gradientes](html-y-css/bordes-sombras-y-gradientes.md)
   * [Media Queries](html-y-css/media-queries.md)
   * [Flexbox](html-y-css/flexbox.md)
+  * [Canvas](html-y-css/canvas.md)
 * [Bootstrap 3](bootstrap-3/README.md)
   * [Primeros pasos](bootstrap-3/primeros-pasos.md)
   * [Elementos básicos de HTML](bootstrap-3/elementos-basicos-de-html.md)
