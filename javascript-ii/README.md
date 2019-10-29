@@ -18,3 +18,4 @@ En esta sección vamos a tocar los temas más avanzados del lenguaje incluyendo 
 * [Programación asincrónica](programacion-asincronica.md)
 * [Excepciones](excepciones.md)
 * [Testing](testing.md)
+* [Canvas](canvas.md)
