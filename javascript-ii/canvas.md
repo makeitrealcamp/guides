@@ -35,3 +35,7 @@ Algo a resaltar de este ejemplo es cómo manejamos los estilos dentro del canvas
 En este último ejemplo veremos cómo podemos usar **canvas** para crear animaciones.
 
 {% embed url="https://codepen.io/simonhoyos/pen/dyyYxVp" %}
+
+Podemos notar que en nuestra animación utilizamos el método `requestAnimationFrame()` este método es un método global de JavaScript. Este método es un ciclo que nos permite sincronizar nuestra animación con la tasa de actualización de pantalla del navegador.
+
+Para conocer más sobre el API de contexto 2D de canvas puedes visitar [MDN web docs](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D)
