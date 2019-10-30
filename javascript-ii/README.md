@@ -7,7 +7,7 @@ En esta sección vamos a tocar los temas más avanzados del lenguaje incluyendo 
 ## Prerequisitos
 
 * [JavaScript I](../javascript-i/)
-* [jQuery y AJAX](../jquery-y-ajax/)
+* [JavaScript en el navegador](../javascript-browser/)
 
 ## Contenido
 
