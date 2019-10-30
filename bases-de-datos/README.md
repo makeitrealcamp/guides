@@ -27,7 +27,7 @@ Para MongoDB se recomiendan los siguientes temas:
 
 * [JavaScript I](../javascript-i/)
 * [JavaScript II](../javascript-ii/)
-* [jQuery y AJAX](../jquery-y-ajax/)
+* [jQuery](../jquery/)
 
 ## Contenido
 

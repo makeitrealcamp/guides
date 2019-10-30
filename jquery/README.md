@@ -1,4 +1,4 @@
-# jQuery y AJAX
+# jQuery
 
 **jQuery** es una librería escrita en **JavaScript** que permite manipular HTML, escuchar eventos del mouse, el teclado, etc, y realizar llamados a servidores remotos con **AJAX** para crear aplicaciones Web dinámicas.
 
@@ -8,6 +8,7 @@ Todo lo que puedes hacer con **jQuery** lo puedes hacer sin **jQuery**, es decir
 
 * [Preparación](../preparacion/)
 * [JavaScript I](../javascript-i/)
+* [JavaScript en el navegador](../javascript-browser/)
 
 ## Contenido
 
@@ -15,6 +16,4 @@ Todo lo que puedes hacer con **jQuery** lo puedes hacer sin **jQuery**, es decir
 * [Manipulando HTML](manipulando-html.md)
 * [Escuchando eventos](escuchando-eventos.md)
 * [Plugins](plugins.md)
-* [JSON](json.md)
 * [Realizando peticiones con AJAX](realizando-peticiones-con-ajax.md)
-
