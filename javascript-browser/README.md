@@ -19,7 +19,7 @@ Aunque existen muchas más funcionalidades que nos ofrecen los navegadores, en e
 
 ## Temas
 
-* [Primeros pasos][primeros-pasos.md]
+* [Primeros pasos](primeros-pasos.md)
 * [Manipulando HTML](manipulando-html.md)
 * [Escuchando eventos](escuchando-eventos.md)
 * [History API](history.md)
