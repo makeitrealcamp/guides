@@ -4,15 +4,15 @@ Existen varias formas de empezar a trabajar con JavaScript **en el navagador**. 
 
 ### Codepen
 
-La primera, y quizá la forma más fácil, es utilizar una herramienta en línea como [Codepen](https://codepen.io/pen). Ingresa a ese link y vas a ver una pantalla similar a la siguiente \(aunque quizá ya la han actualizado\):
+La primera, y quizá la forma más fácil, es utilizar una herramienta en línea como [Codepen](https://codepen.io/pen). Ingresa a ese link y vas a ver una pantalla similar a la siguiente:
 
 ![Codepen](https://s3.amazonaws.com/makeitreal/images/full-stack-curriculum/codepen.jpg)
 
-Estás listo\(a\) para empezar a trabajar con JavaScript **en el navegador**.
+Es posible que no sea exactamente igual (si la actualizaron) pero lo importante es que vas a tener 3 espacios para escribir el HTML, CSS y JavaScript respectivamente. En el espacio para el HTML omite las etiquetas `html`, `head` y `body`, todo lo que escribas allí va a estar dentro del `body` que Codepen crea para ti.
 
-### La segunda forma es crear un documento HTML
+### Desde un documento HTML
 
-Otra forma es crear un documento HTML y crear un tag `script`. Puedes copiar la siguiente estructura en un archivo HTML para empezar:
+Otra forma de empezar a trabajar con JavaScript desde el navegador es crear un documento HTML y crear un tag `script`. Puedes copiar la siguiente estructura en un archivo HTML para empezar:
 
 ```html
 <!DOCTYPE html>
