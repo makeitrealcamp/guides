@@ -68,7 +68,7 @@
   * [Escuchando eventos](javascript-browser/escuchando-eventos.md)
   * [History API](javascript-browser/history.md)
   * [Canvas](javascript-browser/canvas.md)
-  * [Notification API](javascript-browser/notificaciones.md)
+  * [Notificaciones Web](javascript-browser/notificaciones.md)
   * [Audio y Video](javascript-browser/video-audio.md)
   * [Arrastrar y soltar](javascript-browser/drag-drop.md)
   * [JSON](javascript-browser/json.md)
