@@ -1,6 +1,6 @@
 # JavaScript en el Navegador
 
-Los navegadores (Chrome, Internet Explorer, Firefox, etc.) exponen algunos objetos que nos van a permitir realizar tareas como:
+Los navegadores (Chrome, Internet Explorer, Firefox, etc.) exponen algunos objetos a través de JavaScript que nos van a permitir realizar tareas como:
 
 * Manipular el HTML y CSS del documento.
 * Acceder a la URL y a la historia de navegación.
@@ -24,7 +24,7 @@ Aunque existen muchas más funcionalidades que nos ofrecen los navegadores, en e
 * [Escuchando eventos](escuchando-eventos.md)
 * [History API](history.md)
 * [Canvas](canvas.md)
-* [Notification API](notificaciones.md)
+* [Notificaciones Web](notificaciones.md)
 * [Audio y Video](video-audio.md)
 * [Arrastrar y soltar](drag-drop.md)
 * [JSON](json.md)
