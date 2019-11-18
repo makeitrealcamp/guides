@@ -7,10 +7,9 @@ Los navegadores (Chrome, Internet Explorer, Firefox, etc.) exponen algunos objet
 * Trabajar con Canvas para realizar animaciones avanzadas.
 * Acceder y enviar información a servidores remotos.
 * Mostrar notificaciones.
-* Acceder a la cámara y micrófono.
 * Implementar funcionalidades de arrastrar y soltar (drag and drop).
 
-Aunque existen muchas más funcionalidades que nos ofrecen los navegadores, en esta sección vamos a ver las más comunes y útiles para tus aplicaciones del front-end.
+Entre muchas otras!
 
 ## Prerequisitos
 

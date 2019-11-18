@@ -1,6 +1,6 @@
 # Primeros pasos
 
-Existen varias formas de empezar a trabajar con JavaScript **en el navagador**. Vamos a ver dos de ellas.
+Existen varias formas de empezar a trabajar con JavaScript **en el navegador**. Vamos a ver dos de ellas.
 
 ### Codepen
 
@@ -8,7 +8,7 @@ La primera, y quizá la forma más fácil, es utilizar una herramienta en línea
 
 ![Codepen](https://s3.amazonaws.com/makeitreal/images/full-stack-curriculum/codepen.jpg)
 
-Es posible que no sea exactamente igual (si la actualizaron) pero lo importante es que vas a tener 3 espacios para escribir el HTML, CSS y JavaScript respectivamente. En el espacio para el HTML omite las etiquetas `html`, `head` y `body`, todo lo que escribas allí va a estar dentro del `body` que Codepen crea para ti.
+Es posible que no sea exactamente igual (p.e. si la actualizaron) pero lo importante es que vas a tener 3 espacios para escribir el HTML, CSS y JavaScript respectivamente. En el espacio para el HTML omite las etiquetas `html`, `head` y `body`, todo lo que escribas allí va a estar dentro del `body` que Codepen crea para ti.
 
 ### Desde un documento HTML
 
