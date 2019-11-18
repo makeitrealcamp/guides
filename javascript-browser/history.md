@@ -1,6 +1,6 @@
 # History API
 
-El History API nos permite cambiar la URL del navegador sin refrescar la página, ver la longitud de la historia y navegar por esa historia (ir atrás o adelante).
+El History API nos permite cambiar la URL del navegador sin refrescar la página, ver el número de URL's visitadas (la historia) y navegar por la historia de URL's (ir atrás o adelante).
 
 El History API es muy útil en aplicaciones que nunca se refrescan, también conocidas como SPAs (Single Page Applications).
 
