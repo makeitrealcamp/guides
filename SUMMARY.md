@@ -147,6 +147,7 @@
   * [Formularios](react/formularios.md)
   * [Peticiones HTTP con Axios](react/peticiones-http-con-axios.md)
   * [React Hooks](react/react-hooks.md)
+  * [React Context](react/context.md)
   * [React Bootstrap](react/react-bootstrap.md)
   * [React Router](react/react-router.md)
   * [Testing](react/testing.md)
