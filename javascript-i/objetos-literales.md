@@ -101,6 +101,34 @@ for (var i=0; i < llaves.length; i++) {
 
 `Object.keys` retorna un arreglo con las llaves del objeto que almacenamos en la variable `llaves`. Después iteramos por todas las llaves y utilizamos cada llave para obtener, de forma dinámica, el valor de esa llave en el objeto.
 
+## Métodos
+
+El valor de una propiedad de un objeto puede ser una función.
+
+```javascript
+var person = {
+  name: "Pedro",
+  sayHi: function() {
+    console.log("Hola!");
+  }
+}
+```
+
+A una función de un objeto se le llama **método**.
+
+Los métodos pueden utilizar otras propiedades del objeto utilizando la palabra clave `this`:
+
+```javascript
+var person = {
+  name: "Pedro",
+  sayHi: function() {
+    console.log("Hola, me llamo " + this.name);
+  }
+}
+
+person.sayHi() // "Hola, me llamo Pedro"
+```
+
 ## Mezclando arreglos y objetos
 
 Es posible mezclar arreglos y objetos para crear estructuras complejas. Crea un archivo llamado `products.js` y transcribe lo siguiente:
@@ -132,4 +160,3 @@ for (var i=0; i < products.length; i++) {
 ```
 
 Lo primero que estamos haciendo es iterando por el arreglo de productos. Por cada uno de los productos \(recuerda que cada producto es un objeto\) vamos a mostrar el nombre \(la llave `nombre`\), después el identificador \(la llave `id`\), el precio \(la llave `price`\) y las categorías \(la llave `categories`\). Como las categorías están en un arreglo debemos utilizar el método `join` para convertirlas en una cadena.
-
