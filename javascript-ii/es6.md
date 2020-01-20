@@ -128,7 +128,7 @@ Este fue un ejemplo forzado para mostrar que es posible usar funciones como valo
 
 ## Plantillas literales
 
-Existe una nueva forma de definir cadenas de texto que nos permite crear cadenas de varias líneas, insertar expresiones de JavaScript y más. Las plantillas literales se crean con tildes invertidas\(````````\):
+Existe una nueva forma de definir cadenas de texto que nos permite crear cadenas de varias líneas, insertar expresiones de JavaScript y más. Las plantillas literales se crean con tildes invertidas\(\`\`\):
 
 ```javascript
 `una cadena`
@@ -169,6 +169,45 @@ const g = ({name: x}) => {
 }
 
 g({name: 5});
+```
+
+## Los tres puntos (`...`)
+
+Los tres puntos tienen dos significados en JavaScript. Por un lado se pueden utilizar para capturar los argumentos de una función. Por ejemplo:
+
+```javascript
+function restParams(param1, ...rest) {
+  console.log(param1) // imprime el valor del primer argumento
+  console.log(rest) // imprime los valores de los siguientes argumentos
+}
+```
+
+A esto se e conoce como **rest parameters** (el resto de los parámetros) y se reciben en un arreglo.
+
+Por otro lado los tres puntos son el **operador spread** que permite separar o expandir un arreglo o un objeto para crear nuevos arreglos u objetos, o para pasar los valores de un arreglo como argumentos de una función.
+
+Por ejemplo, el método `Math.max` recibe varios números por parámetro y retorna el mayor. Sin embargo, si tenemos un arreglo, podemos utilizar el operador `spread` para separarlos:
+
+```javascript
+const nums = [1, 2, 3, 4]
+
+const max = Math.max(...nums)
+// equivalente a Math.max(1, 2, 3, 4)
+```
+
+También podemos utilizar el **operador spread** para crear arreglos a partir de otros arreglos:
+
+```javascript
+const arr = [3, 4]
+const newArr = [1, 2, ...arr, 5, 6] // [1, 2, 3, 4, 5, 6]
+```
+
+Por último, podemos crear objetos a partir de otros objetos:
+
+```javascript
+const obj = { a: 1, b: 2, c: 3 }
+const newObj = { ...obj, c: 4, d: 5}
+// newObj queda { a: 1, b: 2, c: 4, d: 5}
 ```
 
 ## Métodos concisos
@@ -321,4 +360,3 @@ import b from "./module1.js" // realmente le puedes poner el nombre que quieras 
 
 console.log(b); // 7
 ```
-
