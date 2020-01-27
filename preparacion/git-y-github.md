@@ -1,5 +1,7 @@
 # Git y Github
 
+**Nota:** Esta guía está obsoleta. Ahora tenemos una sección completa de **git** que puedes encontrar en [este enlace](/git).
+
 **Git** te permite guardar un historial de cambios de tus proyectos y trabajar con otros desarrolladores en un mismo proyecto.
 
 El concepto más importante de **git** es el **commit**. Un **commit** es una fotografía de tu proyecto en un momento determinado. La forma en que **git** almacena el historial de cambios de tu proyecto es creando una cadena de **commits**.
