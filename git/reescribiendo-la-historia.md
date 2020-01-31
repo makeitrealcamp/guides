@@ -6,13 +6,13 @@ En ocasiones vas a necesitar cambiar uno o más commits, por ejemplo para cambia
 
 ## Cambiando el último commit
 
-Si quieres modificar el mensaje o los cambios del último commit puedes hacer lo siguiente: realiza los cambios que necesites en tu espacio de trabajo (los archivos de tu proyecto), agregarlos al index y ejecuta el siguiente comando:
+Si quieres modificar el mensaje o los cambios del último commit puedes hacer lo siguiente: realiza los cambios que necesites en tu espacio de trabajo (los archivos de tu proyecto), agrégalos al index y ejecuta el siguiente comando:
 
 ```
 git commit --amend
 ```
 
-La opción `--amend` le dice a **git** que queremos incluir otros cambios en el último commit y que abra el editor de texto por defecto para cambiar el mensaje.
+La opción `--amend` le dice a **git** que queremos incluir otros cambios al último commit y que abra el editor de texto por defecto para cambiar el mensaje.
 
 Si no quieres cambiar el mensaje puedes utilizar:
 
@@ -84,3 +84,29 @@ Cada commit tiene un comando a la izquierda que nos permite decidir qué hacer c
 * `f, fixup`: queremos unir el commit con el anterior descartando el mensaje de este commit (dejando el del anterior).
 
 Si eliminas una línea de commit, el commit será eliminado. Al guardar y cerrar el editor, **git** comienza a aplicar los commits deteniéndose para cambiar mensajes o realizar los ajustes donde se haya usado la opción `edit`.
+
+## Recuperando commits
+
+Un commit nunca se borra. Cuando reescribes la historia con cualquiera de las funcionalidades que vimos anteriormente, **git** cambia la referencia o crea nuevos commits. Los commits descartados quedan huérfanos (no hay una rama que los referencie).
+
+**git** mantiene un historial interno de todos los cambios que se realizan sobre las referencias de los commits del HEAD y de cada rama. A este historial se le conoce como el **reflog**. Para ver el **reflog** del HEAD ejecuta el siguiente comando:
+
+```
+$ git reflog
+19a3b8b HEAD@{1}: commit: Small corrections to JS in Browser section
+904d523 HEAD@{2}: checkout: moving from master to peticiones-http
+904d523 HEAD@{3}: pull: Fast-forward
+a51a872 HEAD@{4}: checkout: moving from notifications to master
+```
+
+Si quieres ver el **reflog** de otra rama simplemente pasa el nombre de la rama al final del comando:
+
+```
+git reflog <nombre-rama>
+```
+
+Podemos volver a cualquier punto en el tiempo utilizando el comando `git reset`. Por ejemplo, podemos deshacer el último commit del reflog anterior con el siguiente comando:
+
+```
+git reset --hard HEAD@{2}
+```

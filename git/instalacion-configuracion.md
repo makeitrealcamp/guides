@@ -4,7 +4,7 @@ El primer paso para utilizar **git** es instalar la aplicación de consola. Tamb
 
 ## Instalación
 
-Es posible que ya tengas la aplicación de consola de **git** en tu máquina, para verificar ejecuta el siguiente comando desde la consola:
+Es posible que ya tengas la aplicación de consola de **git** en tu máquina. Para verificar, ejecuta el siguiente comando desde la consola:
 
 ```
 git --version
@@ -30,7 +30,7 @@ sudo dnf install git-all
 
 ### MacOS
 
-La forma más fácil de instalar **git** en Mac es ejecutando el comando `git --version` y seguir las instrucciones.
+La forma más fácil de instalar **git** en Mac es ejecutando el comando `git --version` y seguir las instrucciones que aparecen en pantalla.
 
 ### Windows
 

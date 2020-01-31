@@ -14,7 +14,7 @@ En [Github](https://github.com) puedes crear repositorios gratis, aunque hay alg
 
 Si aún no tienes una cuenta en [Github](https://github.com) es hora de crear una antes de continuar.
 
-### Creando un repositorio en Github
+## Creando un repositorio en Github
 
 Para crear un repositorio en [Github](https://github.com) ingresa a tu cuenta y haz click sobre la opción "New Repository" como se muestra en la siguiente imagen:
 
@@ -26,7 +26,7 @@ En la siguiente pantalla debes darle un nombre al repositorio, asegurarte que es
 
 Has creado un repositorio en [Github](https://github.com), es hora de configurarlo en el repositorio local y subir el historial.
 
-### Configurando el repositorio remoto
+## Configurando el repositorio remoto
 
 Cuando creas un repositorio en [Github](https://github.com) te va a aparecer una pantalla como la que ves a continuación. Copia y pega en la consola las líneas que se indican con la flecha roja:
 
@@ -58,7 +58,7 @@ Automáticamente **git** sabe a qué repositorio y rama enviar los nuevos commit
 
 **Recuerda que los commits no se envían automáticamente al remoto cuando los creas, debes ejecutar `git push` para enviarlos.**
 
-### Clonando un repositorio
+## Clonando un repositorio
 
 Para descargar un repositorio a tu computador (a esto se le conoce como clonar) utiliza el comando `git clone` seguido de la URL del repositorio. Por ejemplo, el siguiente comando clonaría el repositorio de [Node.js](https://github.com/nodejs/node):
 
@@ -83,7 +83,7 @@ git checkout rama-1
 
 El primer comando actualiza la información del **repositorio remoto** (incluyendo las ramas que existen). El segundo comando descarga la rama si no existe localmente.
 
-### Actualizando una rama
+## Actualizando una rama
 
 Si estás trabajando con otros desarrolladores, es posible que tu repositorio local se desactualice con respecto al remoto. Sin embargo, no es posible actualizar todas las ramas a la vez, debes actualizarla una por una.
 
@@ -103,13 +103,13 @@ git merge origin/master
 
 `git pull` es recomendable ejecutarlo únicamente si no se han creado nuevos commits localmente. La razón es que si hay commits diferentes en la rama remota y la local, se crearía un **merge commit**. Por esta razón, si hay nuevos commits localmente, es mejor rebasar la rama como veremos en la siguiente sección.
 
-### Rebasando una rama local contra una rama remota
+## Rebasando una rama local contra una rama remota
 
 Si se han creado commits diferentes tanto en la rama local como en la rama remota es preferible rebasar la rama local contra la rama remota.
 
 **Nota:** para aprender sobre rebasar ramas (localmente) te recomendamos referirte a la guía [Trabajando con ramas](ramas.md).
 
-Por ejemplo, para rebasar una rama llamada `rama-1` (asumiendo que existe en el repositorio remoto) ejecutaríamos los siguientes comandos:
+Por ejemplo, para rebasar una rama local `rama-1` contra una remota con el mismo nombre, ejecutaríamos los siguientes comandos:
 
 ```
 git checkout rama-1
@@ -119,9 +119,16 @@ git rebase origin/rama-1
 
 El primer comando nos ubica en `rama-1`. El segundo comando actualizaría la información del repositorio remoto (incluyendo nuevos commits que puedan existir en la rama remota). El tercer comando rebasa la rama contra la rama remota.
 
-### Reemplazando una rama local
+También es posible rebasar una rama local contra otra rama remota diferente. Esto es muy útil cuando queremos actualizar nuestra rama local contra `master` pero ya tenemos nuevos commits en nuestra rama:
 
-En ocasiones queremos que unarama local quede igual que una rama remota. Por ejemplo, si quisieramos que la rama `rama-1` quedara como la remota, ejecutaríamos los siguientes comandos:
+```
+git fetch origin
+git rebase origin/master
+```
+
+## Reemplazando una rama local
+
+En ocasiones necesitamos que una rama local quede igual que una rama remota. Por ejemplo, si quisieramos que la rama `rama-1` quedara como la remota, ejecutaríamos los siguientes comandos:
 
 ```
 git fetch origin
@@ -130,9 +137,9 @@ git reset --hard origin/rama-1
 
 El comando `git reset` resetearía la rama en la que estamos actualmente ubicados y reemplazaría el historial con el que existe en la rama remota.
 
-### Reemplazando una rama remota
+## Reemplazando una rama remota
 
-En ocasiones queremos que una rama remote quede igual que la rama local (el caso inverso de la sección anterior). Por ejemplo, si queremos que la rama remota `rama-1` quede como la local, ejecutaríamos el siguiente comando:
+En ocasiones necesitamos que una rama remote quede igual que la rama local (el caso inverso de la sección anterior). Por ejemplo, si queremos que la rama remota `rama-1` quede como la local, ejecutaríamos el siguiente comando:
 
 ```
 git push -f <remoto> <rama>
@@ -142,7 +149,7 @@ Este comando es muy útil cuando hemos reescrito el historial de commits en nues
 
 **Nota:** Ten mucho cuidado con esta opción `-f`, puede que se pierdan cambios en la rama remota. Nunca lo utilices sobre `master` o sobre ramas en las que otras personas estén trabajando. En la mayoría de servicios como [Github](https://github.com) es posible proteger las ramas que no queremos que se puedan reemplazar.
 
-### Resumen de los comandos
+## Resumen de los comandos
 
 * `git clone <url>` - clona un repositorio.
 * `git remote add <nombre> <url>` - configura un repositorio remoto.

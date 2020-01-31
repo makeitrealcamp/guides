@@ -8,7 +8,7 @@ Los archivos y carpetas definidos en `.gitignore` **no** van a aparecer como arc
 
 Si aún no existe el archivo `.gitignore` podemos crearlo con nuestro editor de texto favorito e incluirlo en el siguiente commit.
 
-El archivo `.gitignore` debe contener, en cada línea, el nombre de un archivo, carpeta o patrón. Por ejemplo:
+En el archivo `.gitignore` escribimos los nombres de los archivo o carpetas que queremos ignorar (uno por línea).  También podemos tener comentarios (utilizando numeral `#`). Por ejemplo:
 
 ```
 # esto es un comentario
@@ -17,6 +17,12 @@ build
 ```
 
 En este caso estamos ignorando un archivo llamado `development.log` (que esté en cualquier carpeta) y la carpeta `build` (incluyendo todos los archivos que estén dentro de la carpeta).
+
+Si queremos ignorar un archivo o carpeta que esté en la raíz del proyecto (no en una subcarpeta), utilizaríamos un `/` antes del archivo o la carpeta. Por ejemplo, para ignorar el archivo `development.log` que se encuentra en la raíz utilizaríamos la siguiente línea:
+
+```
+/development.log
+```
 
 También puedes utilizar patrones en el archivo `.gitignore`:
 
