@@ -61,7 +61,7 @@ En la vida real las listas encadenadas **no** son muy comunes (los arreglos func
 
 ## Colas (queues)
 
-Una cola es una estructura que permite agregar elementos al final de la lista y obtener el primero de la lista (como una fila de pago en un supermercado). A esto se le conoce como PEPS (primero en entrar, primero en salir).
+Una cola es una estructura que permite agregar elementos al final de la lista y obtener el primero (como una fila de pago en un supermercado). A esto se le conoce como PEPS (primero en entrar, primero en salir).
 
 Las operaciones principales de una cola son:
 
@@ -75,7 +75,7 @@ Las colas se pueden implementar sobre un arreglo limitando las operaciones para 
 
 ## Pilas (stacks)
 
-Una pila es una estructua que permite agregar elementos al principio de una lista y obtener el primero de esa lista (como una pila de libros en la que solo puedes tomar el libro de la parte superior, y en la que solo puedes ubicar libros encima de los demás). A esto se le conoce como UEPS (último en entrar, primero en salir).
+Una pila es una estructua que permite agregar elementos al inicio de una lista y obtener el primero (como una pila de libros en la que solo puedes tomar el libro de la parte superior, y en la que solo puedes ubicar libros encima de los demás). A esto se le conoce como UEPS (último en entrar, primero en salir).
 
 Las operaciones principales de una pila son:
 
@@ -143,7 +143,6 @@ tree.traverseDFS(function(e) { console.log(e); });
 // 1
 // 3
 // 7
-// 5
 
 tree.traverseBFS(function(e) { console.log(e); });
 // 4
@@ -151,7 +150,6 @@ tree.traverseBFS(function(e) { console.log(e); });
 // 7
 // 1
 // 3
-// 5
 ```
 
 ## Grafos
