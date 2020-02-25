@@ -13,6 +13,8 @@ La **línea de comandos** es una aplicación en la que puedes escribir y ejecuta
 
 Y mucho más!
 
+{% youtube %} https://youtube.com/watch?v=P2P1SyC26XI {% endyoutube %}
+
 ## Abriendo la línea de comandos
 
 En Windows busca una aplicación que se llama **PowerShell**.
@@ -119,13 +121,11 @@ Por ejemplo, si nos encontramos en la carpeta `/Users/germanescobar`, la **ruta 
 
 Cuando ingresas a la **línea de comandos** te vas a encontrar en la carpeta raíz de tu usuario \(generalmente en `/Users/tu_nombre_de_usuario`\).
 
-Puedes volver a esta carpeta en cualquier momento utilizando el comando:
+Puedes volver a esta carpeta en cualquier momento utilizando el comando `cd` sin ninguna opción:
 
 ```text
-$ cd ~
+$ cd
 ```
-
-Ese caracter `~` es díficil de encontrar en el teclado a veces. Si no lo encuentras pide ayuda!
 
 ### La carpeta padre
 
@@ -166,20 +166,28 @@ $ cd Projects
 
 Nuestra recomendación es que crees esa carpeta `Projects` dentro de la raíz de tu usuario para todos tus proyectos.
 
-## Abriendo archivos y carpetas en Atom
+## Abriendo carpetas en el explorador de archivos
 
-**Atom** viene con una aplicación de la **línea de comandos** llamada `atom`. Puedes utilizar ese comando para abrir un archivo o una carpeta en **Atom**.
+Para abrir una carpeta en el explorador de archivos gráfico utiliza el comando `open` seguido de una ruta relativa o absoluta. Por ejemplo, para abrir la carpeta actual utilizaríamos:
+
+```text
+$ open .
+```
+
+## Abriendo archivos y carpetas en VSCode
+
+**VSCode** viene con una aplicación de la **línea de comandos** llamada `code`. Puedes utilizar ese comando para abrir un archivo o una carpeta en **VSCode**.
 
 Por ejemplo, el siguiente comando abre el archivo `archivo1.txt`:
 
 ```text
-$ atom archivo1.txt
+$ code archivo1.txt
 ```
 
 Para abrir la carpeta actual:
 
 ```text
-$ atom .
+$ code .
 ```
 
 ## Eliminando archivos y carpetas
@@ -232,9 +240,30 @@ Por ejemplo, el siguiente comando **copia** la carpeta `mi-carpeta` a la carpeta
 $ cp -r mi-carpeta otra-carpeta
 ```
 
+## Buscando archivos y carpetas
+
+Para buscar archivos utiliza el comando `find` que recibe la ruta desde la cuál se quiere buscar, la opción `-name` y el nombre o patrón que estamos buscando. Por ejemplo, para buscar todos los archivos `index.html` que se encuentren en una carpeta `/Projects` podemos ejecutar el siguiente comando:
+
+```text
+$ find /Projects -name index.html
+```
+
+Si queremos buscar archivos dentro de la carpeta actual utilizaríamos `.` en la ruta:
+
+```text
+$ find . -name index.html
+```
+
+Para buscar carpetas utiliza la opción `-type d`. Por ejemplo, para encontrar todas las carpetas llamadas `logs` dentro de la ubicación actual ejecutaríamos el siguiente comando:
+
+```text
+$ find . -type d -name logs
+```
+
+**Nota:** Ten en cuenta que `find` va a buscar en las carpetas y todas las subcarpetas de la ruta que le pasemos.
+
 ## Trucos y consejos
 
 Si oprimes la flecha arriba `↑` te van a aparecer los últimos comandos que has ingresado. Muy útil para repetir un comando que ya has ingresado. Si te pasas te puedes devolver con la flecha hacia abajo:
 
 Puedes autocompletar las rutas ingresando las primeras letras y oprimiendo la tecla `tab`. Ahorra mucho tiempo!
-
