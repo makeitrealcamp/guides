@@ -1,4 +1,4 @@
-# Introduction
+# Introducción
 
 En estas guías vas a encontrar información sobre los temas de programación que enseñamos en [Make it Real](https://makeitreal.camp/).
 
