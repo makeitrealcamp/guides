@@ -121,7 +121,7 @@ Puedes ubicar `"use strict"` al principio de un archivo (alcance global) o de un
 
 ```javascript
 function estricta() {
-  "use script" // solo aplica a la función
+  "use strict" // solo aplica a la función
 
   // ...
 }
