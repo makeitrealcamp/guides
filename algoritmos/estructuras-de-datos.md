@@ -32,7 +32,7 @@ La lista también puede estar doblemente encadenada, es decir, cada nodo tiene u
 
 Las operaciones principales de una lista encadenada son:
 
-* Insertar un valor en un posición (por defecto al final).
+* Insertar un valor en una posición (por defecto al final).
 * Obtener un valor por posición.
 * Recorrer las posiciones.
 * Eliminar una posición.
