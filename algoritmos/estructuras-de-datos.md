@@ -65,8 +65,8 @@ Una cola es una estructura que permite agregar elementos al final de la lista y 
 
 Las operaciones principales de una cola son:
 
-* Agregar un valor.
-* Obtener el primer valor.
+* Agregar un valor. (al final de la lista o cola)
+* Remover el primer valor.
 * Obtener el tamaño.
 
 Las colas se usan en programación principalmente para almacenar información que va a ser procesada en el futuro.
