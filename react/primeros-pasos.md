@@ -4,16 +4,10 @@
 
 Aunque existen varias formas de empezar con React, quizá la forma más fácil es con [create-react-app](https://github.com/facebookincubator/create-react-app), una aplicación de consola que nos va a permitir crear una aplicación en React rápidamente.
 
-El primer paso es instalar [create-react-app](https://github.com/facebookincubator/create-react-app) con npm o Yarn:
+El primer paso es crear nuestra aplicación utilizando [npx](https://www.npmjs.com/package/npx) y el comando [`create-react-app`](https://github.com/facebookincubator/create-react-app) seguido del nombre que le quieras dar. Por ejemplo:
 
 ```text
-$ npm install -g create-react-app
-```
-
-Para crear una aplicación utiliza el comando `create-react-app` seguido del nombre que le quieras dar a tu aplicación. Por ejemplo:
-
-```text
-$ create-react-app my-app
+$ npx create-react-app my-app
 ```
 
 Cuando ejecutas ese comando [create-react-app](https://github.com/facebookincubator/create-react-app) va a crear una carpeta llama `my-app` con una serie de archivos y subcarpetas para que puedas empezar a trabajar en tu proyecto.
