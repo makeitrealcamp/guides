@@ -93,7 +93,7 @@
   * [Prototipos](javascript-ii/prototipos.md)
   * [Librerías \(Node.js\)](javascript-ii/librerias-node.js.md)
   * [ES6](javascript-ii/es6.md)
-  * [Uso de this \(call, apply, bind\)](uso-this.md)
+  * [Uso de this \(call, apply, bind\)](javascript-ii/uso-this.md)
   * [Programación funcional](javascript-ii/programacion-funcional.md)
   * [Scope, hoisting, closures](javascript-ii/scope-hoisting-closures.md)
   * [Programación asincrónica](javascript-ii/programacion-asincronica.md)
