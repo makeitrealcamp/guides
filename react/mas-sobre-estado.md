@@ -45,7 +45,7 @@ Existen varias formas de cambiar un elemento de forma inmutable. La primera es c
 const arr = [1, 2, 3];
 
 // vamos a cambiar la segunda posición por un 0
-const idx == 1;
+const idx = 1;
 const newArr = arr.map((elem, i) =>
   idx === i ? 0 : elem
 );
@@ -59,7 +59,7 @@ La segunda es utilizando el método `slice` y `concat`:
 ```javascript
 const arr = [1, 2, 3];
 
-const idx == 1;
+const idx = 1;
 const newArr = arr.slice(0. idx)
                   .concat(0)
                   .concat(arr.slice(idx + 1));
@@ -70,7 +70,7 @@ La tercera es con el nuevo operador `...` \(spread\) de JavaScript:
 ```javascript
 const arr = [1, 2, 3];
 
-const idx == 1;
+const idx = 1;
 const newArr = [
   ...arr.slice(0, idx),
   0,
@@ -86,7 +86,7 @@ Puedes remover un elemento de forma inmutable de varias formas. La primera es co
 const arr = [1, 2, 3];
 
 // vamos a remover la segunda posición
-const idx == 1;
+const idx = 1;
 const newArr = arr.filter((e, i) => idx != i);
 
 // arr: [1, 2 3]
@@ -98,7 +98,7 @@ La segunda es utilizando el método `slice` y `concat`:
 ```javascript
 const arr = [1, 2, 3];
 
-const idx == 1;
+const idx = 1;
 const newArr = arr.slice(0, idx).
                   .concat(arr.slice(idx + 1));
 ```
@@ -108,7 +108,7 @@ La tercera es con el nuevo operador `...` \(spread\):
 ```javascript
 const arr = [1, 2, 3];
 
-const idx == 1;
+const idx = 1;
 const newArr = [
   ...arr.slice(0, idx),
   ...arr.slice(idx + 1)
