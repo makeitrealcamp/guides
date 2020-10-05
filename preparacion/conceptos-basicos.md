@@ -132,7 +132,7 @@ Las direcciones IP públicas son manejadas por una organización sin ánimo de l
 
 Las direcciones IP privadas se utilizan para redes locales (como la de tu hogar).
 
-Sobre Internet se han implementado una multitud de servicios como correo electrónico, la World Wide Web (WWW), voz y video sobe IP (p.e. Skype), entre otros.
+Sobre Internet se han implementado una multitud de servicios como correo electrónico, la World Wide Web (WWW), voz y video sobre IP (p.e. Skype), entre otros.
 
 Otros conceptos importantes que debes saber sobre Internet son los siguientes:
 
