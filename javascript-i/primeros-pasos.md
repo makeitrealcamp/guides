@@ -10,10 +10,10 @@ Para seguir los ejemplos de este libro vas a necesitar instalar [Node.js](https:
 
 ```text
 $ node -v
-v8.5.0
+v14.4.0
 ```
 
-La versión puede ser diferente, y cualquier versión mayor a 6.0.0 está bien.
+La versión puede ser diferente, y cualquier versión mayor a 12.0.0 está bien.
 
 Si ves un mensaje diciendo que el comando no fue encontrado, significa que aún no lo tienes instalado. Puedes encontrar las instrucciones para instalarlo en el siguiente enlace: [https://github.com/makeitrealcamp/node-installation](https://github.com/makeitrealcamp/node-installation).
 
