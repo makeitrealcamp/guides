@@ -139,7 +139,7 @@ array.join("-") // "1-2-3"
 
 ## Matrices
 
-Los elementos de un arreglo puede ser otros arreglos. De esta forma se pueden modelar matrices. Una matriz es una cuadrícula (p.e. un tablero de triqui, una hoja de cálculo, etc.)
+Los elementos de un arreglo pueden ser otros arreglos. De esta forma puedes modelar cuadrículas (p.e. un teclado numérico, un tablero de ajedrez, una hoja de cálculo, etc.). A este tipo de estructura se le conoce como una **matriz**:
 
 ```javascript
 var matrix = [
@@ -149,7 +149,7 @@ var matrix = [
 ]
 ```
 
-Para acceder a los elementos internos (a los números en este caso) puedes pensar en filas y columnas. Por ejemplo, en nuestra matriz de ejemplo el 1 se encuentra en la fila 0 y columna 0. El 9 se encuentra en la fila 2, columna 2:
+Para acceder a los elementos internos de una matriz puedes pensar en filas y columnas. Por ejemplo, en nuestra matriz de ejemplo el 1 se encuentra en la fila 0 y columna 0. El 9 se encuentra en la fila 2, columna 2:
 
 ```javascript
 matrix[0][0] // 1
