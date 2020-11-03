@@ -134,23 +134,16 @@ También es posible anidar estos métodos. Por ejemplo, para verificar si una ca
 true
 ```
 
-Puedes obtener una porción de la cadena con el método `substr` que recibe dos argumentos: el índice desde el cuál se va a retornar la subcadena y, opcionalmente, el número de caracteres que se quiere extraer. Si se omite el segundo argumento se extrae hasta el final de la cadena:
+Puedes obtener una porción de la cadena con el método `substring` que recibe dos argumentos: el índice desde el cuál se va a retornar la subcadena y, opcionalmente, la posición hasta donde se quiere extraer. Si se omite el segundo argumento se extrae hasta el final de la cadena:
 
 ```text
-> "Hola Mundo".substr(0, 4)
+> "Hola Mundo".substring(0, 3)
 'Hola'
-> "Hola Mundo".substr(5)
-'Mundo'
-```
-
-**Nota:** Ten cuidado porque también existe un método `substring` que se diferencia de `substr` por el segundo argumento. A diferencia de `substr`, `substring` recibe la posición hasta donde se desea extraer la cadena. Por ejemplo:
-
-```text
-> "Bienvenido!".substr(4, 6)
-'venido'
 > "Bienvenido!".substring(4, 6)
 've'
 ```
+
+**Nota:** Ten cuidado porque también existe un método **obsoleto** `substr`, que se diferencia de `substring` por el segundo argumento. A diferencia de `substring`, `substr` recibe, como segundo argumento, el número de caracteres que se desean extraer. Este método `substr` es obsoleto y se recomienda evitarlo.
 
 Puedes reemplazar un trozo de la cadena por otro con el método `replace`:
 
@@ -165,4 +158,3 @@ Puedes validar si la cadena contiene una subcadena específica con el método `i
 > "Hola Mundo".includes("Hola")
 true
 ```
-
