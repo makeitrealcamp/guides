@@ -1,6 +1,6 @@
 # Ramas (branches)
 
-Las **ramas** (branches) nos permiten desviarnos de la línea principal de desarrollo para realizar experimentos que después podemos integrarlos a la línea principal o descartarlos.
+Las **ramas** (branches) nos permiten desviarnos de la línea principal de desarrollo que después podemos integrar a la línea principal o descartar. Las ramas son útiles para trabajar en nuevas funcionalidades, solución de errores o realizar experimentos, especialmente cuando estamos trabajando con más desarrolladores sobre el mismo proyecto.
 
 Por defecto **git** crea una **rama** por defecto llamada `master`.
 
@@ -14,7 +14,7 @@ On branch master
 
 ## Listando las ramas
 
-Para ver una lista de las ramas utiliza el comando `git branch`. Por ejemplo, suponiendo que tienes tres ramas (`master`, `rama-1` y `rama-2`):
+Para ver una lista de las ramas utiliza el comando `git branch`. Por ejemplo, suponiendo que tienes tres ramas (`master`, `rama-1` y `rama-2`) el resultado sería similar al siguiente:
 
 ```
 $ git branch
@@ -134,7 +134,7 @@ git branch -D mi-rama
 
 ## Rebasando una rama
 
-**Nota:** Rebasar ramas es un tema avanzado que recomendamos omitir hasta que tengas más experiencia con Git.
+**Nota:** Rebasar ramas es un tema avanzado que recomendamos omitir hasta que tengas un poco más experiencia con Git.
 
 Una rama se rebasa con alguno de dos siguientes objetivos:
 

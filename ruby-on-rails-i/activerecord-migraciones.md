@@ -85,7 +85,7 @@ class CreateJoinTableCategoriesProducts < ActiveRecord::Migration[5.0]
 end
 ```
 
-Ten en cuenta que esta es una tabla que representa la relación muchos a muchos entre dos tablas pero no existe un modelo de esta tabla.
+Ten en cuenta que esta es una tabla que representa la relación muchos a muchos entre dos tablas pero no tiene un modelo asociado.
 
 ## Ejecutando y reversando migraciones
 
