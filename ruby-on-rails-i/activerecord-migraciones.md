@@ -66,6 +66,27 @@ class RemovePublishedAtFromProducts < ActiveRecord::Migration[5.0]
 end
 ```
 
+Por último, es posible generar una migración de una relación muchos a muchos entre dos tablas. por ejemplo:
+
+```text
+$ rails generate migration CreateJoinTableCategoriesProducts categories products
+```
+
+Al ejecutar este comando se generaría la siguiente migración:
+
+```ruby
+class CreateJoinTableCategoriesProducts < ActiveRecord::Migration[5.0]
+  def change
+    create_join_table :categories, :products do |t|
+      # t.index [:category_id, :product_id]
+      # t.index [:product_id, :category_id]
+    end
+  end
+end
+```
+
+Ten en cuenta que esta es una tabla que representa la relación muchos a muchos entre dos tablas pero no tiene un modelo asociado.
+
 ## Ejecutando y reversando migraciones
 
 Para ejecutar las migraciones pendientes ejecuta el siguiente comando en la consola:
@@ -171,4 +192,3 @@ end
 El método `reversible` es útil para hacer migraciones de datos \(p.e. cuando creas una nueva columna y debes actualizar todos los registros\) o para ejecutar código SQL especial.
 
 Es posible que ahora no necesites esta funcionalidad pero es bueno que sepas que existe!
-
