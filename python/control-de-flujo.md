@@ -183,7 +183,7 @@ def dividir(a, b):
 
 Hagamos unas pruebas:
 
-```python
+```
 >>> dividir(10, 3)
 3.3333333333333335
 >>> dividir(10, 0)
