@@ -24,7 +24,7 @@ Abre una consola y ejecuta el siguiente comando
 $ python3
 ```
 
-Obtendrás la siguiente salida
+Obtendrás una salida similar a la siguiente:
 ```text
 Python 3.6.11 (default, Jun 29 2020, 05:15:03)
 [GCC 5.4.0 20160609] on linux

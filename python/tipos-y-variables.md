@@ -1,10 +1,10 @@
 # Tipos y Variables
 
 ## Strings
-Los programadores nos referimos a los bloques de texto como “strings”
+Los programadores nos referimos a los bloques de texto como "strings"
 
 ```python
-print(“Hello World”)
+print("Hello World")
 ```
 
 Ahora podrías hacerte una nueva pregunta, y es si ¿puedo usar comillas simples?, y si es así ¿cuándo usar las comillas dobles o simples?
@@ -19,7 +19,7 @@ print('El computador esta imprimiendo "Hola Mundo!"')
 ¿Qué notas extraño en ambas líneas de código?
 En la primera línea estamos combinando exitosamente comillas dobles (para abrir y cerrar la frase) con las comillas simples (para denotar la palabra en inglés I’m).
 
-En la segunda línea estamos combinando exitosamente las comillas simples (para abrir y cerrar la frase) con las comillas dobles (Para acentuar la palabra “Hola Mundo!”)
+En la segunda línea estamos combinando exitosamente las comillas simples (para abrir y cerrar la frase) con las comillas dobles (Para acentuar la palabra "Hola Mundo!")
 
 Como puedes ver, podemos usar las comillas dobles o simples para abrir o cerrar las frases, pero lo que no podemos hacer es algo como esto:
 
@@ -28,7 +28,7 @@ print("Una frase común en programación es "Hola Mundo!"")
 ```
 
 ¿Qué notas extraño en esta línea de código?
-El programa está asumiendo que estas terminando la frase después de la palabra “es”, ya que abriste la frase con comillas dobles y estas acentuando la frase “Hola Mundo” con el mismo tipo de comillas. Si ejecutas esto en tu consola obtendrás el siguiente error:
+El programa está asumiendo que estas terminando la frase después de la palabra "es", ya que abriste la frase con comillas dobles y estas acentuando la frase "Hola Mundo" con el mismo tipo de comillas. Si ejecutas esto en tu consola obtendrás el siguiente error:
 
 ```python
 >>> print("Una frase común en programación es "Hola Mundo!"")
@@ -57,7 +57,7 @@ terminator = "Hasta la vista, Baby"
 print(terminator)
 ```
 
-Algo a notar aquí, es que la variable sigue llamándose igual `terminator`, pero fue “reasignada” a otro valor, por tanto cambió el valor de la variable.
+Algo a notar aquí, es que la variable sigue llamándose igual `terminator`, pero fue "reasignada" a otro valor, por tanto cambió el valor de la variable.
 
 Otra pregunta que podría surgir es si ¿las variables pueden ser reasignadas a otro tipo de datos? SI, siempre y cuando sea un tipo de dato válido en Python. Veamos este ejemplo
 
@@ -74,7 +74,7 @@ var = False
 ```
 
 ## Errores
-Cuando nos encontramos con un error no esperado, a esto lo llamamos “bugs”. Dos errores comunes en python son `SyntaxError` y `NameError`:
+Cuando nos encontramos con un error no esperado, a esto lo llamamos "bugs". Dos errores comunes en python son `SyntaxError` y `NameError`:
 
 * `SyntaxError`: significa que algo está mal escrito en el programa, como puntuaciones donde no pertenecen, no hay paréntesis de cierre, etc.
 * `NameError`: cuando el interpretador de python ve una palabra que no reconoce, como una variable no definida por ejemplo.
@@ -85,7 +85,7 @@ Anteriormente vimos un error de sintaxis cuando los paréntesis no estaban bien 
 print("Una frase común en programación es "Hola Mundo!"")
 ```
 
-El resultado es un `SyntaxError: invalid syntax`, y python trata de señalar dónde está el posible error con el símbolo `^`, en este caso señalando “Hola”
+El resultado es un `SyntaxError: invalid syntax`, y python trata de señalar dónde está el posible error con el símbolo `^`, en este caso señalando "Hola"
 
 Resultado
 
@@ -219,7 +219,7 @@ print(44 % 2)
 ```
 
 ### Concatenación
-El operador `+` no solo suma dos números, sino que también puede “añadir” dos strings. Esto se llama concatenación. Si queremos concatenar un string con un número debemos cambiar el número a string con la función `str()` de python.
+El operador `+` no solo suma dos números, sino que también puede "añadir" dos strings. Esto se llama concatenación. Si queremos concatenar un string con un número debemos cambiar el número a string con la función `str()` de python.
 
 
 ```python
@@ -231,15 +231,12 @@ string_completo = nacimiento_string + str(edad) + nacimiento_string_2
 print(string_completo)
 ```
 
-Como puedes ver, en la concatenación tuvimos que “convertir” la variable que almacena un número a un string usando el método de Python `str()`
+Como puedes ver, en la concatenación tuvimos que "convertir" la variable que almacena un número a un string usando el método de Python `str()`
 
 ### Más igual
 Esta es una forma abreviada de actualizar variables. Cuando usted tiene un número guardado en una variable y quiere sumar otro valor al valor actual de la variable, puede usar el operador `+=`.
 
 Este operador también puede ser usado con la concatenación de strings
-
-
-
 
 ```python
 # primero la variable tiene un número almacenado de 3

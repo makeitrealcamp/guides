@@ -1,6 +1,6 @@
 # Control del Flujo
 
-Los computadores van por un flujo de decisiones cada vez que ejecuta un programa, evaluando condiciones a medida que corre.
+Los computadores van por un flujo de decisiones a medida que se ejecuta un programa, evaluando condiciones a medida que corre.
 
 ## Expresiones Booleanas
 Una expresión booleana es una cláusula que puede ser evaluada a `True` o `False` y sin dejar lugar a duda o ser una respuesta ambigua.
@@ -66,7 +66,7 @@ if 2 == 4 - 2:
 ¿Este condicional imprime "apple"? R:/ si lo imprime ya que cumple el condicional.
 
 ### Operaciones Relacionales II
-Hay un montón de operadores relacionales ya vimos alguno, y aquí tenemos más:
+Hay un montón de operadores relacionales ya vimos algunos, y aquí tenemos más:
 * mayor que: `>`
 * menor que:  `<`
 * mayor o igual que: `>=`
@@ -77,10 +77,10 @@ Supongamos que estamos corriendo una plataforma de streaming y queremos escribir
 ```python
 def checkeo_edad(edad):
   if edad >= 13:
-    return True
+    return TrueF
 ```
 
-Haz la prueba en tu maquina, llama a la función `checkeo_edad()` ya pasale diferentes argumentos para ver cómo se comporta.
+Haz la prueba en tu maquina, llama a la función `checkeo_edad()` y pásale diferentes argumentos para ver cómo se comporta.
 
 ### Operaciones Booleanas:
 A menudo los condicionales que usted evaluará requerirán más de dos expresiones booleanas. Puede hacerlo con operadores booleanos (también llamados operadores lógicos). Los operadores booleanos son:

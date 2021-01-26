@@ -8,8 +8,6 @@ Cada ítem es separado por coma (por ej. `[67, 68]`). Es considerado buena prác
 alturas = [1.9, 1.70, 1.6, 1.7]
 ```
 
-Las listas están indexadas y esos índices empiezan en `0`.
-
 Una lista puede contener más que solo números decimales.
 
 ```python
@@ -41,7 +39,7 @@ Una lista no tiene siempre que contener valores. Podemos crear listas vacías. U
 lista_vacia = []
 ```
 
-### Creciendo la Lista: append
+### Creciendo la Lista: `append`
 Podemos añadir un único elemento a la lista usando `.append()`. La declaración de `.append()` siempre va después de la lista. Esto es diferente a las funciones como `print()` que siempre vienen antes, miremos la diferencia
 
 ```python
@@ -79,7 +77,7 @@ mi_lista.append(4)
 [1, 2, 3, 4]
 ```
 
-### Creciendo la Lista: más(+)
+### Creciendo la Lista: más(`+`)
 Existe una segunda forma de añadir elementos a una lista vacía o previamente creada y con valores. Cuando queremos añadir múltiples ítems a una lista podemos usar el `+` para combinar dos listas. Solo podemos usar el `+` para añadir otras listas a una lista, no para agregar valores únicos (como si lo hacía `.append()`)
 
 Otra forma de añadir un único valor a una lista es con la sintaxis: (`[]`) (por ej. `mi_lista + [4]`). Con el operador + se puede añadir más de una lista.

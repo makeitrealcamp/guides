@@ -30,7 +30,7 @@ saludar()
 # Esto imprime las líneas de saludo
 ```
 
-Nota: si intentas imprimir estas líneas desde tu consola o terminal te arrojará un `SintaxError`. Esto es debido a que en tu consola espera que ingreses por cada línea una expresión (sin saltos de línea). Existe la opción de crear Lambdas en python, lo que es igual a una función escrita en una sola línea de código (fuera de otras utilidades). Puedes ver más información aquí. https://www.w3schools.com/python/python_lambda.asp Te recomendamos seguir ejecutando los comandos desde tu IDE favorita.
+Nota: si intentas escribir la función desde tu consola o terminal debes dar doble enter para poder crear la función correctamente. 
 
 ### Parámetros
 ¿Qué pasa si queremos cambiar algo dinámicamente dentro de la función? Podemos usar los parámetros. Los parámetros son variables que podemos pasar dentro de la función cuando la llamamos. Cada vez que llamamos a la función con un valor diferente dentro del paréntesis, ese valor es asignado a esa variable para mantener el valor.
