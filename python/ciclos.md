@@ -33,9 +33,9 @@ for <variable temporal> in <lista>:
 **Nota** cuando usamos código explicativo del tipo `<variable temporal>` nos estamos refiriendo a ["pseudo-código"](https://es.wikipedia.org/wiki/Pseudoc%C3%B3digo).
 
 Revisemos cada uno de estos bloques constructores del ciclo `for`:
-* variable temporal: puede ser llamada como quiera y no tiene que estar definida con anticipación.
-* lista: es la lista sobre la cual queremos iterar
-* acción: es la acción que queremos ejecutar sobre cada elemento de la lista, según nuestro anterior ejemplo, sería un `pint()`. Esa es la acción
+* <variable temporal>: puede ser llamada como quiera y no tiene que estar definida con anticipación.
+* <lista>: es la lista sobre la cual queremos iterar
+* <acción>: es la acción que queremos ejecutar sobre cada elemento de la lista, según nuestro anterior ejemplo, sería un `pint()`. Esa es la acción
 
 Volvamos a realizar el mismo ejercicio, pero usando el ciclo `for`
 
@@ -55,14 +55,14 @@ labrador
 pug
 ```
 
-Con solo dos líneas de código imprimos todos los ítems de una lista, sin importar su tamaño. Ahora, ¿qué pasa si cambiamos el nombre de la variable temporal?
+Con solo dos líneas de código imprimos todos los ítems de una lista, sin importar su tamaño. Ahora, ¿qué pasa si cambiamos el nombre de la variable temporal `i` por `raza`?
 
 ```python
 for raza in razas:
   print(raza)
 ```
 
-Sigue funcionando sin problemas, y dando el mismo resultado. Una buena práctica aquí es llamar las listas en plural y la variable temporal en singular.
+Sigue funcionando sin problemas, y dando el mismo resultado. Una buena práctica aquí es llamar las listas en plural y la variable temporal en singular. Sin embargo encontrás multiples ejemplos donde la variable temporal es llamada `i` o `j`, pero recuerda que esto no influye en el resultado final.
 
 Todo lo que esté al mismo nivel de indentación después de la declaración del ciclo `for` estará incluido dentro del ciclo y corre en cada iteración. Si olvidamos indentar, obtendremos un `IndentationError`
 
@@ -101,9 +101,9 @@ for numero in mis_numeros_favoritos:
 
 ¡Pruébalo en tu máquina a ver que sucede!
 
-Respuesta: el computador se queda atorado, ya que ha entrado en un ciclo infinito, pero ¿por qué? Si revisas el código en detalle, te darás cuenta que dentro del ciclo `for` estamos añadiendo el valor `1` a la lista de forma infinita, por tanto el ciclo nunca termina. Debes dar CTRL + C para poder parar la ejecución, y así seguir adelante.
+Respuesta: el computador se queda atorado, ya que ha entrado en un ciclo infinito, pero ¿por qué? Si revisas el código en detalle, te darás cuenta que dentro del ciclo `for` estamos añadiendo el valor `1` a la lista de forma infinita, por tanto el ciclo nunca termina. Debes oprimir las teclas `CTRL + C` para poder parar la ejecución, y así seguir adelante.
 
-### Break
+### `break`
 En algún momento vamos a querer buscar un item dentro de una lista
 
 
@@ -148,7 +148,7 @@ chihuahua
 Hemos encontrado un beagle
 ```
 
-### Continue
+### `continue`
 Otro caso de uso similar se da cuando estamos iterando sobre una lista, pero podríamos querer saltarnos algunos valores o ítems. Podemos usar `continue` para movernos al siguiente `i` de la lista
 
 ```python
@@ -251,6 +251,31 @@ while i <= n:
     i += 1    # actualizamos el contador
 ```
 
+Resultado
+
+```
+contador:  1
+sumatoria:  1
+contador:  2
+sumatoria:  3
+contador:  3
+sumatoria:  6
+contador:  4
+sumatoria:  10
+contador:  5
+sumatoria:  15
+contador:  6
+sumatoria:  21
+contador:  7
+sumatoria:  28
+contador:  8
+sumatoria:  36
+contador:  9
+sumatoria:  45
+contador:  10
+sumatoria:  55
+```
+
 Analiza el resultado en detalle, y trata de hacer otros ejemplos adicionales por tu cuenta.
 
 ## Comprensión de listas o "List Comprehensions"
@@ -332,7 +357,7 @@ Resultado
 
 Como vemos es el mismo resultado del ciclo `for`.
 
-El List Comprehension
+Este list comprehension
 1. Toma un elemento en `palabras`
 2. Asigna ese elemento a la variable llamada `palabra`
 3. Verifica si `palabra[0] == @` es igual a `True`, y si sí, añade `palabra` a la nueva lista `usernames`. Si no, no pasa nada.
