@@ -25,3 +25,4 @@ A partir de enero de 2021, Python ocupa el tercer lugar en el índice de [TIOBE]
 * [Control de Flujo](control-de-flujo.md)
 * [Listas](listas.md)
 * [Ciclos](ciclos.md)
+* [Diccionarios, Tuplas y Sets](diccionarios-tuplas-y-sets.md)
