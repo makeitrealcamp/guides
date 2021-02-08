@@ -187,3 +187,7 @@
   * [Listas](python/listas.md)
   * [Ciclos](python/ciclos.md)
   * [Diccionarios, Tuplas y Sets](python/diccionarios-tuplas-y-sets.md)
+* [Numpy](numpy/README.md)
+  * [Primeros Pasos](numpy/primeros-pasos.md)
+  * [Operaciones con Arrays](numpy/operaciones-con-arrays.md)
+  * [Arrays de Dos Dimensiones](numpy/arrays-de-dos-dimensiones.md)
