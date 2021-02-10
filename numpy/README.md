@@ -20,3 +20,4 @@ Una de las características más importantes de NumPy es la habilidad de usar lo
 * [Primeros Pasos](primeros-pasos.md)
 * [Operaciones con Arrays](operaciones-con-arrays.md)
 * [Arrays de Dos Dimensiones](arrays-de-dos-dimensiones.md)
+* [Estadística con Numpy](estadistica-con-numpy.md)
