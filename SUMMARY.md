@@ -191,3 +191,4 @@
   * [Primeros Pasos](numpy/primeros-pasos.md)
   * [Operaciones con Arrays](numpy/operaciones-con-arrays.md)
   * [Arrays de Dos Dimensiones](numpy/arrays-de-dos-dimensiones.md)
+  * [Estadística con Numpy](numpy/estadistica-con-numpy.md)
