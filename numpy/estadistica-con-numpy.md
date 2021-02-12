@@ -279,3 +279,34 @@ print("Rango Intercuantil: ", tercer_cuantil - primer_cuantil)
 * Es útil también para determinar los outliers con los valores máximo y mínimo
 * Es un resumen no afectado por los outliers.
 * Podemos comparar las 5 métricas de resumen con otros datasets para ver símiles o diferencias
+
+## Desviación Estándar
+Mientras que la media y la mediana nos habla sobre el centro de nuestros datos, ellos no reflejan el rango de datos. Aquí es donde llega la desviación standard
+
+Similar a los rangos intercuartiles, la desviación estándar nos dice que tan dispersa está nuestra data.
+* A mayor desviación estándar, más dispersa está nuestra data del centro.
+* A menor desviación estándar, más datos están agrupados alrededor de la media.
+
+Con NumPy podemos usar la función llamada `np.std`
+
+```python
+numeros = np.array([65, 36, 52, 91, 63, 79])
+np.std(numeros)
+
+# 17.716909687891082
+```
+
+### Desviación Estándar Vs Rango Intercuartil
+
+Desviación Estándar
+* Toma en cuenta todos los valores del dataset, incluyendo outliers.
+* Depende de la media, porque este valor es usado para determinar qué tanto están los datos desviados de la media del dataset.
+* Es importante cuando necesitamos la varianza de un set de datos, como regresiones lineales.
+* Es más confiable cuando los datos están normalizados y no sesgados (skewed)
+
+Rango Intercuartil
+* Nos dice que tan dispersos están los datos. A mayor valor, más dispersa está la data y viceversa
+* No toma en cuenta todos los datos del conjunto de datos, sino principalmente las posiciones cuando el set está ordenado.
+* No se afecta tanto por los outliers, o por datos no normalizados o sesgados.
+
+Utilizar ambos cuando analizamos datos es mejor que usar uno solo, y tenemos mejores insights.
