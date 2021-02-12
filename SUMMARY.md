@@ -192,3 +192,4 @@
   * [Operaciones con Arrays](numpy/operaciones-con-arrays.md)
   * [Arrays de Dos Dimensiones](numpy/arrays-de-dos-dimensiones.md)
   * [Estadística con Numpy](numpy/estadistica-con-numpy.md)
+  * [Distribucuón Estadística](numpy/distribucion-estadistica.md)
