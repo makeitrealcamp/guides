@@ -1,104 +1,80 @@
 # Funciones
 
-Una función es una colección de varias líneas de código. Al llamar una función, estamos llamando todas esas líneas a la vez, sin tener que repetir el código. Una función es una herramienta que usted puede usar una y otra vez para producir un resultado consistente desde diferentes entradas.
+Una función es una colección de varias líneas de código que se puede invocar desde otras partes del programa o aplicación. Al invocar una función, estamos ejecutando todas esas líneas a la vez, sin tener que repetir ese código siempre que lo necesitemos. Es una forma de reutilizar código.
 
-## Escribir una función
-Para escribir una función en python necesitamos un encabezado y un bloque de código indentado. El encabezado empieza con la palabra `def` y el nombre de la función seguido de paréntesis y dos puntos.
-
-El código indentado corre algún tipo de operación. La sintaxis luce algo como lo siguiente:
-
-```python
-def nombre_de_la_funcion():
-  # mi código
-  pass
-```
-
-Esa es la sintaxis básica de una función, la identificación es el espacio en blanco a la izquierda del comentario. En python el espacio en blanco que deja la indentación le dice al computador que hace parte de la función y qué no hace parte de ella.
-
-Nota: la palabra reservada `pass` se usa comunmente en Python para "saltarse" la ejecución de una función.
-
-Si quisiéramos escribir otra línea fuera de la función, solo debemos quitar la indentación. Normalmente se usan 2 espacios de indentación, aunque muchas plataformas usan 4 espacios. Normalmente usamos la tecla "Tab" o tabuladora de nuestro teclado. Hagamos otro ejemplo
-
+Para definir una función en **Python** se utiliza la palabra clave `def` seguido del nombre de la función, paréntesis y dos puntos como se muestra a continuación:
 
 ```python
 def saludar():
-  print("Bienvenido a mi tienda de camisetas")
-  print("La camiseta que tenemos en oferta hoy es la de los Avengers")
-  print("Disfruta comprando!")
-
-saludar()
-# Esto imprime las líneas de saludo
+  # el código que queremos que se ejecute, debe estar indentado
+  print("Hola!")
 ```
 
-Nota: si intentas escribir la función desde tu consola o terminal debes dar doble enter para poder crear la función correctamente. 
-
-### Parámetros
-¿Qué pasa si queremos cambiar algo dinámicamente dentro de la función? Podemos usar los parámetros. Los parámetros son variables que podemos pasar dentro de la función cuando la llamamos. Cada vez que llamamos a la función con un valor diferente dentro del paréntesis, ese valor es asignado a esa variable para mantener el valor.
+Para **invocar** la función utilizamos el nombre seguido de paréntesis:
 
 ```python
-def saludar(oferta_especial):
-  print("Bienvenido a mi tienda de camisetas")
-  print("La camiseta que tenemos en oferta hoy es la de " + oferta_especial)
-  print("Disfruta comprando!")
-
-saludar("los Avengers")
-# Esto imprime las líneas de saludo
+saludar() # Imprime "Hola!"
 ```
+
+### Argumentos
+
+Podemos pasarle información a la función a través de argumentos (o parámetros). Puedes pensar en los argumentos como información que le pasamos a la función cuando la invocamos. Los argumentos se definen dentro de los paréntesis de la función. Por ejemplo, podemos recibir un argumento `nombre` en nuestra función `saludar`:
+
+```python
+def saludar(nombre):
+  print("Hola " + nombre)
+
+saludar("Pedro") # "Hola Pedro"
+saludar("María") # "Hola María"
+```
+
+Fíjate que dentro de la función podemos utilizar el argumento como si fuera cualquier otra variable y al invocar la función decidimos la información que le queremos pasar.
 
 ### Múltiples parámetros
-Podemos hacer una función que tome más de un parámetro usando comas. Ahora ambas variables serán pasada a la función cuando sea llamada
 
+Las funciones pueden recibir más de un argumento separándolos con coma (`,`). Por ejemplo:
 
 ```python
-def saludar(mi_tienda, oferta_especial):
-  print("Bienvenido " + mi_tienda + " de camisetas")
-  print("La camiseta que tenemos en oferta hoy es la de " + oferta_especial)
-  print("Disfruta comprando!")
+def saludar(nombre, edad):
+  print("Hola " + nombre + " de " + edad + " años")
 
-saludar("Comics T-Shirts. Tienda ", "los Avengers")
-# Esto imprime las líneas de saludo
+saludar("Pedro", 20) # "Hola Pedro de 20 años"
+saludar("María", 30) # "Hola María de 30 años"
 ```
 
-En este punto podría surgir la siguiente pregunta: ¿Todos los parámetros deben ser usados dentro de la función?
-* Una función seguirá trabajando normal incluso si ninguno de los parámetros son usados dentro de la función.
-* Sin embargo, hacer esto es contra-intuitivo, ya que el propósito de los parámetros es permitir diferentes inputs para que sean usados con la función.
-
+¿Todos los argumentos deben ser usados dentro de la función? Una función sigue trabajando normal incluso si ninguno de los argumentos son usados dentro de la función. Sin embargo, hacer esto es contra-intuitivo, ya que el propósito de los argumentos es permitir diferentes entradas para que sean usados dentro de la función.
 
 ### Keyword arguments
-En la función del anterior ejercicio, teníamos dos argumentos: (mi_tienda, oferta_especial). No importa que valor sea puesto en el primero y en el segundo argumento, serán asignados respectivamente. Esto es llamado argumentos posicionales, porque la asignación depende de la posición. También podemos pasar estos argumentos como "keyword arguments", donde decimos explícitamente a qué argumento corresponde.
 
-Presta atención al orden de los parámetros en el siguiente código:
+En la función del anterior ejercicio, teníamos dos argumentos: `nombre` y `edad`. No importa que valor sea puesto en el primero y en el segundo argumento, serán asignados respectivamente. Esto es llamado argumentos posicionales, porque la asignación depende de la posición. También podemos pasar estos argumentos como "keyword arguments", donde decimos explícitamente a qué argumento corresponde.
 
-```python
-def saludar(mi_tienda, oferta_especial):
-  print("Bienvenido " + mi_tienda + " de camisetas")
-  print("La camiseta que tenemos en oferta hoy es la de " + oferta_especial)
-  print("Disfruta comprando!")
-
-saludar(oferta_especial="los Avengers", mi_tienda="Comics T-Shirts. Tienda ")
-# Esto imprime las líneas de saludo
-```
-
-En la última línea cambiamos el orden en que pasamos los parámetros de la función, sin embargo sigue imprimiendo en las posiciones correctas. Esto es debido a que explícitamente le hemos dicho a qué parámetro pertenece cada valor.
-
-### Parámetros por defecto
-También podemos definir parámetros por defecto usando una sintaxis similar a la anterior, pero en la definición de la función. Si la función no es llamada con ese parámetro, entonces es asignado el valor por defecto. Estos parámetros por defecto deben declararse como último argumento dentro de los paréntesis, sino tendremos error de sintaxis
+Presta atención al orden de los argumentos en el siguiente código:
 
 ```python
-def saludar(mi_tienda, oferta_especial="Star Wars"):
-  print("Bienvenido " + mi_tienda + " de camisetas")
-  print("La camiseta que tenemos en oferta hoy es la de " + oferta_especial)
-  print("Disfruta comprando!")
+def saludar(nombre, edad):
+  print("Hola " + nombre + " de " + edad + " años")
 
-saludar(mi_tienda="Comics T-Shirts. Tienda ")
-# Esto imprime las líneas de saludo
+saludar(edad=30, nombre="Maria") # "Hola Maria de 30 años"
 ```
 
-Si vemos, en la última línea solo pasamos un parámetro a la función. Pero debido a que habíamos declarado un parámetro por defecto llamado "Star Wars" no tendremos ningún error y se tomará ese valor para el parámetro `oferta_especial`
+En la última línea cambiamos el orden en que pasamos los argumentos de la función, sin embargo sigue imprimiendo en las posiciones correctas. Esto es debido a que explícitamente le hemos dicho a qué argumento pertenece cada valor.
 
+### Argumentos por defecto
 
-### Returns
-Cuando hay un resultado de una función que tiene que ser guardado en una variable, a esto lo llamamos valor de retorno de una función. Para ello usamos la palabra reservada `return`.
+También podemos definir argumentos por defecto usando una sintaxis similar a la anterior, pero en la definición de la función. Si la función no es llamada con ese argumento, entonces es asignado el valor por defecto. Estos argumentos por defecto deben declararse como último argumento dentro de los paréntesis, si no tendremos error de sintaxis.
+
+```python
+def saludar(nombre, edad=20):
+  print("Hola " + nombre + " de " + edad + " años")
+
+saludar(nombre="Pedro") # "Hola Pedro de 20 años"
+```
+
+Si vemos, en la última línea solo pasamos un argumento a la función. Pero debido a que habíamos declarado un argumento por defecto no tendremos ningún error y se tomará ese valor para el parámetro `nombre`.
+
+### Valor de retorno
+
+Las funciones pueden, opcionalmente, retornar un valor. Para ello usamos la palabra reservada `return` seguido del valor que queremos retornar:
 
 ```python
 def dividir_por_cuatro(numero):
@@ -116,14 +92,16 @@ resultado2 = dividir_por_cuatro(resultado)
 print(str(resultado) + " dividido por 4 es " + str(resultado2) + "!")
 ```
 
-Respuesta
+Respuesta:
+
 ```
 16 dividido por 4 es 4.0!
 4.0 dividido por 4 es 1.0!
 ```
 
 ### Retorno de múltiples valores
-Algunas veces vamos a querer retornar varios valores desde una función. Podemos hacerlo separando los valores por coma.
+
+Algunas veces vamos a querer retornar varios valores desde una función. Podemos hacerlo separando los valores con coma:
 
 ```python
 def valor_al_cuadrado(valor_x, valor_y):
@@ -135,19 +113,17 @@ def valor_al_cuadrado(valor_x, valor_y):
 Perfecto, hemos declarado una función que retorna dos valores, los cuales hemos separado por coma. Sin embargo, debemos llamar la función de una manera especial. Miremos como:
 
 ```python
-x_al_cuadrado, y_al_cuadrado = valor_al_cuadrado(1, 3)
+x_al_cuadrado, y_al_cuadrado = valor_al_cuadrado(1, 3) # retorna 1 y 9
 
 print(x_al_cuadrado)
 print(y_al_cuadrado)
-
-# retorna 1 y 9
 ```
 
-Como vemos, podremos obtener estos valores de retorno asignándolos a unas variables cuando llamamos la función.
+Como vemos, podemos obtener estos valores de retorno asignándolos a variables cuando llamamos la función.
 
-### Scope
+### Alcance
+
 Las variables definidas dentro de las funciones no existen fuera de la función, por tanto si tratamos de acceder a esa variable obtendremos un `NameError`. La parte de un programa donde una variable puede ser accedida la llamamos en programación el scope, en español significa el "alcance" de la variable.
-
 
 ```python
 def crear_string(articulo_especial):
@@ -164,5 +140,5 @@ encabezado = "Nuestro artículo especial es "
 def crear_string(articulo_especial):
   return encabezado + articulo_especial + "."
 
-print(crear_string("Mandalorian"))
+print(crear_string("Mandalorian")) # "Nuestro artículo especial es Mandalorian"
 ```
