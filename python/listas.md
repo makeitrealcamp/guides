@@ -1,4 +1,5 @@
 # Listas
+
 Una lista es un set ordenado de objetos en Python. Una lista empieza y termina con corchetes (`[` y `]`)
 
 Cada ítem es separado por coma (por ej. `[67, 68]`). Es considerado buena práctica añadir espacio después de la coma. Veamos unos ejemplos
@@ -19,6 +20,7 @@ lista_mixta = ["andrea", 25]
 ```
 
 ## Listas de listas
+
 Hemos visto que las listas pueden contener números y strings, pero las listas también pueden contener otras listas!
 
 ```python
@@ -33,13 +35,15 @@ Como vemos tenemos un corchete "padre" que tiene unos elementos internos separad
 ```
 
 ## Listas vacías
+
 Una lista no tiene siempre que contener valores. Podemos crear listas vacías. Usualmente lo hacemos porque planeamos llenarla más adelante con datos. Ya vamos a hablar sobre cómo anexar datos a una lista
 
 ```python
 lista_vacia = []
 ```
 
-### Creciendo la Lista: `append`
+### Creciendo la lista: `append`
+
 Podemos añadir un único elemento a la lista usando `.append()`. La declaración de `.append()` siempre va después de la lista. Esto es diferente a las funciones como `print()` que siempre vienen antes, miremos la diferencia
 
 ```python
@@ -78,6 +82,7 @@ mi_lista.append(4)
 ```
 
 ### Creciendo la Lista: más(`+`)
+
 Existe una segunda forma de añadir elementos a una lista vacía o previamente creada y con valores. Cuando queremos añadir múltiples ítems a una lista podemos usar el `+` para combinar dos listas. Solo podemos usar el `+` para añadir otras listas a una lista, no para agregar valores únicos (como si lo hacía `.append()`)
 
 Otra forma de añadir un único valor a una lista es con la sintaxis: (`[]`) (por ej. `mi_lista + [4]`). Con el operador + se puede añadir más de una lista.
@@ -97,6 +102,7 @@ items_vendidos_nuevos = items_vendidos + ['tortas', 'empanadas']
 Hemos añadido dos elementos en un solo paso con el operador `+`
 
 ## Rangos
+
 Muy pronto vamos a necesitar construir listas con una lista consecutiva de números. (por ej, una lista de ítems con valores del 0 al 9). Para ello podemos usar una función llamada `range`.
 
 La función `range` toma un único parámetro y genera una lista empezando desde `0` y terminando un número antes del número asignado en el parámetro.
@@ -151,6 +157,7 @@ print(list(mi_lista))
 Ahora lo que hizo fue ir de dos en dos
 
 ## Índices de una lista
+
 Las listas están indexadas, esto significa que cada elemento de la lista tiene un valor posicional el cual nos servirá para hacer ciertas operaciones especiales. Veamos un ejemplo
 
 ```python
@@ -168,9 +175,11 @@ En la lista anterior el valor `ana` tiene un índice de `0`, el valor `juan` tie
 Más adelante veremos la utilidad en detalle
 
 ## Operaciones con listas
+
 Ahora que ya sabemos como crear una lista, podemos empezar a trabajar con listas previamente creadas.
 
 ### Largo de una Lista
+
 Muy seguido, necesitaremos conocer el número de ítems dentro de una lista, usualmente llamado el largo (length). Podemos hacer eso usando la función `len`, cuando aplicamos `len` a una lista obtenemos el número de ítems
 
 ```python
@@ -214,6 +223,7 @@ Nota: más adelante veremos los ciclos `for`, por ahora solo ejecutemos el códi
 Como vemos el `len()` es `4`, sin embargo los índices de la lista van desde `0` hasta `3`. Esto será muy útil para cuando necesitemos hacer operaciones sobre cada elemento de una lista, ya que de esta forma accedemos a los índices de cada elemento.
 
 ### Seleccionando elementos
+
 Recordemos que las listas están indexadas y estos índices empiezan en `0`. Podemos seleccionar un único elemento de la lista usando corchetes (`[ ]`) y el índice del ítem de la lista
 
 ```python
