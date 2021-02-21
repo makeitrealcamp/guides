@@ -1,32 +1,32 @@
 # Primeros pasos
 
-Para verificar si tienes Python 3 instalado abre una línea de comandos y ejecuta `python3 --version`. Si ya lo tienes te va a aparecer una línea similar a la siguiente:
+Para verificar si tienes **Python 3** instalado abre una línea de comandos y ejecuta `python3 --version`. Si ya lo tienes te va a aparecer una línea similar a la siguiente:
 
 ```text
 $ python3 --version   
-Python 3.6.11
+Python 3.8.5
 ```
 
-La versión puede ser diferente y cualquier versión superior a 3.0 está bien.
+La versión puede ser diferente pero cualquier versión superior a 3.0 está bien.
 
 Si ves un mensaje diciendo que el comando no fue encontrado, significa que aún no tienes Python 3 instalado. Puedes encontrar las instrucciones para instalarlo en el siguiente enlace:
 [https://realpython.com/installing-python/](https://realpython.com/installing-python/)
 
-Una vez que tengas instalado Python y lo hayas verificado, continúa.
+Una vez que tengas instalado **Python 3** y lo hayas verificado con el comando anterior puedes continuar.
 
 ## Ejecutando código Python
 
-Existen dos formas en las que puedes ejecutar código de Python. La primera es por medio de la consola o terminal, y la segunda opción es por medio de un editor de texto como VSCode, Atom o Sublime Text, entre otros.
+Existen dos formas en las que puedes ejecutar código escrito en Python. La primera es abriendo la consola interactiva de Python, y la segunda es creando un archivo con extensión `.py` y ejecutándolo desde la consola.
 
-### Ejecutando desde la terminal o consola
+### Consola interactiva
 
-Abre una consola y ejecuta el siguiente comando
+Abre una consola y ejecuta el siguiente comando:
 
 ```text
 $ python3
 ```
 
-Obtendrás una salida similar a la siguiente:
+Este comando abre la consola interactiva de Python:
 
 ```text
 Python 3.6.11 (default, Jun 29 2020, 05:15:03)
@@ -35,7 +35,9 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>>
 ```
 
-Esto significa que ya te encuentras listo para ejecutar cualquier comando de python. Vamos a verlo en acción. Ejecuta el siguiente comando:
+Te encuentras listo para ejecutar cualquier código en Python. Puedes identificar que estás en la consola interactiva porque encuentras los siguientes tres caracteres en el prompt: `>>>`.
+
+Ahora ejecuta el siguiente código:
 
 ```text
 >>> print("Hello world")
@@ -49,24 +51,24 @@ Hello world
 
 Para salir de la consola interactiva de Python oprime `Ctrl + D` o escribe `exit()` y oprime `Enter`.
 
-### Ejecutando desde un editor de texto
+### A partir de un archivo
 
-Ahora vamos a hacer este mismo proceso pero desde tu editor de texto. Puedes usar el editor de tu preferencia, el cual puede ser Atom, Sublime, VSCode o incluso PyCharm. Vamos de nuevo a la consola y crearemos una carpeta llamada `/python` así:
+Ahora vamos a hacer este mismo proceso pero creando un archivo con extensión `.py`. Puedes usar el editor de tu preferencia, por ejemplo [Atom](https://atom.io/), [VSCode](https://code.visualstudio.com/) o incluso [PyCharm](https://www.jetbrains.com/pycharm/). Vamos de nuevo a la consola y crearemos una carpeta llamada `/python` ejecutando el siguiente comando:
 
 ```text
 mkdir python
 ```
 
-Ingresamos a la carpeta y crearemos nuestro primer archivo de Python
+Ingresamos a la carpeta y creemos nuestro primer archivo de Python:
 
 ```text
 cd python
 touch index.py
 ```
 
-Si verificas con el comando `ls` ya debería aparecer el archivo Python listado. Si te das cuenta, los archivos de Python tendrán la extensión `.py`
+Si ejecutas el comando `ls` ya debería aparecer el archivo Python listado. Si te das cuenta, los archivos de Python tendrán la extensión `.py`.
 
-Ahora accede a tu editor de texto seleccionado y abre desde allí el archivo `index.py` que acabamos de crear y copia lo siguiente:
+Ahora accede a tu editor de texto seleccionado y abre desde allí el archivo `index.py` que acabamos de crear y escribe la siguiente línea:
 
 ```python
 print("Hello World")
@@ -74,7 +76,7 @@ print("Hello World")
 
 Guarda el archivo y vuelve a la consola.
 
-**Nota:** antes de ejecutar el siguiente comando verifica que ya te has salido de la consola interactiva de Python oprimiendo `Ctrl + D` o ejecutando `exit()`.
+**Nota:** antes de ejecutar el siguiente comando verifica que ya te has salido de la consola interactiva de Python oprimiendo `Ctrl + D` o ejecutando `exit()`. Fíjate que no aparezca `>>>` en el prompt.
 
 En la consola debes estar ubicado en la carpeta `/python` que creamos hace un momento. Ahora ejecuta el siguiente comando:
 
@@ -82,9 +84,7 @@ En la consola debes estar ubicado en la carpeta `/python` que creamos hace un mo
 python3 index.py
 ```
 
-Esto le está diciendo a la máquina que ejecute Python3 en el archivo `index.py`, y debido a que allí encuentra un comando de python llamado `print` le dará las instrucciones a la máquina para que imprima el string que allí se encuentra.
-
-Deberías obtener la siguiente respuesta una vez oprimes `Enter` en tu teclado.
+Esto le indica a la máquina que ejecute el código que se encuentra en `index.py` utilizando Python. Deberías ver lo siguiente en la pantalla:
 
 ```text
 Hello World
@@ -94,10 +94,10 @@ Excelente, has empezado con pie derecho estas guías, ahora empecemos a hacer co
 
 ### Comentarios
 
-Los comentarios en Python se utilizan principalmente para:
+Los comentarios en Python se utilizan para:
 
-* Documentar nuestro código y darle contexto a otras personas
-* Ignorar una línea y ver cómo corre el código
+* Documentar el código y darle contexto a otras personas sobre nuestro código.
+* Ignorar temporalmente la ejecución de una o más líneas de código.
 
 Los comentarios empiezan con el signo `#`:
 

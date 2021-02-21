@@ -1,55 +1,47 @@
 # Primeros pasos
 
 ## Instalando e importando NumPy
-Para usar NumPy con Python, debemos instalarlo e importarlo en la línea superior usando el siguiente código:
 
-Instalación desde la consola
+Para usar [NumPy](https://numpy.org/) debemos primero instalarlo desde la consola con el siguiente comando:
 
 ```
 pip3 install numpy
 ```
 
-Importación desde un archivo de python
+Después debemos importarlo en nuestro código de Python con la siguiente línea:
 
 ```python
 import numpy as np
 ```
 
-Escribiendo `as np` nos permite usar `np` como un atajo a NumPy (**less typing = fewer errors!**)
+El `as np` al final de esta línea nos permite usar `np` como un atajo a NumPy (**less typing = fewer errors!**).
 
 ## Usando NumPy
-Un NumPy array es un tipo especial de Lista. Es una Estructura de Datos que organiza múltiples items. Cada ítem puede ser de diferentes tipos (strings, numbers, o incluso otros arrays). Los arrays son más poderosos cuando son usados para guardar números. Esto es porque los arrays nos dan formas especiales de correr operaciones matemáticas que son simples de escribir y computacionalmente más eficientes.
 
-Un NumPy array se ve de esta manera:
-
-```python
-mi_array = np.array([1, 2, 3, 4, 5, 6])
-```
-
-Podemos transformar una Lista de Python en un NumPy Array usando `np.array()` y guardando en una nueva variable
+[NumPy](https://numpy.org/) incluye varios objetos y funciones que podemos invocar iniciando con `np.`, seguido del nombre del objeto o la función. Por ejemplo, para sacar el promedio de un arreglo haríamos lo siguiente:
 
 ```python
-mi_lista = [1, 2, 3, 4, 5, 6]
-mi_array = np.array(mi_lista)
+prom = np.mean([1, 2, 3, 4])
+print(prom) # 2.5
 ```
 
-## NumPy Arrays VS Listas
-* Ambos pueden guardar múltiples ítems de cualquier tipo de datos.
-* En ambos se puede acceder a ítems individuales por sus índices.
-* La diferencia más notable e importante es que podemos correr operaciones en un Array (sobre cada ítem), como suma, multiplicación y resta, como se podría en matemáticas.
-* Con las listas no se puede aplicar en cada uno de los  elementos una suma, y causaría error.
-
-## Creando Arrays desde CSV
-Típicamente no estaremos ingresando datos directamente dentro de un array. En vez, estaremos importando datos de algún otro lugar. Podemos transformar archivos CSV en arrays usando la función: `np.genfromtxt()`
-
-Creemos un archivo llamado sample.csv desde un editor de texto con los siguientes datos
-`34,9,12,11,7`.
-
-Importemos el CSV a NumPy usando el siguiente código:
+Hay algo importante que debemos aclarar y es que, aunque en este ejemplo le pasamos una lista a la función `mean`, NumPy convierte la lista a un arreglo de NumPy internamente. Podemos transformar una lista de Python en un arreglo de NumPy usando la función `array`:
 
 ```python
-csv_array = np.genfromtxt('sample.csv', delimiter=',')
-print(csv_array)
+arr = np.array([1, 2, 3])
 ```
 
-Un archivo CSV contiene líneas de datos que tiene columnas de datos separadas por comas. Cada fila sería como una fila en una base de datos.
+Por ejemplo, podemos sumar dos arreglos:
+
+```python
+arr = np.array([1, 2]) + np.array([1, 2])
+print(arr) # [2, 4]
+```
+
+Si intentas lo anterior con listas de Python no se sumarían sino que se concatenarían:
+
+```python
+print([1, 2] + [1, 2]) # [1, 2, 1, 2]
+```
+
+En la siguiente guía vamos a explorar más sobre los arreglos de NumPy.

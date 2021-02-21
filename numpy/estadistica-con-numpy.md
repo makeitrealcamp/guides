@@ -1,9 +1,11 @@
 # Estadística con NumPy
+
 Podemos usar NumPy para analizar datos usando estadística. Aprenderemos diferentes métodos para calcular propiedades estadísticas de un set de datos, como encontrar la media y la desviación standard. Esto servirá para entender cómo podemos usar la estadística para llegar a conclusiones acerca de los datos.
 
 La estadística nos ayuda a entender mejor los datos. Usando estadística podremos inferir, con cierta certeza, que probabilidades de ocurrencia existen sobre algo y nos ayuda a leer las propiedades acerca de los datos. Sirve para, por ejemplo, obtener hábitos de uso de los usuarios, click-rates, publicidad, posts, etc. Podría también ayudarnos, por ejemplo, a predecir futuras compras basado en historial de compras.
 
 ## Media o promedio
+
 El primer concepto estadístico que exploramos será la media (mean), comúnmente conocida como el promedio. Es útil para obtener el centro de un dataset. NumPy tiene una función pre-construida para calcular la media de los arrays: `np.mean`
 
 ```python
@@ -15,6 +17,7 @@ np.mean(respuestas_array)
 ```
 
 ### Redondeando
+
 Podemos redondear la media a un número específico de puntos decimales? Si, podemos usar la función de Python `round()` el cual recibe dos parámetros: número a redondear y número de decimales. NumPy nos provee también una forma de redondear cada valor en un array a través de la función `np.round()`. Funciona similar al round de python porque recibe ambos parámetros.
 
 ```python
@@ -23,12 +26,13 @@ numero = 1.234
 print(round(numero, 2)) # 1.23
 print(round(numero)) # 1
 
-# redondeando un array con Numpy
+# redondeando un array con NumPy
 array = np.array([1.11, 2.22, 3.33, 4.44])
 print(np.round(array, 1)) # [1.1 2.2 3.3 4.4]
 ```
 
 ### Mean y operaciones lógicas
+
 También podemos usar `np.mean` para calcular el **porcentaje de elementos de un array que tienen ciertas propiedades**. Recordemos que los operadores lógicos evalúan cada ítem en un array para ver si cumple una condición. Si el ítem cumple, evalúa a `True = 1` o `False = 0`.
 
 Cuando `np.mean` calcula una sentencia lógica, la media que da como resultado será equivalente al número total de True’s dividido por el largo (`len`) del array.
@@ -44,6 +48,7 @@ np.mean(respuestas_array > 5) ## 0.4
 ¿Qué hizo la última línea de código? Evaluó las respuestas que son mayores a 5, y les asigna el valor de 1 (`True`), y las divide por el largo (`len`). El resultado nos dice que el 40% de los que respondieron, dieron una calificación de más de 5
 
 ### Media de los valores
+
 Que pasa si queremos obtener la media de los valores en vez del porcentaje de valores, que satisfacen una condición? por demos hacerlo así:
 
 Digamos que tenemos un array de temperaturas desde -20 hasta 50 y queremos obtener el promedio de temperaturas mayores a 10.
@@ -65,6 +70,7 @@ np.mean(temperaturas[temperaturas > 10])
 ```
 
 ### Media de Arrays de 2-Dimensiones
+
 Si tenemos un array de dos-dimensiones, `np.mean` puede calcular las medias del array más largo así como de los valores interiores. Imaginemos un juego de encestar canastas en baloncesto. A un jugador le cometen 4 faltas personales y le conceden 2 tiros libres por cada falta. En nuestro array `encestar`, cada array interior es un intento y cada item es un tiro libre. 1 representa una cesta exitosa, 0 representa un fallo.
 
 ```python
@@ -99,6 +105,7 @@ Y se pone más interesante si corremos la media sobre las columnas internas. Est
 
 
 ## Valores Atípicos (Outliers)
+
 Como podemos ver, la media es una vía útil para entender rápidamente partes diferentes de nuestra data. Sin embargo, la media está altamente influenciada por valores específicos de nuestro set de datos. ¿Qué pasa si uno de esos valores es significativamente diferente del resto? Los valores que no se ajustan dentro de la mayoría del set de datos, son conocidos como outliers (valores atípicos)
 
 Es importante identificar valores atípicos porque si pasan desapercibidos, pueden sesgar nuestros datos y conducir a errores en nuestro análisis (como la determinación de la media)
@@ -126,6 +133,7 @@ estaturas_estudiantes = [1.6, 1.3, 1.7, 2.1, 1.8, 1.8, 1.67, 1.70, 1.72]
 Tenemos un valor de `2.1` lo cual es perfectamente posible (al igual que el estudiante de baja estatura) y también lo consideramos un valor atípico en comparación con los demás valores de la lista.
 
 ### ¿Como determinar outliers?
+
 Algunas veces podemos hacerlo solo mirando el dataset y señalando los valores que parecen más grandes o menores que otros valores. Pero es un método manual, propenso a errores y difícil de realizar.
 
 Una forma de identificar rápidamente outliers es ordenando los datos de mayor a menor o viceversa. Una vez los datos están ordenados, podemos ver rápidamente al inicio y al final del dataset para ver si hay valores más allá del rango esperado. Podemos usar la función de NumPy `np.sort`
@@ -140,6 +148,7 @@ np.sort(estaturas_estudiantes)
 Podemos también hacer otros cálculos estadísticos para determinar un rango de valores y si algún valor se sale del rango es un outlier. Esto se puede hacer con cuantiles. Algo así: `[primer_cuantil - 1.5 * IQR, tercer_cuantil + 1.5 * IQR]` donde IQR es “Interquartile Range (Rango Intercuantil)”. Ya veremos cuantiles detalladamente más adelante en esta misma guía...
 
 ## Mediana
+
 Otra métrica importante que podemos usar para el análisis de datos es la mediana (`median`). La mediana es el valor del medio de un set de datos que ha sido ordenado en términos de magnitud (del más pequeño al más grande)
 
 Si el largo del set de datos es un número impar, la mediana sería el valor central (recuerde que la lista debe estar primero ordenada de menor a mayor). Así que en el siguiente ejemplo, la mediana sería 3
@@ -176,6 +185,7 @@ np.median(numeros)
 ```
 
 ### Diferencias entre la Media y la Mediana
+
 Algunas veces estos dos valores serán muy similares según el set de datos, pero son diferentes y representan conceptos diferentes. La mediana retorna el valor en una posición central de un dataset ordenado. Si el largo del dataset es par, será el promedio de los dos valores del medio. Es conocido también como el "50th percentile".
 La media es el promedio de todos los valores del set de datos. Los outliers pueden influir mucho en la media, pero no en la mediana.
 
@@ -192,6 +202,7 @@ np.median(valores)
 Lo que podemos ver de este ejemplo es cómo la media se ve fuertemente impactada por valores atípicos, mientras que la mediana representa mejor la mayoría de los datos.
 
 ### Representación de Mayoría
+
 ¿Cómo podemos decir si un valor representa mejor la mayoría de los datos? Podemos hacer lo siguiente:
 * Primero remover los outliers del set de datos
 * La media ahora puede ser calculada con estos nuevos valores para una representación más acertada de los datos
@@ -217,6 +228,7 @@ np.mean(valores_sin_outliers)
 R: La mediana está más cercana, por tanto representa mejor la mayoría de los datos para este caso en particular.
 
 ## Percentiles (Cuantiles)
+
 Como sabemos, la mediana está en el medio del set de datos. Es el número en el cual el 50% de los ítems están por debajo y 50% de los ítems están por arriba.
 
 Pero qué pasa si queremos encontrar un punto en el cual el 40% de los ítems están por debajo y el 60% de los ítems están por arriba?
@@ -244,12 +256,14 @@ np.percentile(d2, 40)
 ```
 
 ¿Qué nos dicen los percentiles?
+
 * Nos dice cómo se encuentra un valor, de un set de datos, en relación con el resto de datos.
 * Un ejemplo muy conocido es para estandarizar puntajes (scores).
 * Los percentiles pueden decirnos que tan bien le fue a alguien en relación con otros puntajes.
 * En Data Analysis sirve para determinar el rango interquartile (3rd -1st percentile) para saber que tan disperso está el set de datos. Ya lo veremos más adelante...
 
 Algunos percentiles tienen nombres específicos:
+
 * El 25th percentile es llamado first quartile (primer cuantil)
 * El 50th percentile es llamado the median (la mediana)
 * El 75th percentile es llamado third quartile (tercer cuantil)
@@ -273,7 +287,9 @@ print("Rango Intercuantil: ", tercer_cuantil - primer_cuantil)
 ```
 
 ### Five-number summary
+
 ¿Por qué es útil el five-number summary?
+
 * Consiste en estos valores del dataset: minimo, 1st quartile, median, 3rd quartile y maximo
 * Podemos calcular el IQR (Interquartile Range) que nos dice que tan dispersa esta nuestra data.
 * Es útil también para determinar los outliers con los valores máximo y mínimo
@@ -281,9 +297,11 @@ print("Rango Intercuantil: ", tercer_cuantil - primer_cuantil)
 * Podemos comparar las 5 métricas de resumen con otros datasets para ver símiles o diferencias
 
 ## Desviación Estándar
+
 Mientras que la media y la mediana nos habla sobre el centro de nuestros datos, ellos no reflejan el rango de datos. Aquí es donde llega la desviación standard
 
 Similar a los rangos intercuartiles, la desviación estándar nos dice que tan dispersa está nuestra data.
+
 * A mayor desviación estándar, más dispersa está nuestra data del centro.
 * A menor desviación estándar, más datos están agrupados alrededor de la media.
 
