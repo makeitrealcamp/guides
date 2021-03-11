@@ -17,6 +17,11 @@ arr = np.array([
 En el capítulo anterior vimos el atributo `size` para conocer el número de elementos de un arreglo. Este método sigue aplicando para arreglos multidimensionales:
 
 ```python
+arr = np.array([
+  [1, 2],
+  [3, 4]
+])
+
 arr.size # 4
 ```
 
@@ -28,7 +33,7 @@ arr.shape # (2, 2)
 
 ## Creando arreglos multidimensionales
 
-En el capítulo anterior vimos cómo crear arreglos utilizando métodos como `arange`, `ones` y `zeros`, entre otros. Algunos de estos métodos como `ones`, `zeros`, `empty` o `full` reciben la forma del arreglo:
+En el capítulo anterior vimos cómo crear arreglos utilizando métodos como `arange`, `ones` y `zeros`, entre otros. Algunos de estos métodos reciben la forma del arreglo como primer argumento:
 
 ```python
 np.ones((2, 2)) # [[1.,1.], [1.,1.]]
@@ -37,9 +42,11 @@ np.zeros((2, 2, 2)) # un arreglo de tres dimensiones (un cubo): 2 x 2 x 2
 np.full((3, 3, 8), 5) # un arreglo de tres dimensiones (un cubo): 3 x 3 x 8
 ```
 
+Otros métodos como `arange` no permiten especificar la forma del arreglo final. Sin embargo, podemos cambiar la forma de un arreglo como veremos a continuación.
+
 ## Cambiando la forma de un arreglo
 
-También es posible cambiar la forma de un arreglo con el método `reshape`. Por ejemplo, aunque el método `arange` no recibe una forma, podemos cambiar la forma con `reshape`:
+Para cambiar la forma de un arreglo utilizamos el método `reshape`. Por ejemplo, aunque el método `arange` no permite especificar la forma, podemos cambiar la forma con `reshape`:
 
 ```python
 arr = np.arange(6) # [0, 1, 2, 3, 4, 5]
@@ -54,7 +61,7 @@ arr.reshape((3, 2))
 
 ## Obteniendo valores de un arreglo multidimensional
 
-Para obtener los valores de un arreglo multidimensional debemos especificar los índices en cada dimensión. Por ejemplo, en un arreglo de dos dimensiones:
+Para obtener los valores de un arreglo multidimensional debemos especificar los índices en cada dimensión. Por ejemplo, para obtener un valor en un arreglo de dos dimensiones debemos pasar dos índices:
 
 ```python
 arr = np.array([
@@ -95,7 +102,7 @@ arr[1:, :2] # [[4, 5], [7, 8]]
 
 ## Multiplicando arreglos
 
-Para realizar la multiplicación entre dos arreglos utiliza el método `matmul` o el operador `@`:
+Para realizar la multiplicación entre dos arreglos utiliza el método `matmul` o utilizamos el operador `@`:
 
 ```python
 a = np.array([
@@ -109,7 +116,7 @@ np.matmul(a, b) # [[8]]
 a @ b # [[8]]
 ```
 
-Otro ejemplo:
+A esta multiplicación se le llama también producto de matrices o producto punto, y es diferente a la multiplicación elemento a elemento. Veamos otro ejemplo:
 
 ```python
 a = np.array([
@@ -123,6 +130,12 @@ b = np.array([
 
 np.matmul(a, b) # [[4, 1], [2, 2]]
 a @ b # [[4, 1], [2, 2]]
+```
+
+Si queremos multiplicar elemento a elemento utilizaríamos el operador asterisco (`*`):
+
+```python
+a * b # [[4, 0], [0, 2]]
 ```
 
 ## Transponer un arreglo
