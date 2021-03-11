@@ -19,24 +19,26 @@ arr = np.array([1, 2, 3]) # arr es ahora un arreglo de NumPy
 El método `arange` permite crear un arreglo con un rango de números:
 
 ```python
-np.arange(3) # crea un arreglo con los valores 0, 1, 2
-np.arange(3, 7) # crea un arreglo con los valores 3, 4, 5, 6
-np.arange(2, 9, 2) # 2, 4, 6, 8
+np.arange(3) # array([0, 1, 2])
+np.arange(3, 7) # array([3, 4, 5, 6])
+np.arange(2, 9, 2) # array([2, 4, 6, 8])
 ```
 
-En el último ejemplo el tercer argumento representa el salto entre los números.
+En el último ejemplo, el tercer argumento representa el salto entre los números.
+
+**Nota:** De ahora en adelante vamos a omitir la palabra `array` y los paréntesis en los resultados pero ten en cuenta que son arreglos de NumPy, no listas de Python.
 
 El método `linspace` permite crear un arreglo de valores igualmente espaciados en un rango:
 
 ```python
-np.linspace(0, 10, num=5) #  [0. ,  2.5,  5. ,  7.5, 10. ]
+np.linspace(0, 10, num=5) # [0., 2.5, 5., 7.5, 10.]
 ```
 
 También podemos crear arreglos de unos (1) o ceros (0):
 
 ```python
-np.ones(3) # crea un arreglo con tres unos
-np.zeros(3) # tres ceros
+np.ones(3) # [1, 1, 1]
+np.zeros(3) # [0, 0, 0]
 ```
 
 Y arreglos "vacíos" (información aleatoria) o con un valor determinado:

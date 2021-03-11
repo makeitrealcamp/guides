@@ -2,23 +2,20 @@
 
 Podemos usar NumPy para analizar datos usando estadística. Aprenderemos diferentes métodos para calcular propiedades estadísticas de un set de datos, como encontrar la media y la desviación standard. Esto servirá para entender cómo podemos usar la estadística para llegar a conclusiones acerca de los datos.
 
-La estadística nos ayuda a entender mejor los datos. Usando estadística podremos inferir, con cierta certeza, que probabilidades de ocurrencia existen sobre algo y nos ayuda a leer las propiedades acerca de los datos. Sirve para, por ejemplo, obtener hábitos de uso de los usuarios, click-rates, publicidad, posts, etc. Podría también ayudarnos, por ejemplo, a predecir futuras compras basado en historial de compras.
+La estadística nos ayuda a entender mejor los datos. Usando estadística podremos inferir, con cierta certeza, que probabilidades de ocurrencia existen sobre algo y nos ayuda a leer las propiedades acerca de los datos. Sirve para, por ejemplo, obtener hábitos de uso de los usuarios, tasas de click (click rates), publicidad, posts, etc. Podría también ayudarnos, por ejemplo, a predecir futuras compras basado en historial de compras.
 
 ## Media o promedio
 
-El primer concepto estadístico que exploramos será la media (mean), comúnmente conocida como el promedio. Es útil para obtener el centro de un dataset. NumPy tiene una función pre-construida para calcular la media de los arrays: `np.mean`
+El primer concepto estadístico que exploramos será la media (mean), comúnmente conocida como el promedio. Es útil para obtener el centro de un dataset. NumPy incluye una función para calcular la media de los arreglos: `np.mean`.
 
 ```python
-respuestas_encuesta = [5, 10.4, 4, 3, 6.6]
-respuestas_array = np.array(respuestas_encuesta)
-np.mean(respuestas_array)
-
-## 5.8
+arr = np.array([5, 10.4, 4, 3, 6.6])
+np.mean(arr) # 5.8
 ```
 
 ### Redondeando
 
-Podemos redondear la media a un número específico de puntos decimales? Si, podemos usar la función de Python `round()` el cual recibe dos parámetros: número a redondear y número de decimales. NumPy nos provee también una forma de redondear cada valor en un array a través de la función `np.round()`. Funciona similar al round de python porque recibe ambos parámetros.
+Podemos redondear la media a un número específico de puntos decimales? Sí, podemos usar la función de Python `round()` el cual recibe dos parámetros: número a redondear y número de decimales. NumPy nos provee también una forma de redondear cada valor en un array a través de la función `np.round()`. Funciona similar al round de python porque recibe ambos parámetros.
 
 ```python
 # redondeando un número con Python
