@@ -199,3 +199,4 @@
   * [Modificando Dataframes](pandas/modificando-dataframes.md)
   * [La Función Lambda](pandas/la-funcion-lambda.md)
   * [Aggregates en Pandas](pandas/aggregates-en-pandas.md)
+  * [Múltiples Tablas](pandas/multiples-tablas.md)
