@@ -14,3 +14,7 @@ El nombre deriva del término "datos de panel (panel data)", un término de econ
 ## Contenido
 
 * [Primeros Pasos](primeros-pasos.md)
+* [Inspección y Selección de Datos](inspeccion-y-seleccion-de-datos.md)
+* [Modificando Dataframes](modificando-dataframes.md)
+* [La Función Lambda](la-funcion-lambda.md)
+* [Aggregates en Pandas](aggregates-en-pandas.md)
