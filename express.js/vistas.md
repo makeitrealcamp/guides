@@ -82,7 +82,7 @@ html
 La línea `block content` se va a reemplazar con el código de cada vista. Ahora vamos a crear una vista llamada `index.pug` \(también en la carpeta `views`\) que va a "extender" el layout que acabamos de crear:
 
 ```text
-extends "layout.pug"
+extends layout.pug
 
 block content
   h1 Hola Mundo
