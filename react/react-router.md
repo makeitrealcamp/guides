@@ -163,9 +163,9 @@ La primera forma es utilizar el componente `Navigate`, que redirecciona al usuar
 import { Navigate } from "react-router-dom";
 
 function App() {
-  const isAuthenticated = ...;
+  const authenticated = ...;
   return (
-    { isAuthenticated ? <h1>Bienvenido</h1> : <Navigate to="/login" /> }
+    { authenticated ? <h1>Bienvenido</h1> : <Navigate to="/login" /> }
   )
 }
 ```
@@ -186,3 +186,34 @@ function Login() {
   return <form onSubmit={handleSubmit}>...</form>
 }
 ```
+
+## Rutas Privadas
+
+Para implementar rutas privadas (rutas que sólo usuarios autenticados pueden acceder) necesitamos crear un componente adicional que llamaremos `RequireAuth` y que se configurará en la ruta de la siguiente forma:
+
+```jsx
+<Route 
+  path="/private" 
+  element={
+    <RequireAuth>
+      <ProtectedPage />
+    </RequireAuth>
+  }
+>
+```
+
+El componente `RequireAuth` se implementaría de la siguiente forma:
+
+```jsx
+import { useLocation } from 'react-router-dom';
+
+function RequireAuth({ children }) {
+  const location = useLocation();
+  const authenticated = ... // verificar si el usuario está autenticado
+  return authenticated ? children : <Navigate to="/login" state={{ from: location }} />
+}
+```
+
+La idea general de este componente es verificar si el usuario está autenticado y renderizar el componente protegido o redireccionar al usuario a la página de ingreso.
+
+**Nota:** En este ejemplo hemos omitido el código que verifica si el usuario está autenticado porque depende de la forma en que se implemente (p.e. esta información puede estar en el Context API, en Redux, o directamente en el LocalStorage, entre otras).
