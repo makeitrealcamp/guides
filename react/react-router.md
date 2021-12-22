@@ -71,7 +71,7 @@ function App() {
 Para definir una plantilla que podamos usar en varias pantallas de nuestra aplicación puedes crear rutas anidadas de la siguiente forma:
 
 ```javascript
-render() {
+function App() {
   return (
     <BrowserRouter>
       <Routes>
