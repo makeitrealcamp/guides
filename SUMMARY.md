@@ -147,6 +147,7 @@
   * [Mongoose](express.js-ii/mongoose.md)
   * [Web Sockets](express.js-ii/web-sockets.md)
   * [Autenticación](express.js-ii/autenticacion.md)
+  * [Envío de correos](express.js-ii/envio-de-correos.md)
   * [Cargar imágenes](express.js-ii/carga-de-imagenes.md)
   * [Deployment](express.js-ii/deployment.md)
   * [Testing](express.js-ii/testing.md)

@@ -14,6 +14,7 @@ En esta sección vas a encontrar temas más avanzados como autenticación, Web S
 * [Mongoose](mongoose.md)
 * [Web Sockets](web-sockets.md)
 * [Autenticación](autenticacion.md)
+* [Envío de correos](envio-de-correos.md)
 * [Carga de imágenes](carga-imagenes.md)
 * [Deployment](deployment.md)
 * [Testing](testing.md)
