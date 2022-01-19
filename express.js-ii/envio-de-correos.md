@@ -20,7 +20,7 @@ $ npm install nodemailer
 
 El siguiente paso es requerirla, crear un transporte (depende del proveedor que se utilice) y después utilizar el método `sendMail` para enviar el correo. En el siguiente ejemplo vamos a utilizar un transporte falso que simula el envío del correo (ideal para desarrollo y pruebas):
 
-```js
+```javascript
 const nodemailer = require("nodemailer")
 
 async function run() {
@@ -65,7 +65,7 @@ $ npm install nodemailer-sendgrid-transport
 
 Y ahora debemos crear el transporte para enviar el email modificando el código anterior:
 
-```js
+```javascript
 const nodemailer = require("nodemailer")
 const sgTransport = require('nodemailer-sendgrid-transport');
 
@@ -95,7 +95,7 @@ Escribir todo el código HTML del email dentro de nuestro código puede ser muy 
 
 Creemos un archivo llamado `templates.js` que exporte funciones para cada una de las plantillas. Por ejemplo:
 
-```js
+```javascript
 exports.welcomeEmail = function(name) {
   return `
     <h1>Hola ${name},</h1>
@@ -120,7 +120,7 @@ $ npm install @sendgrid/mail
 
 Para enviar correos utilizamos el método `send`:
 
-```js
+```javascript
 const sgMail = require('@sendgrid/mail');
 
 sgMail.setApiKey('SENDGRID_API_KEY');
@@ -154,7 +154,7 @@ send()
 
 Al utilizar la librería oficial de SendGrid podemos aprovechar funcionalidades únicas como envío de correos programados agregando la llave `send_at` al mensaje. Por ejemplo, para enviar un correo 5 minutos en el futuro podemos agregar lo siguiente al construir el mensaje:
 
-```js
+```javascript
 const time = Math.round((new Date()).getTime() / 1000) // UNIX Timestamp
 const msg = {
   // ... ver ejemplo anterior
@@ -178,7 +178,7 @@ Cada plantilla tiene un identificador único que se debe incluir al enviar el co
 
 Por ejemplo, asumiendo que tenemos una plantilla con identificador `d-12345` con dos variables `name` y `credits`, podríamos utilizar el siguiente código para enviar un mensaje reemplazando la variable `name` por `Pedro Perez` y `credits` por `15000`:
 
-```js
+```javascript
 const sgMail = require('@sendgrid/mail');
 
 sgMail.setApiKey('SENDGRID_API_KEY');
