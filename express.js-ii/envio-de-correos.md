@@ -1,6 +1,6 @@
 # Envío de Correos
 
-El envío de correos se hace a través de un proveedor como [SendGrid](https://sendgrid.com/), [MailGun](https://www.mailgun.com/) o [Gmail](https://gmail.com/) (no recomendado para producción), entre otros.
+Para enviar correos electrónicos desde nuestras aplicaciones necesitamos un proveedor como [SendGrid](https://sendgrid.com/), [MailGun](https://www.mailgun.com/) o [Gmail](https://gmail.com/) (no recomendado para producción), entre otros.
 
 En esta guía vamos a ver cómo funciona [Nodemailer](https://nodemailer.com/) (la librería más popular) utilizando [SendGrid](https://sendgrid.com/) como proveedor.
 
@@ -21,9 +21,12 @@ $ npm install nodemailer
 El siguiente paso es requerirla, crear un transporte (depende del proveedor que se utilice) y después utilizar el método `sendMail` para enviar el correo. En el siguiente ejemplo vamos a utilizar un transporte falso que simula el envío del correo (ideal para desarrollo y pruebas):
 
 ```javascript
+const express = require("express")
 const nodemailer = require("nodemailer")
 
-async function run() {
+const app = express()
+
+app.post("/sendEmail", async (req, res) => {
   const transporter = await createFakeTransporter()
 
   const email = await transporter.sendMail({
@@ -36,7 +39,9 @@ async function run() {
 
   // Vista previa del correo (sólo para el transporte falso de pruebas)
   console.log("Preview URL: %s", nodemailer.getTestMessageUrl(email))
-}
+
+  res.json({ id: email.id })
+})
 
 async function createFakeTransporter() {
   let testAccount = await nodemailer.createTestAccount()
@@ -52,7 +57,7 @@ async function createFakeTransporter() {
   })
 }
 
-run().catch(e => console.log(e))
+app.listen(3000)
 ```
 
 ### Utilizando el transporte de Sendgrid
@@ -66,13 +71,14 @@ $ npm install nodemailer-sendgrid-transport
 Y ahora debemos crear el transporte para enviar el email modificando el código anterior:
 
 ```javascript
+// ... requerir express y crear el app
 const nodemailer = require("nodemailer")
 const sgTransport = require('nodemailer-sendgrid-transport');
 
-async function run() {
+app.post("/sendEmail", (req, res) => {
   const transporter = await createSendGridTransporter()
   const email = await transporter.sendMail(...)
-}
+})
 
 async function createSendGridTransporter() {
   const options = {
@@ -84,7 +90,7 @@ async function createSendGridTransporter() {
   return nodemailer.createTransport(sgTransport(options));
 }
 
-run().catch(e => console.log(e))
+// ...
 ```
 
 **Nota:** No publiques tu API Key en repositorios de Git públicos o SendGrid bloqueará tu cuenta para evitar usos indebidos. Utiliza alguna librería como [`dotenv`](https://github.com/motdotla/dotenv) y una variable de entorno para almacenarla.
@@ -109,6 +115,27 @@ exports.recoverPasswordEmail = function(token) {
 ```
 
 Recuerda que todos los estilos CSS deben ser en línea, es decir, dentro del atributo `style` de cada elemento. Si quieres separar el CSS del HTML te recomendamos [esta librería](https://www.npmjs.com/package/inline-css). Su uso está por fuera del alcance de esta guía pero encontrarás varios ejemplos en el enlace.
+
+### Archivos adjuntos
+
+Para enviar archivos adjuntos desde Nodemailer sólo debes agregar la llave `attachments` al mensaje con un arreglo de objetos. Cada objeto representa un archivo adjunto:
+
+```javascript
+let message = {
+  ...
+  attachments: [
+    { // podemo pasar un string
+      filename: 'text1.txt',
+      content: 'hello world!'
+    },
+    { // o la ruta de un archivo, entre otras opciones
+      path: '/path/to/file.txt'
+    }
+  ]
+}
+```
+
+Para ver otras formas de adjuntar cada archivo y más opciones te recomendamos ver [la documentación de Nodemailer](https://nodemailer.com/message/attachments/).
 
 ## SendGrid (librería oficial)
 
