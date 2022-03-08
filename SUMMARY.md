@@ -164,6 +164,7 @@
   * [React Context](react/context.md)
   * [React Bootstrap](react/react-bootstrap.md)
   * [React Router](react/react-router.md)
+  * [Carga de Imágenes](react/carga-de-imagenes.md)
   * [Testing](react/testing.md)
 * [Redux](redux/README.md)
   * [Primeros pasos](redux/primeros-pasos.md)
