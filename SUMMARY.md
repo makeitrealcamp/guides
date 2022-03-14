@@ -76,6 +76,7 @@
   * [Primeros pasos](javascript-browser/primeros-pasos.md)
   * [Manipulando HTML](javascript-browser/manipulando-html.md)
   * [Escuchando eventos](javascript-browser/escuchando-eventos.md)
+  * [Local Storage](javascript-browser/local-storage.md)
   * [History API](javascript-browser/history.md)
   * [Canvas](javascript-browser/canvas.md)
   * [Notificaciones Web](javascript-browser/notificaciones.md)

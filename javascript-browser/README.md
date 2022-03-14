@@ -21,6 +21,7 @@ Entre muchas otras!
 * [Primeros pasos](primeros-pasos.md)
 * [Manipulando HTML](manipulando-html.md)
 * [Escuchando eventos](escuchando-eventos.md)
+* [Local Storage](local-storage.md)
 * [History API](history.md)
 * [Canvas](canvas.md)
 * [Notificaciones Web](notificaciones.md)
