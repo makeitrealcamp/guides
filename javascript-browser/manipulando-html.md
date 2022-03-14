@@ -37,7 +37,7 @@ Para obtener varios elementos utiliza el método `querySelectorAll` que es simil
 
 ```javascript
 // retorna todos los div del documento
-var divs = document.querySelector("div");
+var divs = document.querySelectorAll("div");
 for(var div of divs.entries()) {
   console.log(div);
 }
@@ -59,7 +59,7 @@ Para agregar texto puedes utilizar el método `createTextNode`, el atributo `inn
 var p = document.createElement("p");
 
 // con createTextNode
-var text = document.createTextoNode("Hola");
+var text = document.createTextNode("Hola");
 p.appendChild(text);
 
 // con innerHTML
