@@ -1,6 +1,6 @@
 # Testing
 
-Para escribir pruebas automatizadas de nuestras aplicaciones en React vamos a utilizar [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) (a veces abreviado RTL).
+Para escribir pruebas automatizadas en nuestras aplicaciones en React vamos a utilizar una librería llamada [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) (a veces abreviado RTL).
 
 [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) no reemplaza [Jest](https://facebook.github.io/jest/), que seguimos necesitando para definir y correr nuestras pruebas, sino que nos ofrece objetos y métodos para renderizar, interactuar y validar nuestro código de React.
 
@@ -8,7 +8,7 @@ Para escribir pruebas automatizadas de nuestras aplicaciones en React vamos a ut
 
 [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) viene incluído con [create-react-app](https://github.com/facebook/create-react-app). En otras configuraciones que no esté incluído debemos instalar las siguientes librerías manualmente:
 
-```
+```text
 # npm
 npm install --save-dev jest @testing-library/react @testing-library/jest-dom 
 
@@ -26,7 +26,7 @@ import '@testing-library/jest-dom';
 
 Para ejecutar las pruebas vas a utilizar el siguiente comando:
 
-```
+```text
 # npm
 npm test
 
@@ -40,7 +40,7 @@ yarn test
 
 Escribamos una prueba que renderice un componente `App` y verifique que tenga un texto específico:
 
-```js
+```javascript
 import { render, screen } from "@testing-library/react"
 import App from "./App"
 
@@ -54,7 +54,7 @@ La primera línea importa algunos objetos de React Testing Library que vamos a n
 
 La segunda línea importa el componente `App`.
 
-De la cuarta a la octava línea tenemos la prueba que renderiza el componente y verifica que exista un elemento con texto "learn react" (ignorando mayúsculas y minúsculas) en el documento.
+De la cuarta a la séptima línea tenemos la prueba que renderiza el componente y verifica que exista un elemento con texto "learn react" (ignorando mayúsculas y minúsculas) en el documento.
 
 ## Encontrando elementos
 
@@ -69,7 +69,7 @@ Estas son las dos formas que nos parecen más importantes. Para ver la lista com
 
 Por ejemplo, para seleccionar un encabezado (`h1`) podríamos utilizar el rol "heading" o agregarle un atributo `data-testid`:
 
-```js
+```javascript
 // <h1>Título</h1>
 screen.getByRole("heading", { level: 1 })
 
@@ -87,7 +87,7 @@ Aunque React Testing Library promueve la búsqueda por rol, en la práctica no e
 
 Las variaciones que tienen la palabra `All` se utilizan para encontrar varios elementos, las que no la tienen se utilizan para encontrar un solo elemento. Por ejemplo:
 
-```js
+```javascript
 // retorna un arreglo con todos los encabezados
 screen.getAllByRole("heading")
 
@@ -99,11 +99,18 @@ screen.getByRole("heading")
 
 La diferencia entre `getBy` y `findBy` (y `getAllBy` y `findAllBy`) es que `getBy` retorna el elemento inmediatamente mientras que `findBy` retorna una promesa y se puede utilizar para encontrar elementos que pueden tomar tiempo en aparecer (o desaparecer).
 
+Por defecto `screen` busca en todo el `body` del documento. Para limitar la búsqueda utiliza el método `within`:
+
+```javascript
+const container = screen.getByTestId("container")
+within(container).getByRole("heading")
+```
+
 ## Interactuando con los elementos
 
 Para interactuar con los elementos utilizamos el objeto `fireEvent` seguido del nombre del evento que queramos disparar. Por ejemplo:
 
-```js
+```javascript
 const input = screen.getByRole("textbox", { name: "email" })
 fireEvent.change(input, { target: { value: "pedro@example.com" } })
 
@@ -125,7 +132,7 @@ $ npm install --save-dev @testing-library/user-event
 
 La librería se utiliza de la siguiente forma:
 
-```js
+```javascript
 const user = userEvent.setup()
 
 const input = screen.getByRole("textbox", { name: "email" })
@@ -141,7 +148,7 @@ Para aprender más sobre `@testing-library/user-event` te recomendamos ver la [d
 
 Aunque los métodos `getBy...` y `findBy...` lanzan una excepción si no se encuentran (y hacen que la prueba falle) es mejor hacer el `expect`:
 
-```js
+```javascript
 const h1 = screen.getByRole("heading", { level: 1 })
 expect(h1).toBeInTheDocument()
 ```
@@ -150,14 +157,14 @@ El método `toBeInTheDocument` es de la librería `@testing-library/jest-dom`. P
 
 Para negar algún matcher utiliza `.not` antes del matcher:
 
-```js
+```javascript
 const h1 = screen.getByRole("heading", { level: 1 })
 expect(h1).not.toBeInTheDocument()
 ```
 
 Para esperar a que aparezca un elemento puedes utilizar el `find...` o el `waitFor`:
 
-```js
+```javascript
 const h1 = await screen.findByRole("heading", { level: 1 })
 expect(h1).toBeInTheDocument()
 
@@ -170,7 +177,7 @@ En general es preferible utilizar el `find...` cuando es posible.
 
 Para esperar a que desaparezca un elemento puedes utilizar el método `waitForElementToBeRemoved` o el `waitFor`:
 
-```js
+```javascript
 await waitForElementToBeRemoved(() => screen.getByText('algo'))
 
 await waitFor(() => screen.getByText("algo")).not.toBeInTheDocument())
@@ -180,7 +187,7 @@ await waitFor(() => screen.getByText("algo")).not.toBeInTheDocument())
 
 Para imprimir el HTML en la consola utiliza el método `debug` del objeto `screen`:
 
-```js
+```javascript
 // imprime todo el documento
 screen.debug()
 // imprime un elemento
@@ -191,7 +198,7 @@ screen.debug(screen.getAllByText('multi-test'))
 
 Otra opción interesante es el método `logTestingPlaygroundURL` que genera un URL con un link al [Testing Playground](https://testing-playground.com/).
 
-```js
+```javascript
 // imprime en la consola una URL que puedes abrir en el navegador
 screen.logTestingPlaygroundURL();
 ```
