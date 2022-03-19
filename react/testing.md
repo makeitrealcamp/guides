@@ -1,32 +1,26 @@
 # Testing
 
-Para escribir las pruebas automatizadas de nuestras aplicaciones de React vamos a utilizar [Jest](https://facebook.github.io/jest/) y [Enzyme](http://airbnb.io/enzyme/).  
+Para escribir pruebas automatizadas de nuestras aplicaciones en React vamos a utilizar [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) (a veces abreviado RTL).
 
-[Enzyme](http://airbnb.io/enzyme/) es una librería que nos va a permitir escribir pruebas de nuestros componentes más fácilmente.
+[React Testing Library](https://testing-library.com/docs/react-testing-library/intro) no reemplaza [Jest](https://facebook.github.io/jest/), que seguimos necesitando para definir y correr nuestras pruebas, sino que nos ofrece objetos y métodos para renderizar, interactuar y validar nuestro código de React.
 
 ## Configuración
 
-[Jest](https://facebook.github.io/jest/) viene incluído con [create-react-app](https://github.com/facebook/create-react-app), pero [Enzyme](http://airbnb.io/enzyme/), así que debemos agregar la librería con npm o Yarn:
+[React Testing Library](https://testing-library.com/docs/react-testing-library/intro) viene incluído con [create-react-app](https://github.com/facebook/create-react-app). En otras configuraciones que no esté incluído debemos instalar las siguientes librerías manualmente:
 
 ```
 # npm
-npm install --save-dev enzyme enzyme-adapter-react-16
+npm install --save-dev jest @testing-library/react @testing-library/jest-dom 
 
 # Yarn
-yarn add enzyme enzyme-adapter-react-16 --dev
+yarn add jest @testing-library/react @testing-library/jest-dom --dev
 ```
 
 El siguiente paso es crear un archivo `src/setupTests.js` con el siguiente contenido:
 
 ```javascript
-const Enzyme = require('enzyme');
-const EnzymeAdapter = require('enzyme-adapter-react-16');
-
-// Setup enzyme's react adapter
-Enzyme.configure({ adapter: new EnzymeAdapter() });
+import '@testing-library/jest-dom';
 ```
-
-**Nota:** Si estás utilizando React 15 debes cambiar las referencias a la versión 16 por referencias a la versión 15 (en la librería y el código anterior).
 
 ## Ejecutando pruebas
 
@@ -40,94 +34,164 @@ npm test
 yarn test
 ```
 
-Ese comando deja un proceso corriendo que ejecuta las pruebas cada vez que cambia el código. Puedes oprimir "a" para ejecutar todas las pruebas y "q" para salir.
+**Nota:** En [create-react-app](https://github.com/facebook/create-react-app) este comando deja un proceso corriendo que ejecuta las pruebas cada vez que cambia el código. Puedes oprimir "a" para ejecutar todas las pruebas y "q" para salir.
 
-## Creando pruebas
+## Escribiendo la primera prueba
 
-Por defecto [create-react-app](https://github.com/facebook/create-react-app) crea una prueba de ejemplo en `src/App.test.js`:
+Escribamos una prueba que renderice un componente `App` y verifique que tenga un texto específico:
 
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+```js
+import { render, screen } from "@testing-library/react"
+import App from "./App"
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-});
+test("renders text", () => {
+  render(<App />)
+  expect(screen.getByText(/learn react/i)).toBeInTheDocument()
+})
 ```
 
-La vamos a modificar para utilizar [Enzyme](http://airbnb.io/enzyme/):
+La primera línea importa algunos objetos de React Testing Library que vamos a necesitar en la prueba: `render` para renderizar el componente y `screen` para buscar el elemento.
 
-```javascript
-import React from 'react';
-import App from './App';
-import { shallow } from 'enzyme';
+La segunda línea importa el componente `App`.
 
-it('renders without crashing', () => {
-  shallow(<App />);
-});
+De la cuarta a la octava línea tenemos la prueba que renderiza el componente y verifica que exista un elemento con texto "learn react" (ignorando mayúsculas y minúsculas) en el documento.
+
+## Encontrando elementos
+
+Una parte importante de las pruebas es encontrar elementos en la página para hacer validaciones (assertions) o interacciones (p.e. click en el mouse o escribir en el teclado).
+
+React Testing Library ofrece varias formas de encontrar elementos, entre ellas:
+
+* **Por rol** (`getByRole`): el rol de un elemento describe su funcionalidad y se utiliza para mejorar la accesibilidad de la página. Es posible cambiar el rol por defecto de un elemento utilizando la propiedad `role`.
+* **Por testId** (`getByTestId`): por el valor del atributo `data-testid` de cualquier elemento.
+
+Estas son las dos formas que nos parecen más importantes. Para ver la lista completa te recomendamos revisar la [documentación de la librería](https://testing-library.com/docs/queries/about).
+
+Por ejemplo, para seleccionar un encabezado (`h1`) podríamos utilizar el rol "heading" o agregarle un atributo `data-testid`:
+
+```js
+// <h1>Título</h1>
+screen.getByRole("heading", { level: 1 })
+
+// <h1 data-testid="title">Título</h1>
+screen.getByTestId("title")
 ```
 
-`shallow` es una función de [Enzyme](http://airbnb.io/enzyme/) que se utiliza para probar componentes de forma aislada, ya que no renderiza los subcomponentes.
+Estos métodos retornan el elemento o lanzan una excepción si no lo encuentran. Fíjate que estamos llamando los métodos sobre el objeto `screen`, que es la forma más común.
 
-Si deseas renderizar los subcomponentes utiliza `render` o `mount`.
+En React Testing Library no hay forma de encontrar elementos por `id` o `class` (`className` en JSX). La razón es que estos atributos pueden cambiar fácilmente y hacen que las pruebas sean muy frágiles.
 
-`render` es bastante limitado y es recomendado cuando sólo necesitas analizar el resultado de la estructura HTML.
+Aunque React Testing Library promueve la búsqueda por rol, en la práctica no es tan fácil conocer todos los roles. Afortunadamente existe una herramienta llamada [Testing Playground](https://testing-playground.com/) que nos ayuda con esta tarea. También existe una lista de todos los roles en [este recurso](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques).
 
-`mount` lanza un navegador sin cabeza (headless browser) que permite simular eventos (como clicks), ejecutar código JavaScript, etc. Sin embargo es mucho más lento que `shallow` o `render`, así que úsalo sólo cuando sea completamente necesario.
+`getByRole` tiene las siguientes variaciones: `queryByRole`, `findByRole`, `getAllByRole`, `queryAllByRole`, `findAllByRole`. Lo mismo ocurre con `getByTestId` y las demás formas de encontrar elementos.
 
-[Jest](https://facebook.github.io/jest/), por defecto, toma las pruebas de los archivos que terminen en `test.*` o que se encuentren en la carpeta `__tests__`.
+Las variaciones que tienen la palabra `All` se utilizan para encontrar varios elementos, las que no la tienen se utilizan para encontrar un solo elemento. Por ejemplo:
 
-Existen varios métodos que puedes utilizar para verificar los componentes.
+```js
+// retorna un arreglo con todos los encabezados
+screen.getAllByRole("heading")
 
-### find
-
-Quizá el método más útil para verificar tus componentes es el `find`, que permite buscar elementos específicos con selectores CSS. Por ejemplo:
-
-```javascript
-it("renders task list" () => {
-  const wrapper = shallow(<App />);
-  expect(wrapper.find('TaskList').length).toBe(1);
-});
+// retorna un encabezado, si no hay o hay más de uno genera una excepción
+screen.getByRole("heading")
 ```
 
-En este caso estamos verificando que exista un componente `TaskList` dentro de `App`. Si queremos verificar los elementos dentro de `TaskList` utilizaríamos `render` en vez de `shallow`:
+`getBy` y `queryBy` (y su contrapartida `getAllBy` y `queryAllBy`) son muy parecidas, la única diferencia es que `getBy` lanza una excepción si no hay coincidencias mientras que `queryBy` retorna `null`. Nuestra recomendación es ignorar `queryBy` y `queryAllBy` por ahora.
 
-```javascript
-it("renders task list" () => {
-  const wrapper = render(<App />); // render - en vez de shallow
-  expect(wrapper.find('ul .task').length).toBe(3);
-});
+La diferencia entre `getBy` y `findBy` (y `getAllBy` y `findAllBy`) es que `getBy` retorna el elemento inmediatamente mientras que `findBy` retorna una promesa y se puede utilizar para encontrar elementos que pueden tomar tiempo en aparecer (o desaparecer).
+
+## Interactuando con los elementos
+
+Para interactuar con los elementos utilizamos el objeto `fireEvent` seguido del nombre del evento que queramos disparar. Por ejemplo:
+
+```js
+const input = screen.getByRole("textbox", { name: "email" })
+fireEvent.change(input, { target: { value: "pedro@example.com" } })
+
+const button = screen.getByRole("button", { name: "Ingresar" })
+fireEvent.click(button)
 ```
 
-### simulate
+Disparar eventos de esta forma tiene una desventaja y es que debemos conocer el evento exacto que estamos utilizando. 
 
-Este método permite simular eventos como clicks, presionar teclas, enviar formularios, etc. Sólo está disponible con `shallow` y `mount`. Por ejemplo, podemos simular la creación de una nueva tarea (asumiendo que tenemos un campo de texto y un botón para hacerlo):
+Por ejemplo, al escribir en un campo de texto se están disparando varios eventos: `keyDown`, `keyPress`, `keyUp` y `change`.
 
-```javascript
-it("creates a new task" () => {
-  const wrapper = mount(<App />);
+Existe una librería complementaria llamada `@testing-library/user-event` que nos permite simular interacciones que disparan todos los eventos de una acción.
 
-  wrapper.find("input#title").simulate("change", { target: { value: "Hacer mercado" }})
-  wrapper.find(".btn-new-task").simulate("click");
+Para instalar la librería ejecuta:
 
-  expect(wrapper.find('ul .task').length).toBe(4);
-});
+```
+$ npm install --save-dev @testing-library/user-event
 ```
 
-### setState
+La librería se utiliza de la siguiente forma:
 
-Permite cambiar el estado del componente.
+```js
+const user = userEvent.setup()
 
-```javascript
-it("renders task list" () => {
-  const wrapper = mount(<App />);
+const input = screen.getByRole("textbox", { name: "email" })
+await user.type(input, "pedro{enter}")
 
-  wrapper.setState({ tasks: [{...}, {...}] });
-  expect(wrapper.find('ul .task').length).toBe(2);
-});
+const button = screen.getByRole("button", { name: "Ingresar" })
+await user.click()
+```
 
-El listado completo de métodos se encuentra en [este enlace](http://airbnb.io/enzyme/docs/api/).
+Para aprender más sobre `@testing-library/user-event` te recomendamos ver la [documentación oficial](https://testing-library.com/docs/user-event/intro).
 
-{% youtube %} https://www.youtube.com/watch?v=phuXKvUsYi8 {% endyoutube %}
+## Validando los elementos
+
+Aunque los métodos `getBy...` y `findBy...` lanzan una excepción si no se encuentran (y hacen que la prueba falle) es mejor hacer el `expect`:
+
+```js
+const h1 = screen.getByRole("heading", { level: 1 })
+expect(h1).toBeInTheDocument()
+```
+
+El método `toBeInTheDocument` es de la librería `@testing-library/jest-dom`. Para ver la lista completa de **matchers** que agrega esta librería te recomendamos ver la [documentación oficial](https://github.com/testing-library/jest-dom#readme).
+
+Para negar algún matcher utiliza `.not` antes del matcher:
+
+```js
+const h1 = screen.getByRole("heading", { level: 1 })
+expect(h1).not.toBeInTheDocument()
+```
+
+Para esperar a que aparezca un elemento puedes utilizar el `find...` o el `waitFor`:
+
+```js
+const h1 = await screen.findByRole("heading", { level: 1 })
+expect(h1).toBeInTheDocument()
+
+// espera a que aparezca un elemento con texto "algo" en el documento
+await waitFor(() => expect(screen.getByText("algo")).toBeInTheDocument())
+```
+En general es preferible utilizar el `find...` cuando es posible.
+
+**Nota:** Estos métodos retornan una promesa así que no olvides el `await` y agregarle el `async` a la prueba.
+
+Para esperar a que desaparezca un elemento puedes utilizar el método `waitForElementToBeRemoved` o el `waitFor`:
+
+```js
+await waitForElementToBeRemoved(() => screen.getByText('algo'))
+
+await waitFor(() => screen.getByText("algo")).not.toBeInTheDocument())
+```
+
+## Debugging
+
+Para imprimir el HTML en la consola utiliza el método `debug` del objeto `screen`:
+
+```js
+// imprime todo el documento
+screen.debug()
+// imprime un elemento
+screen.debug(screen.getByText('test'))
+// imprime varios elementos
+screen.debug(screen.getAllByText('multi-test'))
+```
+
+Otra opción interesante es el método `logTestingPlaygroundURL` que genera un URL con un link al [Testing Playground](https://testing-playground.com/).
+
+```js
+// imprime en la consola una URL que puedes abrir en el navegador
+screen.logTestingPlaygroundURL();
+```
