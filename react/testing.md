@@ -63,15 +63,19 @@ Una parte importante de las pruebas es encontrar elementos en la página para ha
 React Testing Library ofrece varias formas de encontrar elementos, entre ellas:
 
 * **Por rol** (`getByRole`): el rol de un elemento describe su funcionalidad y se utiliza para mejorar la accesibilidad de la página. Es posible cambiar el rol por defecto de un elemento utilizando la propiedad `role`.
+* **Por texto** (`getByText`): por el texto del elemento.
 * **Por testId** (`getByTestId`): por el valor del atributo `data-testid` de cualquier elemento.
 
-Estas son las dos formas que nos parecen más importantes. Para ver la lista completa te recomendamos revisar la [documentación de la librería](https://testing-library.com/docs/queries/about).
+Estas son las tres formas que nos parecen más importantes. Para ver la lista completa te recomendamos revisar la [documentación de la librería](https://testing-library.com/docs/queries/about).
 
-Por ejemplo, para seleccionar un encabezado (`h1`) podríamos utilizar el rol "heading" o agregarle un atributo `data-testid`:
+Por ejemplo, para seleccionar un encabezado (`h1`) podríamos utilizar el rol "heading", el texto o agregarle un atributo `data-testid`:
 
 ```javascript
 // <h1>Título</h1>
 screen.getByRole("heading", { level: 1 })
+
+// <h1>Título</h1>
+screen.getByText("Título")
 
 // <h1 data-testid="title">Título</h1>
 screen.getByTestId("title")
