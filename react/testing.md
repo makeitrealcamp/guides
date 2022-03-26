@@ -99,7 +99,11 @@ screen.getAllByRole("heading")
 screen.getByRole("heading")
 ```
 
-`getBy` y `queryBy` (y su contrapartida `getAllBy` y `queryAllBy`) son muy parecidas, la única diferencia es que `getBy` lanza una excepción si no hay coincidencias mientras que `queryBy` retorna `null`. Nuestra recomendación es ignorar `queryBy` y `queryAllBy` por ahora.
+`getBy` y `queryBy` (y su contrapartida `getAllBy` y `queryAllBy`) son muy parecidas, la única diferencia es que `getBy` lanza una excepción si no hay coincidencias mientras que `queryBy` retorna `null`, que es útil cuando necesitamos verificar que un elemento **no** existe, por ejemplo:
+
+```javascript
+expect(screen.queryByRole("...")).not.toBeInTheDocument()
+```
 
 La diferencia entre `getBy` y `findBy` (y `getAllBy` y `findAllBy`) es que `getBy` retorna el elemento inmediatamente mientras que `findBy` retorna una promesa y se puede utilizar para encontrar elementos que pueden tomar tiempo en aparecer (o desaparecer).
 
