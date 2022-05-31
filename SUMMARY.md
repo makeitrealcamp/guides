@@ -166,6 +166,7 @@
   * [React Router](react/react-router.md)
   * [Carga de Imágenes](react/carga-de-imagenes.md)
   * [Testing](react/testing.md)
+  * [Estructura de carpetas](react/estructura-carpetas.md)
 * [Redux](redux/README.md)
   * [Primeros pasos](redux/primeros-pasos.md)
   * [Action creators](redux/action-creators.md)
