@@ -25,3 +25,4 @@ React fue creada, y es mantenida, por Facebook, pero es una librería de [códig
 * [React Router](react-router.md)
 * [Carga de Imágenes](carga-de-imagenes.md)
 * [Testing](testing.md)
+* [Estructura de carpetas](estructura-carpetas.md)
