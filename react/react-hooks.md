@@ -1,21 +1,21 @@
 # React Hooks
 
-Los **hooks**, introducidos en React 16.8, nos permiten utilizar el estado y otras características de React sin necesidad de convertir nuestros componentes a clases.
+Los **hooks** nos permiten utilizar el estado y otras características de React sin necesidad de convertir nuestros componentes a clases.
 
 Algunas de las funcionalidades que podemos utilizar son: manejo del estado con `useState`, manejo de efectos secundarios como peticiones `HTTP` con `useEffect`, crear referencias con `useRef`, entre otras.
-
-**Nota**: es importante notar que React no removió el uso de clases en su API, simplemente con los **hooks**, se le dio soporte a características en los componentes función que solo estaban disponibles en componentes clase. Esto quiere decir que ahora tenemos una alternativa diferente para crear nuestros componentes, los **conceptos básicos** de React siguen siendo los mismos.
 
 ## useState
 
 `useState` es el **hook** que nos permite crear un estado para nuestros componentes función. Recibe como argumento el valor inicial del estado. Retorna un arreglo, donde la primera posición es el valor del estado, y la segunda posición es una función que modifica el estado.
 
 ```javascript
+import React, { useState } from 'react';
+
 const Counter = () => {
   // Usando desctructuring podemos nombrar las posiciones del arreglo
   // [0] es el valor actual del estado
   // [1] es la función encargada de reasignar el valor del estado
-  const [count, setCount] = React.useState(0);
+  const [count, setCount] = useState(0);
 
   return (
     <div className="container">
@@ -36,15 +36,18 @@ En este caso el valor inicial del estado es `0`. En la asignación del estado es
 ## useEffect
 
 `useEffect` es  el **hook** que nos permite manejar efectos secundarios.
+
 `useEffect` recibe 2 argumentos, el primero es una función que se ejecutara después de que el componente se rendericé; el segundo argumento es un arreglo, este se conoce como las **dependencias** de nuestro hook, cuando el valor de alguna de las variables que nosotros agreguemos al arreglo de dependencias cambia, la función que pasamos como primer argumento es invocada nuevamente.
 
 ```javascript
+import React, { useState, useEffect } from 'react';
+
 const App = () => {
-  const [posts, setPosts] = React.useState([]);
+  const [posts, setPosts] = useState([]);
 
   // Este useEffect no tiene dependecias
   // Solo invoca las función después del primer renderizado.
-  React.useEffect(() => {
+  useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/posts')
       .then(response => response.json())
       .then(json => setPosts(json));
@@ -62,16 +65,16 @@ const App = () => {
 ```
 
 * En este caso estamos haciendo una petición HTTP, cuando la respuesta es exitosa almacenamos la respuesta en el estado.
-* Podemos definir un arreglo vacío, en este caso la función solo es invocada la primera vez que se renderiza el componente, o `componenteDidMount`.
+* Podemos definir un arreglo vacío, en este caso la función solo es invocada la primera vez que se renderiza el componente.
 * Si pasamos un segundo argumento al `useEffect`, la función se invoca cada vez que el componente se actualiza. Ojo, puedes causar un ciclo infinito. Es recomendable pasar siempre al menos un arreglo vacío.
 
-## Creando nuestro propio use hook
+## Creando nuestro propio hook
 
 Es posible crear nuestros propios **hooks** utilizando los **hooks** básicos proporcionados por React. Para esto debemos crear una función, por convención su nombre debe empezar con `use` y retornar los valores que queremos compartir. De esta manera podemos reutilizar funcionalida.
 
 ```javascript
 const useCount = (initialCount) => {
-  const [count, setCount] = React.useState(initialCount);
+  const [count, setCount] = useState(initialCount);
 
   return [count, setCount];
 }
@@ -123,11 +126,11 @@ const App = () => (
 ```javascript
 const App = () => {
   // bien
-  const [name, setName] = React.useState('');
+  const [name, setName] = useState('');
 
   // mal
   if (name !== 'Pedro') {
-    const [lastName, setLastName] = React.useState('Pérez');
+    const [lastName, setLastName] = useState('Pérez');
   }
 }
 ```
@@ -137,19 +140,19 @@ const App = () => {
 ```javascript
 // bien
 const Component = () => {
-  const [user, setUser] = React.useState(null);
+  const [user, setUser] = useState(null);
 }
 
 // también bien
 const useCustomHook = () => {
-  const [count, setCount] = React.useState(0);
+  const [count, setCount] = useState(0);
 
   return [count, setCount]
 }
 
 //mal
 const sum = (num1, num2) => {
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = useState(0);
 
   return num1 + num2;
 }

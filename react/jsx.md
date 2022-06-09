@@ -1,8 +1,6 @@
 # JSX
 
-{% youtube %} https://youtube.com/watch?v=IBwhZCLNWOA {% endyoutube %}
-
- **JSX** \(JavaScript XML\) es la sintaxis que se utiliza para construir el markup de los componentes de React. Veamos un ejemplo tomado del código que genera [create-react-app](https://github.com/facebookincubator/create-react-app):
+ **JSX** \(JavaScript XML\) es la sintaxis que se utiliza para construir el markup de los componentes de React. Veamos un ejemplo tomado del código que genera [create-react-app](https://github.com/facebook/create-react-app):
 
 ```markup
 <div className="App">
