@@ -1,16 +1,14 @@
 # Primeros pasos
 
-{% youtube %} https://youtube.com/watch?v=_0FHpdMwZFM {% endyoutube %}
+Aunque existen varias formas de empezar con React, quizá la forma más fácil es con [create-react-app](https://github.com/facebook/create-react-app), una aplicación de consola que nos va a permitir crear una aplicación en React rápidamente.
 
-Aunque existen varias formas de empezar con React, quizá la forma más fácil es con [create-react-app](https://github.com/facebookincubator/create-react-app), una aplicación de consola que nos va a permitir crear una aplicación en React rápidamente.
-
-El primer paso es crear nuestra aplicación utilizando [npx](https://www.npmjs.com/package/npx) y el comando [`create-react-app`](https://github.com/facebookincubator/create-react-app) seguido del nombre que le quieras dar. Por ejemplo:
+El primer paso es crear nuestra aplicación utilizando [npx](https://www.npmjs.com/package/npx) y el comando [`create-react-app`](https://github.com/facebook/create-react-app) seguido del nombre que le quieras dar. Por ejemplo:
 
 ```text
 $ npx create-react-app my-app
 ```
 
-Cuando ejecutas ese comando [create-react-app](https://github.com/facebookincubator/create-react-app) va a crear una carpeta llama `my-app` con una serie de archivos y subcarpetas para que puedas empezar a trabajar en tu proyecto.
+Cuando ejecutas ese comando [create-react-app](https://github.com/facebook/create-react-app) va a crear una carpeta llama `my-app` con una serie de archivos y subcarpetas para que puedas empezar a trabajar en tu proyecto.
 
 Ingresa a la carpeta `my-app` y ejecuta el proyecto con los siguientes comandos:
 
@@ -25,7 +23,7 @@ Felicitaciones, has creado tu primera aplicación con React!
 
 ## ¿Qué incluye create-react-app?
 
-Un proyecto creado con [create-react-app](https://github.com/facebookincubator/create-react-app) incluye, además de React, otras librerías como:
+Un proyecto creado con [create-react-app](https://github.com/facebook/create-react-app) incluye, además de React, otras librerías como:
 
 * [Webpack](https://webpack.js.org/) que se encarga de procesar y empaquetar nuestro código JavaScript \(con sus dependencias\), archivos CSS y otros archivos estáticos como imágenes y fuentes.
 * [Babel](https://babeljs.io/) que nos permite usar nuevas características de ECMAScript y JSX \(JavaScript XML\).
@@ -33,7 +31,7 @@ Un proyecto creado con [create-react-app](https://github.com/facebookincubator/c
 * [Jest](https://facebook.github.io/jest/) que es una librería para testing.
 * ... entre otras.
 
-Uno podría configurar un proyecto de React manualmente e incluir cada una de estas librerías, pero es bastante engorroso, [create-react-app](https://github.com/facebookincubator/create-react-app) nos hace la vida más fácil.
+Uno podría configurar un proyecto de React manualmente e incluir cada una de estas librerías, pero es bastante engorroso, [create-react-app](https://github.com/facebook/create-react-app) nos hace la vida más fácil.
 
 ## Estructura del proyecto
 
@@ -76,8 +74,8 @@ En la carpeta del proyecto puedes ejecutar los siguientes comandos:
 * `npm start` - inicia el servidor de desarrollo y abre un navegador con la aplicación.
 * `npm test` - ejecuta las pruebas.
 * `npm run build` - empaqueta la aplicación para producción en la carpeta `build`.
-* `npm run eject` - permite cambiar manualmente las librerías y configuración que utiliza [create-react-app](https://github.com/facebookincubator/create-react-app) por defecto. Ten cuidado con este comando, una vez lo ejecutas **no hay marcha atrás**.
+* `npm run eject` - permite cambiar manualmente las librerías y configuración que utiliza [create-react-app](https://github.com/facebook/create-react-app) por defecto. Ten cuidado con este comando, una vez lo ejecutas **no hay marcha atrás**.
 
 ## Hot reloading
 
-Una de las funcionalidades más importantes de los proyectos creados con [create-react-app](https://github.com/facebookincubator/create-react-app) es la capacidad de hacer cambios en caliente sin necesidad de reiniciar el servidor. Si haces un cambio en algún archivo en `src` o `public` el navegador se refresca automáticamente.
+Una de las funcionalidades más importantes de los proyectos creados con [create-react-app](https://github.com/facebook/create-react-app) es la capacidad de hacer cambios en caliente sin necesidad de reiniciar el servidor. Si haces un cambio en algún archivo en `src` o `public` el navegador se refresca automáticamente.
