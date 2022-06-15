@@ -6,7 +6,7 @@ El objetivo es que cada componente sea independiente y encapsule su markup \(JSX
 
 ## Definiendo un componente
 
-Existen dos formas de definir componentes en React: con funciones o con clases. Sin embargo, cada vez se utilizan más los componentes función que los componentes clase, así que utilizaremos por defecto componentes de función y dedicaremos una guía completa a componentes clase.
+Existen dos formas de definir componentes en React: con funciones o con clases. Sin embargo, cada vez se utilizan más los componentes función que los componentes de clase, así que utilizaremos por defecto componentes de función y dedicaremos una guía completa a componentes de clase.
 
 La forma de definir una componente función es la siguiente:
 

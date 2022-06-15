@@ -1,8 +1,8 @@
-# Componentes Clase
+# Componentes de Clase
 
-Aunque los componentes clase han perdido popularidad y la comunidad de React recomienda utilizar componentes funcionales, aún existen proyectos que utilizan componentes clases y por eso creamos esta guía.
+Aunque los componentes de clase han perdido popularidad y la comunidad de React recomienda utilizar componentes funcionales, aún existen proyectos que utilizan componentes de clases y por eso creamos esta guía.
 
-Un reto interesante (y quiza una de las razones por las que los componentes clase han perdido popularidad) es que para trabajar con componentes clase debes saber lo siguiente:
+Un reto interesante (y quiza una de las razones por las que los componentes de clase han perdido popularidad) es que para trabajar con componentes de clase debes saber lo siguiente:
 
 * Cómo definir una clase.
 * Qué es herencia.
@@ -15,7 +15,7 @@ Esto temas los puedes consultar en las guías de la sección [JavaScript II](../
 
 ## Definiendo un componente
 
-Para definir un componente clase se debe extender `Component` y crear un método `render` que retorna el JSX:
+Para definir un componente de clase se debe extender `Component` y crear un método `render` que retorna el JSX:
 
 ```javascript
 import React, { Component } from 'react';
@@ -102,7 +102,7 @@ class Welcome extends Component {
 
 ## Métodos de cíclo de vida
 
-Una ventaja de los componentes clase es que cuenta con métodos específicos para cada momento del ciclo de vida de un componente. Los más importantes son:
+Una ventaja de los componentes de clase es que cuenta con métodos específicos para cada momento del ciclo de vida de un componente. Los más importantes son:
 
 * `componentDidMount`: se ejecuta justo después que se ha renderizado el componente, ideal para hacer llamados a API o cualquier otra inicialización que necesita el componente.
 * `componentWillUnmount`: se ejecuta antes de que el componente se remueve del DOM, cuando se va a "desmontar".
