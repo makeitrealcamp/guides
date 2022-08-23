@@ -152,7 +152,7 @@ Redux toolkit tiene un objeto builder, el cual expone una serie de métodos como
 **Reducer:** El reducer encargado solo de manejar esta acción.
 
 Ejemplo:
-```js
+```jsx
 import { createAction, createReducer } from '@reduxjs/toolkit'
 
 const increment = createAction('counter/increment')
@@ -181,7 +181,7 @@ Las acciones son objetos planos que expresan una intención de cambiar el estado
 
 Dicho esto podemos empezar a escribir acciones, las acciones tiene un [estándar](https://medium.com/@khriztianmoreno/flux-standard-action-fsa-499369bf34fa) que indican que deben ser así.
 
-```json
+```js
 {
   type: 'ADD_TODO',
   payload: {
@@ -192,7 +192,7 @@ Dicho esto podemos empezar a escribir acciones, las acciones tiene un [estánda
 
 Redux toolkit Simplifica este procedimiento con un utility llamado [createAction](https://redux-toolkit.js.org/api/createAction) el cual es una [HOF](https://leobar37.medium.com/hofs-clousures-y-callbacks-para-ser-feliz-en-javascript-fa105ed6ad44)(higher order function) los cuales son funciones que retornan funciones.
 
-```js
+```jsx
 import { createAction } from "@reduxjs/toolkit";
 
 export const addTodo = createAction("ADD_TODO");
