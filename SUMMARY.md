@@ -176,6 +176,7 @@
   * [Operaciones asincrónicas con redux-thunk](redux/redux-thunk.md)
   * [Combinando funciones reductoras](redux/combinando-reductoras.md)
   * [Testing](redux/testing.md)
+  * [Redux Tool Kit](redux/redux-tool-kit.md)
 * [Algoritmos](algoritmos/README.md)
   * [Describiendo un algoritmo](algoritmos/describiendo-algoritmos.md)
   * [Complejidad (Big-O)](algoritmos/complejidad.md)
