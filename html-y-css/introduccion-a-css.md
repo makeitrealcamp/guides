@@ -150,12 +150,13 @@ Veamos algunos de los atributos que más se utilizan:
 
 ### color
 
-El atributo **color** define el color del texto. Las dos formas más comunes de definir colores en CSS son:
+El atributo **color** define el color del texto. Las tres formas más comunes de definir colores en CSS son:
 
 * El **nombre de un color** \(`red`, `blue`,  `white`, etc.\). [Ver lista de nombres](https://www.w3schools.com/colors/colors_names.asp)
-* El **valor hexadecimal** \(p.e. negro es `#000000` y blanco `#ffffff`\).
+* El **valor RGB (Red, Green, Blue)** \(p.e. `rgb(0, 0, 0)` es negro, `rgb(255, 255, 255)` es blanco\). Cada color va de 0 a 255, la combinación de estos 3 números nos da una opción de más de 16 millones de colores!
+* El **valor hexadecimal** \(p.e. negro es `#000000` y blanco `#ffffff`\). Es una notación compacta de RGB utilizando el sistema hexadecimal, cada color (rojo, verde y azul) va de `00` a `ff` (255).
 
-Utiliza [esta herramienta](https://www.google.com.co/search?q=color+picker&oq=color+picker&aqs=chrome.0.69i59j69i60j69i59j69i60j0l2.3255j0j9&sourceid=chrome&ie=UTF-8) para ver el **valor hexadecimal** de cualquier color.
+Utiliza [esta herramienta](https://www.google.com.co/search?q=color+picker&oq=color+picker&aqs=chrome.0.69i59j69i60j69i59j69i60j0l2.3255j0j9&sourceid=chrome&ie=UTF-8) para ver el **valor hexadecimal o RGB** de cualquier color.
 
 ### font-size
 
@@ -163,6 +164,7 @@ El atributo **font-size** define el tamaño del texto. Las formas más comunes d
 
 * **Pixeles \(px\):** Un pixel es igual a un punto en la pantalla de tu computador. Ejemplos: `12px`, `24px`, `36px`, etc.
 * **Ems \(em\):** Es una forma de definir el tamaño de forma relativa al elemento padre. Esta forma está tomando cada vez más fuerza para crear páginas que se adaptan a la pantalla. Ejemplos: `1em`, `0.8em`, `1.2em`.
+* **Rems \(rem\):** Similar a los **ems** pero, en vez de ser relativo al elemento padre, es relativo a la raíz del documento. La ventaja sobre los **ems** es que el tamaño de la fuente es más predecible.
 
 ### font-family
 
