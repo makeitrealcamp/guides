@@ -1,6 +1,6 @@
 # Unidades en CSS
 
-Existe una gran variedad de unidades que podemos usar en CSS para expresar medidas (p.e. tamaños de fuente, márgenes, ancho y alto de elementos, etc.). En esta guía vamos a ver las más importantes y cuáles usar para responsive design.
+Existe una gran variedad de unidades que podemos usar en CSS para expresar medidas (fuentes, márgenes, ancho y alto de elementos, etc.). En esta guía vamos a ver las más importantes y cuáles usar para responsive design.
 
 Existen dos tipos de unidades: relativas y absolutas.
 
@@ -38,9 +38,7 @@ Por ejemplo, en el siguiente código, asumiendo que el tamaño de la fuente raí
 
 Si utilizáramos `rem` la respuesta sería `15px` (`10px x 1.5`). Sin embargo, con `em` tenemos que tener en cuenta al padre que tiene una fuente de `10px * 2em = 20px`, así que la respuesta sería `30px`.
 
-`em` es útil cuando queremos mantener esa relación de tamaño con la fuente del elemento padre, por ejemplo, para definir el `padding` de los botones o los márgenes entre párrafos.
-
-Otro ejemplo sería la siguiente: si queremos que el tamaño de una fuente sea siempre la mitad de la del padre:
+`em` es útil cuando queremos mantener esa relación de tamaño con la fuente del elemento padre, por ejemplo, para definir el `padding` de los botones, los márgenes entre párrafos, o si queremos que el tamaño de una fuente sea siempre la mitad de la del padre:
 
 ```html
 <h1>
@@ -62,7 +60,7 @@ html {
   font-size: 90%;
 }
 
-// podemos cambiar el porcentaje utilizando media queries, por ejemplo
+/* podemos cambiar el porcentaje utilizando media queries, por ejemplo: */
 @media (min-width: 768px) {
   html { font-size: 100%; }
 }
