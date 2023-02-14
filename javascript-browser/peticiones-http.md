@@ -4,9 +4,9 @@ Desde el navegador podemos realizar peticiones HTTP a servidores remotos con Jav
 
 En este capítulo vamos a ver dos formas de realizar peticiones HTTP a servidores remotos: el Fetch API y una librería llamada [Axios](https://github.com/axios/axios).
 
-**Nota 1:** si aún no has trabajado con programación asincrónica con JavaScript te recomendamos que veas primero [esta guía](../javascript-ii/programacion-asincronica) antes de continuar.
+**Nota 1:** si aún no has trabajado con programación asincrónica con JavaScript te recomendamos que veas primero [esta guía](../javascript-ii/programacion-asincronica.md) antes de continuar.
 
-**Nota 2:** jQuery también incluye un API para realizar peticiones HTTP que puedes consultar en [esta guía](../jquery/realizando-peticiones-con-ajax).
+**Nota 2:** jQuery también incluye un API para realizar peticiones HTTP que puedes consultar en [esta guía](../jquery/realizando-peticiones-con-ajax.md).
 
 ## Fetch API
 
